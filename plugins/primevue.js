@@ -5,15 +5,15 @@ import ConfirmDialog from 'primevue/confirmdialog';
 import Dialog from "primevue/dialog";
 
 import ConfirmationService from 'primevue/confirmationservice';
-import ToastService from "primevue/toastservice";
 import { useConfirm } from "primevue/useconfirm";
 
 export default defineNuxtPlugin((nuxtApp) => {  
-
-    nuxtApp.vueApp.use(PrimeVue, ConfirmationService, ToastService, useConfirm, { ripple: true });
+    buildModules:['@nuxtjs/fontawesome'],
+    nuxtApp.vueApp.use(PrimeVue, { ripple: true });
     nuxtApp.vueApp.component("Calendar", Calendar);
     nuxtApp.vueApp.component("ConfirmDialog", ConfirmDialog);
     nuxtApp.vueApp.component("Dialog", Dialog);
+    nuxtApp.vueApp.use(ConfirmationService);
     
 });
 

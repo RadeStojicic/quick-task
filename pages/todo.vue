@@ -50,7 +50,8 @@ const showSettings = (index) => {
   });
 };
 
-// delete todo
+// delete Todo
+
 const confirm = useConfirm();
 const deleteTodo = (index) => {
   confirm.require({

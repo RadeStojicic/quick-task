@@ -10,18 +10,8 @@
           <a class="siteName" href="#">Quick Task</a>
         </div>
         <ul class="navLinks">
-          <NuxtLink
-            :to="{
-              name: 'index',
-            }"
-            >Home</NuxtLink
-          >
-          <NuxtLink
-            :to="{
-              name: 'todo',
-            }"
-            >Features</NuxtLink
-          >
+          <NuxtLink to="/">Home</NuxtLink>
+          <NuxtLink to="/todo">Features</NuxtLink>
           <NuxtLink to="/pircing">Pricing</NuxtLink>
           <NuxtLink to="/contact">Contact</NuxtLink>
           <NuxtLink class="signUp" to="/signup">Sign In</NuxtLink>

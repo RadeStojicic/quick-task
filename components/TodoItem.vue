@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
+import { useConfirm } from "primevue/useconfirm";
 
 const props = defineProps({
   todo: {

@@ -20,7 +20,7 @@ onMounted(() => {
     <div class="container">
       <div><Sidenav /></div>
       <div>
-        <!-- <router-view></router-view> -->
+        <Nuxt />
       </div>
     </div>
   </div>
