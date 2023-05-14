@@ -4,43 +4,55 @@
   <div class="container">
     <div class="sideNavContainer">
       <div class="sideNavLinks">
-        <NuxtLink to="/todo/all-tasks"
+        <NuxtLink to="/todo/all"
           ><div>
-            <font-awesome-icon icon="fa-solid fa-inbox" />
+            <span>
+              <font-awesome-icon icon="fa-solid fa-inbox" />
+            </span>
             All Tasks
           </div>
           <p>0</p>
         </NuxtLink>
         <NuxtLink to="/todo/today"
           ><div>
-            <font-awesome-icon icon="fas-regular fa-calendar-days" />
+            <span>
+              <font-awesome-icon icon="fas-regular fa-calendar-days" />
+            </span>
             Today
           </div>
           <p>0</p>
         </NuxtLink>
-        <NuxtLink to="/"
+        <NuxtLink to="/todo/important"
           ><div>
-            <font-awesome-icon icon="fab-regular fa-star" />
+            <span>
+              <font-awesome-icon icon="fab-regular fa-star" />
+            </span>
             Important
           </div>
           <p>0</p>
         </NuxtLink>
-        <NuxtLink to="/"
+        <NuxtLink to="/todo/planned"
           ><div>
-            <font-awesome-icon icon="fab-regular fa-clipboard" />
+            <span>
+              <font-awesome-icon icon="fab-regular fa-clipboard" />
+            </span>
             Planned
           </div>
           <p>0</p>
         </NuxtLink>
-        <NuxtLink to="/"
+        <NuxtLink to="/todo/completed"
           ><div>
-            <font-awesome-icon icon="fab-regular fa-calendar-check" /> Completed
+            <span>
+              <font-awesome-icon icon="fab-regular fa-calendar-check" />
+            </span>
+            Completed
           </div>
           <p>0</p>
         </NuxtLink>
-        <NuxtLink to="/"
+        <NuxtLink to="/todo/deleted"
           ><div>
-            <font-awesome-icon icon="fab-regular fa-trash-can" /> Trashed
+            <span> <font-awesome-icon icon="fab-regular fa-trash-can" /> </span
+            >Deleted
           </div>
           <p>0</p>
         </NuxtLink>

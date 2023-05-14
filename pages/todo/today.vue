@@ -1,4 +1,7 @@
 <script setup>
+definePageMeta({
+  layout: "todolayout",
+});
 </script>
 
 <template>
@@ -8,9 +11,7 @@
 </template>
 
 <style scoped>
-main {
-  background-color: whitesmoke;
-  height: 100vh;
-  margin-top: 50px;
+h1 {
+  color: red;
 }
 </style>

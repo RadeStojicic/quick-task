@@ -3,24 +3,14 @@
 import { onMounted } from "vue";
 import NavApp from "../components/NavApp.vue";
 import Sidenav from "../components/Sidenav.vue";
-import { useRouter, useRoute } from "vue-router";
-
-const router = useRouter();
-const route = useRoute();
-
-onMounted(() => {
-  if (route.path === "/todo") {
-    router.push("/todo/all-tasks");
-  }
-});
 </script>
 <template>
   <div>
     <NavApp />
     <div class="container">
       <div><Sidenav /></div>
-      <div>
-        <Nuxt />
+      <div class="main">
+        <slot />
       </div>
     </div>
   </div>
@@ -30,5 +20,11 @@ onMounted(() => {
 .container {
   display: grid;
   grid-template-columns: 300px 1fr;
+}
+
+.main {
+  background-color: whitesmoke;
+  height: 100vh;
+  margin-top: 50px;
 }
 </style>

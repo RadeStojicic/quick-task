@@ -5,7 +5,9 @@
   <div class="containerNav">
     <nav>
       <div class="navLeft">
-        <font-awesome-icon class="logoIcon" :icon="['fas', 'fa-list']" />
+        <span>
+          <font-awesome-icon class="logoIcon" :icon="['fas', 'fa-list']" />
+        </span>
         <NuxtLink to="/"
           ><span style="text-decoration: line-through"
             >Quick Task</span
@@ -78,7 +80,7 @@
 }
 
 .profilePic div {
-  background-image: url("../assets/profilePic.jpg");
+  background-image: url("./assets/images/profilePic.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

@@ -1,5 +1,9 @@
 <script setup>
 import HeaderVue from "../components/Header.vue";
+
+useHead({
+  title: "QuickTask",
+});
 </script>
 
 <template>

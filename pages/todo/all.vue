@@ -1,11 +1,13 @@
 <script setup>
 import { ref } from "vue";
 import { v4 as uuidv4 } from "uuid";
-import TodoApp from "../components/TodoApp.vue";
-import TodoItem from "../components/TodoItem.vue";
-import Sidenav from "../components/Sidenav.vue";
+import TodoApp from "../../components/TodoApp.vue";
+import TodoItem from "../../components/TodoItem.vue";
 import { useConfirm } from "primevue/useconfirm";
 
+definePageMeta({
+  layout: "todolayout",
+});
 // create todo
 const todoList = ref([]);
 const createTodo = (todo) => {
@@ -94,12 +96,6 @@ const deleteTodo = (index) => {
 </template>
 
 <style scoped>
-main {
-  background-color: whitesmoke;
-  height: 100vh;
-  margin-top: 50px;
-}
-
 .todoTasks {
   background-color: whitesmoke;
   padding-bottom: 50px;

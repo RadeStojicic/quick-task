@@ -6,12 +6,14 @@
     <nav class="navContainer">
       <div class="linksContainer">
         <div class="navLeft">
-          <font-awesome-icon class="listIcon" :icon="['fas', 'fa-list']" />
+          <span>
+            <font-awesome-icon class="listIcon" icon="fa-solid fa-list" />
+          </span>
           <a class="siteName" href="#">Quick Task</a>
         </div>
         <ul class="navLinks">
           <NuxtLink to="/">Home</NuxtLink>
-          <NuxtLink to="/todo">Features</NuxtLink>
+          <NuxtLink to="/todo/all">Features</NuxtLink>
           <NuxtLink to="/pircing">Pricing</NuxtLink>
           <NuxtLink to="/contact">Contact</NuxtLink>
           <NuxtLink class="signUp" to="/signup">Sign In</NuxtLink>
