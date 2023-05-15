@@ -15,8 +15,9 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { faClipboard } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarCheck} from "@fortawesome/free-solid-svg-icons";
 import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-library.add(faList,faPlus,faEllipsis,faEllipsisVertical,faBoxArchive,faFilePen,faCircleInfo,faCheck,faArrowRight,faInbox,faCalendarDays,faStar,faClipboard,faCalendarCheck,faTrashCan);
+library.add(faList,faPlus,faEllipsis,faEllipsisVertical,faBoxArchive,faFilePen,faCircleInfo,faCheck,faArrowRight,faInbox,faCalendarDays,faStar,faClipboard,faCalendarCheck,faTrashCan, faXmark);
 
 // This is important, we are going to let Nuxt worry about the CSS
 config.autoAddCss = false
