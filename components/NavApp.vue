@@ -6,7 +6,7 @@
     <nav>
       <div class="navLeft">
         <span>
-          <font-awesome-icon class="logoIcon" :icon="['fas', 'fa-list']" />
+          <i class="pi pi-list logoIcon"></i>
         </span>
         <NuxtLink to="/"
           ><span style="text-decoration: line-through"
@@ -15,9 +15,7 @@
         >
       </div>
       <div class="navRight">
-        <a class="navAddTask" href=""
-          ><div><font-awesome-icon icon="fa-solid fa-plus" /></div
-        ></a>
+        <a class="navAddTask" href=""><i class="pi pi-plus"></i></a>
         <a href="" class="profilePic"><div></div></a>
       </div>
     </nav>

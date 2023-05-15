@@ -36,7 +36,7 @@ const minDate = ref(new Date());
           @keyup.enter="createTask()"
         />
         <button class="createTask" @click="createTask()">
-          <font-awesome-icon icon="fa-solid fa-plus" />
+          <i class="pi pi-plus"></i>
         </button>
       </div>
       <div class="card flex justify-content-center">

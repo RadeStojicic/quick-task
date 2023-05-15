@@ -8,9 +8,7 @@
         ><span style="text-decoration: line-through">Quick Task</span></NuxtLink
       >
     </div>
-    <NuxtLink to="/"
-      ><font-awesome-icon class="closeIcon" icon="fa-solid fa-xmark"
-    /></NuxtLink>
+    <NuxtLink to="/"><i class="pi pi-times closeIcon"></i></NuxtLink>
     <div class="leftSection"></div>
 
     <slot />

@@ -6,53 +6,43 @@
       <div class="sideNavLinks">
         <NuxtLink to="/todo/all"
           ><div>
-            <span>
-              <font-awesome-icon icon="fa-solid fa-inbox" />
-            </span>
+            <i class="pi pi-inbox"></i>
             All Tasks
           </div>
           <p>0</p>
         </NuxtLink>
         <NuxtLink to="/todo/today"
           ><div>
-            <span>
-              <font-awesome-icon icon="fas-regular fa-calendar-days" />
-            </span>
+            <i class="pi pi-table"></i>
             Today
           </div>
           <p>0</p>
         </NuxtLink>
         <NuxtLink to="/todo/important"
           ><div>
-            <span>
-              <font-awesome-icon icon="fab-regular fa-star" />
-            </span>
+            <i class="pi pi-star"></i>
             Important
           </div>
           <p>0</p>
         </NuxtLink>
         <NuxtLink to="/todo/planned"
           ><div>
-            <span>
-              <font-awesome-icon icon="fab-regular fa-clipboard" />
-            </span>
+            <i class="pi pi-calendar"></i>
             Planned
           </div>
           <p>0</p>
         </NuxtLink>
         <NuxtLink to="/todo/completed"
           ><div>
-            <span>
-              <font-awesome-icon icon="fab-regular fa-calendar-check" />
-            </span>
+            <i class="pi pi-check-square"></i>
             Completed
           </div>
           <p>0</p>
         </NuxtLink>
         <NuxtLink to="/todo/deleted"
           ><div>
-            <span> <font-awesome-icon icon="fab-regular fa-trash-can" /> </span
-            >Deleted
+            <i class="pi pi-trash"></i>
+            Deleted
           </div>
           <p>0</p>
         </NuxtLink>

@@ -9,17 +9,15 @@ console.log(supabase);
     <nav class="navContainer">
       <div class="linksContainer">
         <div class="navLeft">
-          <span>
-            <font-awesome-icon class="listIcon" icon="fa-solid fa-list" />
-          </span>
+          <i class="pi pi-list listIcon"></i>
           <a class="siteName" href="#">Quick Task</a>
         </div>
         <ul class="navLinks">
           <NuxtLink to="/">Home</NuxtLink>
-          <NuxtLink to="/todo/all">Features</NuxtLink>
+          <NuxtLink to="/">Features</NuxtLink>
           <NuxtLink to="/pircing">Pricing</NuxtLink>
           <NuxtLink to="/contact">Contact</NuxtLink>
-          <NuxtLink class="signUp" to="/signup">Sign In</NuxtLink>
+          <NuxtLink class="signUp" to="/auth/login">Log In</NuxtLink>
         </ul>
       </div>
     </nav>
@@ -46,6 +44,8 @@ header {
 .listIcon {
   color: rgb(19, 19, 21);
   font-size: 1.8em;
+  display: flex;
+  align-items: center;
 }
 .navLeft {
   display: flex;

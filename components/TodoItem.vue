@@ -61,13 +61,14 @@ const visibleDialog = ref(false);
             <p :class="{ checked: todo.isCompleted }">{{ todo.todo }}</p>
           </div>
           <div class="taskRight">
-            <font-awesome-icon
-              class="seeMoreTodo"
+            <i
+              class="pi pi-ellipsis-v seeMoreTodo"
               icon="fa-solid
             fa-ellipsis-vertical"
               @click="$emit('show-settings', index)"
               v-if="todo.category !== 'Completed'"
-            />
+            >
+            </i>
 
             <div v-if="todo.customSettings == true" class="settings">
               <section
@@ -78,7 +79,7 @@ const visibleDialog = ref(false);
               >
                 <div class="settingsContainer">
                   <div class="settingsSubContainer">
-                    <font-awesome-icon icon="fa-solid fa-file-pen" />
+                    <i class="pi pi-file-edit"></i>
                     <div>Edit</div>
                   </div>
                 </div>
@@ -86,7 +87,7 @@ const visibleDialog = ref(false);
               <section @click="visibleDialog = true">
                 <div class="settingsContainer">
                   <div class="settingsSubContainer">
-                    <font-awesome-icon icon="fa-solid fa-circle-info" />
+                    <i class="pi pi-info-circle"></i>
                     <div>Info</div>
                   </div>
                 </div>
@@ -116,7 +117,7 @@ const visibleDialog = ref(false);
                   label="Delete"
                 >
                   <div class="settingsSubContainer">
-                    <font-awesome-icon icon="fa-solid fa-box-archive" />
+                    <i class="pi pi-trash"></i>
                     <div>Archive</div>
                   </div>
                 </div>

@@ -19,10 +19,12 @@ useHead({
         30+ million people organize their tasks, lists and manage their team’s
         projects with Quick Task
       </h2>
-      <button class="getStarted">
-        Get Started
-        <font-awesome-icon class="arrowRight" icon="fa-solid fa-arrow-right" />
-      </button>
+      <NuxtLink class="getStartedContainer" to="/todo/all"
+        ><button class="getStarted">
+          Get Started
+          <i class="pi pi-arrow-right arrowRight"></i>
+        </button>
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -59,6 +61,10 @@ useHead({
   color: rgb(148, 148, 148);
 }
 
+.getStartedContainer {
+  text-decoration: none;
+}
+
 .getStarted {
   background-color: #335af3;
   padding: 15px 22px 15px 22px;
@@ -72,8 +78,9 @@ useHead({
   justify-content: center;
   align-items: center;
   gap: 5px;
+  cursor: pointer;
 }
 .arrowRight {
-  font-size: 1em;
+  font-size: 0.95em;
 }
 </style>

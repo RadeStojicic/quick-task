@@ -7,6 +7,7 @@ import { useConfirm } from "primevue/useconfirm";
 
 definePageMeta({
   layout: "todolayout",
+  middleware: "auth",
 });
 // create todo
 const todoList = ref([]);
@@ -76,7 +77,7 @@ const deleteTodo = (index) => {
 <template>
   <main>
     <div class="todoTasks">
-      <TodoApp :numberOfTasks="arrayLength" @create-todo="createTodo" />
+      <TodoApp @create-todo="createTodo" />
       <ul>
         <li>
           <TodoItem

@@ -15,12 +15,6 @@
     "nuxt": "^3.4.3"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.4.0",
-    "@fortawesome/free-brands-svg-icons": "^6.4.0",
-    "@fortawesome/free-regular-svg-icons": "^6.4.0",
-    "@fortawesome/free-solid-svg-icons": "^6.4.0",
-    "@fortawesome/vue-fontawesome": "^3.0.3",
-    "@nuxtjs/fontawesome": "^1.1.2",
     "node-sass": "^8.0.0",
     "primeicons": "^6.0.1",
     "primevue": "^3.29.0",
