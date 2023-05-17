@@ -17,7 +17,7 @@ console.log(supabase);
           <NuxtLink to="/">Features</NuxtLink>
           <NuxtLink to="/pircing">Pricing</NuxtLink>
           <NuxtLink to="/contact">Contact</NuxtLink>
-          <NuxtLink class="signUp" to="/auth/login">Log In</NuxtLink>
+          <NuxtLink class="login" to="/auth">Log In</NuxtLink>
         </ul>
       </div>
     </nav>
@@ -91,7 +91,7 @@ header {
   color: #335af3;
 }
 
-.signUp {
+.login {
   color: white;
   background-color: #335af3;
   border-radius: 20px;

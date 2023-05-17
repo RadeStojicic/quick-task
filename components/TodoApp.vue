@@ -39,7 +39,7 @@ const minDate = ref(new Date());
           <i class="pi pi-plus"></i>
         </button>
       </div>
-      <div class="card flex justify-content-center">
+      <!-- <div class="card flex justify-content-center">
         <Calendar
           :minDate="minDate"
           class="calendarContainer"
@@ -47,7 +47,7 @@ const minDate = ref(new Date());
           v-model="date"
           showIcon
         />
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

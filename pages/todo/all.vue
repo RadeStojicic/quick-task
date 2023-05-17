@@ -5,31 +5,48 @@ import TodoApp from "../../components/TodoApp.vue";
 import TodoItem from "../../components/TodoItem.vue";
 import { useConfirm } from "primevue/useconfirm";
 
+const client = useSupabaseClient();
+
 definePageMeta({
   layout: "todolayout",
   middleware: "auth",
 });
-// create todo
-const todoList = ref([]);
-const createTodo = (todo) => {
-  const current = new Date();
-  const time =
-    ("0" + current.getHours()).toString().slice(-2) +
-    ":" +
-    ("0" + current.getMinutes()).toString().slice(-2) +
-    ":" +
-    ("0" + +current.getSeconds()).toString().slice(-2);
 
-  todoList.value.push({
-    id: uuidv4(),
-    todo,
-    time,
-    isCompleted: false,
-    category: "Uncompleted",
-    isEditing: false,
-    customSettings: false,
-    dueToDate: current,
-  });
+const current = new Date();
+// const time =
+//   ("0" + current.getHours()).toString().slice(-2) +
+//   ":" +
+//   ("0" + current.getMinutes()).toString().slice(-2) +
+//   ":" +
+//   ("0" + +current.getSeconds()).toString().slice(-2);
+
+// create todo
+const todoForm = reactive({
+  id: uuidv4(),
+  todo: "",
+  isCompleted: false,
+  category: "Uncompleted",
+  isEditing: false,
+  customSettings: false,
+  dueToDate: current,
+});
+
+const createTodo = async (todo) => {
+  todoForm.todo = todo;
+  try {
+    const { data, error } = await client.from("todos").insert({
+      id: todoForm.id,
+      todo: todoForm.todo,
+      isCompleted: todoForm.isCompleted,
+      category: todoForm.category,
+      isEditing: todoForm.isEditing,
+      customSettings: todoForm.customSettings,
+      dueToDate: todoForm.dueToDate,
+    });
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 let category = ref("");

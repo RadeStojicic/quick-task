@@ -1,18 +1,9 @@
-
 <script setup>
 const supabaseAuth = useSupabaseAuthClient();
-
+const isLoggingIn = ref(true);
 definePageMeta({
   layout: "formslayout",
 });
-
-// login via google
-
-const handleGoogleLogin = () => {
-  supabaseAuth.auth.signInWithOAuth({
-    provider: "google",
-  });
-};
 
 const form = reactive({
   email: "",
@@ -21,17 +12,60 @@ const form = reactive({
 
 const errors = ref("");
 
-const handleSignUp = async () => {
-  const { data, error } = await supabaseAuth.auth.signUp({
-    email: form.email,
-    password: form.password,
-  });
-  if (error) {
-    errors.value = error.massage;
+// login
+const accountLogin = async () => {
+  if (!form.email || !form.password) {
+    errors.value = "Please fill all the fields.";
     return;
+  } else {
+    errors.value = "";
   }
-  if (data) {
+
+  if (!isLoggingIn.value) {
+    return accountRegister();
+  }
+
+  try {
+    const { data, error } = await supabaseAuth.auth.signInWithPassword({
+      email: form.email,
+      password: form.password,
+    });
+    if (error) {
+      errors.value = error.message;
+      return;
+    }
     console.log(data);
+    errors.value = "";
+    if (data) {
+      useRouter().push("/todo/all");
+    }
+  } catch (err) {
+    errors.value = "Something went wrong.";
+  }
+};
+
+// -- login via google
+const handleGoogleLogin = () => {
+  supabaseAuth.auth.signInWithOAuth({
+    provider: "google",
+  });
+};
+
+// register
+const accountRegister = async () => {
+  try {
+    const { data, error } = await supabaseAuth.auth.signUp({
+      email: form.email,
+      password: form.password,
+    });
+    if (error) {
+      errors.value = error.message;
+      console.log(error);
+      return;
+    }
+    console.log(data);
+  } catch (err) {
+    errors.value = "Something went wrong.";
   }
 };
 </script>
@@ -39,9 +73,10 @@ const handleSignUp = async () => {
 <template>
   <main>
     <div>
-      <form @submit.prevent="handleSignUp()" action="">
+      <form @submit.prevent="accountLogin()" action="">
         <div class="formContainer">
-          <h1 class="titleAcc">Sign Up</h1>
+          <h1 v-if="isLoggingIn" class="titleAcc">Login</h1>
+          <h1 v-else class="titleAcc">Sign Up</h1>
           <p class="subtitleAcc">Start managing your time faster and better!</p>
           <div class="inputsButtonContainer">
             <div class="inputs">
@@ -63,7 +98,8 @@ const handleSignUp = async () => {
               </div>
             </div>
             <button type="submit" class="createButton">
-              Create an Account
+              <template v-if="isLoggingIn">Log In</template>
+              <template v-else>Sign Up</template>
             </button>
             <p class="errors">{{ errors }}</p>
           </div>
@@ -79,10 +115,18 @@ const handleSignUp = async () => {
         </div>
         <p class="btn-text">Continue with Google</p>
       </div>
-      <div class="formQuestion">
-        <p>Already have an account?</p>
-        <NuxtLink to="/auth/login">Log in</NuxtLink>
-      </div>
+      <template v-if="isLoggingIn">
+        <div class="formQuestion">
+          <p>Don't you have an account?</p>
+          <span @click="isLoggingIn = false">Sign Up</span>
+        </div>
+      </template>
+      <template v-else>
+        <div class="formQuestion">
+          <p>Already have an account?</p>
+          <span @click="isLoggingIn = true">Log In</span>
+        </div>
+      </template>
     </div>
   </main>
 </template>
@@ -91,9 +135,9 @@ const handleSignUp = async () => {
 <style  scoped>
 main {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   flex: 1.5;
 }
 .inputsButtonContainer {
@@ -189,9 +233,10 @@ main {
   margin-top: 20px;
 }
 
-.formQuestion a {
+.formQuestion span {
   text-decoration: none;
   color: #157afe;
+  cursor: pointer;
 }
 
 .google-btn {
