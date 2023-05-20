@@ -1,7 +1,7 @@
 <script setup>
 import { reactive, ref } from "vue";
 
-const emit = defineEmits(["create-todo"]);
+const emit = defineEmits(["create-todo", "updated-data"]);
 const taskState = reactive({
   todo: "",
   invalid: null,
@@ -12,6 +12,7 @@ const createTask = () => {
   taskState.invalid = null;
   if (taskState.todo !== "") {
     emit("create-todo", taskState.todo);
+    emit("updated-data", 1);
     taskState.todo = "";
     return;
   }

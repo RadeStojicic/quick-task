@@ -1,7 +1,12 @@
 <script setup>
-const supabase = useSupabaseClient();
+const user = useSupabaseUser();
 
-console.log(supabase);
+const authClient = useSupabaseClient();
+
+const handleLogOut = async () => {
+  await authClient.auth.signOut();
+  navigateTo("/auth");
+};
 </script>
 
 <template>
@@ -17,7 +22,8 @@ console.log(supabase);
           <NuxtLink to="/">Features</NuxtLink>
           <NuxtLink to="/pircing">Pricing</NuxtLink>
           <NuxtLink to="/contact">Contact</NuxtLink>
-          <NuxtLink class="login" to="/auth">Log In</NuxtLink>
+          <NuxtLink v-if="!user" class="login" to="/auth">Log In</NuxtLink>
+          <button v-else @click="handleLogOut()" class="logout">Log Out</button>
         </ul>
       </div>
     </nav>
@@ -96,6 +102,16 @@ header {
   background-color: #335af3;
   border-radius: 20px;
   width: 100px;
+  cursor: pointer;
+}
+
+.logout {
+  color: white;
+  background-color: #335af3;
+  border-radius: 5px;
+  width: 100px;
+  cursor: pointer;
+  border: none;
 }
 
 .navLinks a:hover {

@@ -1,15 +1,21 @@
 <script setup>
+const props = defineProps({
+  numberOfTasks: {
+    type: Number,
+    required: true,
+  },
+});
 </script>
 <template>
   <div class="container">
     <div class="sideNavContainer">
       <div class="sideNavLinks">
-        <NuxtLink to="/todo/all"
+        <NuxtLink to="/todo"
           ><div>
             <i class="pi pi-inbox"></i>
             All Tasks
           </div>
-          <p>0</p>
+          <p>{{ numberOfTasks }}</p>
         </NuxtLink>
         <NuxtLink to="/todo/today"
           ><div>

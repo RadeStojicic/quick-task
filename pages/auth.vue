@@ -34,10 +34,9 @@ const accountLogin = async () => {
       errors.value = error.message;
       return;
     }
-    console.log(data);
     errors.value = "";
     if (data) {
-      useRouter().push("/todo/all");
+      await navigateTo("/todo");
     }
   } catch (err) {
     errors.value = "Something went wrong.";

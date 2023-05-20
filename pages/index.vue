@@ -19,7 +19,7 @@ useHead({
         30+ million people organize their tasks, lists and manage their team’s
         projects with Quick Task
       </h2>
-      <NuxtLink class="getStartedContainer" to="/todo/all"
+      <NuxtLink class="getStartedContainer" to="/todo"
         ><button class="getStarted">
           Get Started
           <i class="pi pi-arrow-right arrowRight"></i>
