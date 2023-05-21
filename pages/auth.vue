@@ -11,6 +11,7 @@ const form = reactive({
 });
 
 const errors = ref("");
+const user_profile = useState("user_profile", () => "");
 
 // login
 const accountLogin = async () => {
@@ -36,6 +37,8 @@ const accountLogin = async () => {
     }
     errors.value = "";
     if (data) {
+      user_profile.value = data.user.user_metadata.full_name;
+      console.log(user_profile.value);
       await navigateTo("/todo");
     }
   } catch (err) {

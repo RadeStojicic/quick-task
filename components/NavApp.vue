@@ -1,4 +1,10 @@
 <script setup>
+const props = defineProps({
+  user_name: {
+    type: String,
+    required: true,
+  },
+});
 </script>
 
 <template>
@@ -16,6 +22,7 @@
       </div>
       <div class="navRight">
         <a class="navAddTask" href=""><i class="pi pi-plus"></i></a>
+        <p>{{ user_name }}</p>
         <a href="" class="profilePic"><div></div></a>
       </div>
     </nav>

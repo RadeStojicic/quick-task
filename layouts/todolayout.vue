@@ -3,10 +3,13 @@
 import { onMounted } from "vue";
 import NavApp from "../components/NavApp.vue";
 import Sidenav from "../components/Sidenav.vue";
+
+const user_profile = useState("user_profile");
+console.log(user_profile);
 </script>
 <template>
   <div>
-    <NavApp />
+    <NavApp :user_name="user_profile" />
     <div class="container">
       <div><Sidenav /></div>
       <div class="main">
