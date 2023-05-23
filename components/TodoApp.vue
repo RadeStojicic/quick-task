@@ -34,9 +34,9 @@ const minDate = ref(new Date());
           placeholder="Type something..."
           type="text"
           maxlength="60"
-          @keyup.enter="createTask()"
+          @keyup.enter="createTask"
         />
-        <button class="createTask" @click="createTask()">
+        <button class="createTask" @click="createTask">
           <i class="pi pi-plus"></i>
         </button>
       </div>
