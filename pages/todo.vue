@@ -16,9 +16,11 @@ const { data, refresh } = useAsyncData("todos", async () => {
     .select("*")
     .eq("user_id", user.value?.id);
 
-  data.forEach((todo) => {
+  /*data.forEach((todo) => {
     items.value.push(todo);
-  });
+  });*/
+  
+  items.value = [...data];
 });
 
 definePageMeta({
