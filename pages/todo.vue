@@ -8,25 +8,21 @@ import { useConfirm } from "primevue/useconfirm";
 const client = useSupabaseClient();
 const user = useSupabaseUser();
 
-const items = ref([]);
-
-const { data, refresh } = useAsyncData("todos", async () => {
-  const { data, error } = await client
-    .from("todos")
-    .select("*")
-    .eq("user_id", user.value?.id);
-
-  /*data.forEach((todo) => {
-    items.value.push(todo);
-  });*/
-  
- items.value = [...data];
- return data;
-});
 definePageMeta({
   layout: "todolayout",
   middleware: "auth",
 });
+
+const items = ref([]);
+
+const { data } = useAsyncData("todos", async () => {
+  const { data, error } = await client
+    .from("todos")
+    .select("*")
+    .eq("user_id", user.value?.id);
+  return data;
+});
+items.value = data.value;
 
 const current = new Date();
 // create todo
@@ -41,26 +37,25 @@ const todoForm = reactive({
 });
 
 const createTodo = async (todo) => {
-  //items.value = [];
   todoForm.todo = todo;
   todoForm.key = uuidv4();
   const newTodo = {
-      key: todoForm.key,
-      todo: todoForm.todo,
-      category: todoForm.category,
-      customSettings: todoForm.customSettings,
-      user_id: user.value?.id,
-      // isCompleted: todoForm.isCompleted,
-      // isEditing: todoForm.isEditing,
-      // dueToDate: todoForm.dueToDate,
-    };
+    key: todoForm.key,
+    todo: todoForm.todo,
+    category: todoForm.category,
+    customSettings: todoForm.customSettings,
+    user_id: user.value?.id,
+    // isCompleted: todoForm.isCompleted,
+    // isEditing: todoForm.isEditing,
+    // dueToDate: todoForm.dueToDate,
+  };
   try {
     const { data, error } = await client.from("todos").insert(newTodo);
     if (error) {
       console.log(error.message);
       return;
     }
-    items.value=[...items.value, newTodo];
+    items.value = [...items.value, newTodo];
   } catch (err) {
     console.log(err);
   }
@@ -123,7 +118,7 @@ const deleteTodo = async (index) => {
   <main>
     <NuxtPage />
     <div class="todoTasks">
-      <TodoApp @create-todo="createTodo" @updated-data="refresh" />
+      <TodoApp @create-todo="createTodo" />
       <ul>
         <li>
           <TodoItem

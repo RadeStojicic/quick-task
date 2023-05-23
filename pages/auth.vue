@@ -18,8 +18,6 @@ const accountLogin = async () => {
   if (!form.email || !form.password) {
     errors.value = "Please fill all the fields.";
     return;
-  } else {
-    errors.value = "";
   }
 
   if (!isLoggingIn.value) {
@@ -31,15 +29,18 @@ const accountLogin = async () => {
       email: form.email,
       password: form.password,
     });
+
+    errors.value = "";
+
     if (error) {
       errors.value = error.message;
       return;
     }
-    errors.value = "";
+
     if (data) {
+      useRouter().push("/todo");
       user_profile.value = data.user.user_metadata.full_name;
       console.log(user_profile.value);
-      await navigateTo("/todo");
     }
   } catch (err) {
     errors.value = "Something went wrong.";
@@ -75,7 +76,7 @@ const accountRegister = async () => {
 <template>
   <main>
     <div>
-      <form @submit.prevent="accountLogin()" action="">
+      <form @submit.prevent="accountLogin" action="">
         <div class="formContainer">
           <h1 v-if="isLoggingIn" class="titleAcc">Login</h1>
           <h1 v-else class="titleAcc">Sign Up</h1>
