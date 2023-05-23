@@ -41,11 +41,10 @@ const todoForm = reactive({
 });
 
 const createTodo = async (todo) => {
-  items.value = [];
+  //items.value = [];
   todoForm.todo = todo;
   todoForm.key = uuidv4();
-  try {
-    const { data, error } = await client.from("todos").insert({
+  const newTodo = {
       key: todoForm.key,
       todo: todoForm.todo,
       category: todoForm.category,
@@ -54,11 +53,14 @@ const createTodo = async (todo) => {
       // isCompleted: todoForm.isCompleted,
       // isEditing: todoForm.isEditing,
       // dueToDate: todoForm.dueToDate,
-    });
+    };
+  try {
+    const { data, error } = await client.from("todos").insert(newTodo);
     if (error) {
       console.log(error.message);
       return;
     }
+    items.value=[...items, newTodo];
   } catch (err) {
     console.log(err);
   }
