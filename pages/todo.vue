@@ -20,9 +20,9 @@ const { data, refresh } = useAsyncData("todos", async () => {
     items.value.push(todo);
   });*/
   
-  items.value = [...data];
+ items.value = [...data];
+ return data;
 });
-
 definePageMeta({
   layout: "todolayout",
   middleware: "auth",
@@ -60,7 +60,7 @@ const createTodo = async (todo) => {
       console.log(error.message);
       return;
     }
-    items.value=[...items, newTodo];
+    items.value=[...items.value, newTodo];
   } catch (err) {
     console.log(err);
   }
