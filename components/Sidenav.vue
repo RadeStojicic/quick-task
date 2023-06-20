@@ -24,14 +24,14 @@ const props = defineProps({
           </div>
           <p>0</p>
         </NuxtLink>
-        <NuxtLink to="/todo/important"
+        <NuxtLink to="/"
           ><div>
             <i class="pi pi-star"></i>
             Important
           </div>
           <p>0</p>
         </NuxtLink>
-        <NuxtLink to="/todo/planned"
+        <NuxtLink to="/"
           ><div>
             <i class="pi pi-calendar"></i>
             Planned
@@ -45,7 +45,7 @@ const props = defineProps({
           </div>
           <p>0</p>
         </NuxtLink>
-        <NuxtLink to="/todo/deleted"
+        <NuxtLink to="/"
           ><div>
             <i class="pi pi-trash"></i>
             Deleted

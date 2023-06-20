@@ -3,15 +3,24 @@
 import { onMounted } from "vue";
 import NavApp from "../components/NavApp.vue";
 import Sidenav from "../components/Sidenav.vue";
-
+import { ref, defineProps } from "vue";
 const user_profile = useState("user_profile");
-console.log(user_profile);
+
+const props = defineProps({
+  data: {
+    type: Object,
+    required: true,
+  },
+});
+console.log(props.data);
+const numberOfTasks = ref(0);
+// if (items.value !== null) numberOfTasks.value = items.value.length;
 </script>
 <template>
   <div>
     <NavApp :user_name="user_profile" />
     <div class="container">
-      <div><Sidenav /></div>
+      <div><Sidenav :numberOfTasks="numberOfTasks" /></div>
       <div class="main">
         <slot />
       </div>

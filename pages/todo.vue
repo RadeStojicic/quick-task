@@ -49,6 +49,7 @@ const createTodo = async (todo) => {
     // isEditing: todoForm.isEditing,
     // dueToDate: todoForm.dueToDate,
   };
+
   try {
     const { data, error } = await client.from("todos").insert(newTodo);
     if (error) {
@@ -116,7 +117,7 @@ const deleteTodo = async (index) => {
 
 <template>
   <main>
-    <NuxtPage />
+    <NuxtPage :items="data" />
     <div class="todoTasks">
       <TodoApp @create-todo="createTodo" />
       <ul>
