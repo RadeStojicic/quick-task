@@ -1,5 +1,8 @@
 <script setup>
 import HeaderVue from "../components/Header.vue";
+import FeauturesVue from "../components/Feautures.vue";
+import PricingVue from "../components/Pricing.vue";
+import FaqVue from "../components/Faq.vue";
 
 useHead({
   title: "QuickTask",
@@ -10,77 +13,71 @@ useHead({
   <div class="container">
     <HeaderVue />
     <div class="heroContainer">
-      <h1 class="heroTitle">
-        Take
-        <span style="text-decoration: underline #335af3">Control</span>
-        of Your Schedule using simple to do List
-      </h1>
-      <h2 class="heroSubtitle">
-        30+ million people organize their tasks, lists and manage their team’s
-        projects with Quick Task
-      </h2>
-      <NuxtLink class="getStartedContainer" to="/todo"
-        ><button class="getStarted">
-          Get Started
-          <i class="pi pi-arrow-right arrowRight"></i>
-        </button>
-      </NuxtLink>
+      <div class="leftHero">
+        <h1>
+          <span style="color: #ff2525; font-weight: bold">Unlock</span> your
+          Productivity Potential and conquer your tasks with ease.
+        </h1>
+        <p>
+          Welcome to a world of efficient task management, where your goals
+          become achievable realities
+        </p>
+        <NuxtLink class="getStartedContainer" to="/todo"
+          ><button class="getStarted">Get Started</button>
+        </NuxtLink>
+      </div>
+      <div class="rightHero">
+        <img src="../assets/images/qt_illustration.png" alt="illustration" />
+      </div>
     </div>
+    <FeauturesVue />
+    <PricingVue />
+    <FaqVue />
   </div>
 </template>
 
 
 <style lang="scss" scoped>
 .container {
-  width: 100vw;
+  width: 100%;
+  max-width: 100%;
 }
 .heroContainer {
-  max-width: 1300px;
+  max-width: 1500px;
   width: 80%;
   margin: auto;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  flex-direction: column;
-  margin-top: 120px;
-}
-.heroTitle {
-  width: 80%;
-  text-align: center;
-  font-size: 3.5em;
-  font-weight: 800;
-  color: rgb(18, 22, 29);
+  margin-top: 250px;
+  gap: 80px;
 }
 
-.heroSubtitle {
-  margin-top: 20px;
-  width: 55%;
-  text-align: center;
-  font-size: 1.1em;
-  font-weight: 400;
-  color: rgb(148, 148, 148);
+.leftHero h1 {
+  font-size: 3.4em;
+  width: 100%;
+  color: #0b1b50;
 }
 
-.getStartedContainer {
-  text-decoration: none;
+.leftHero p {
+  margin-top: 30px;
+  color: #a0a6ba;
+  font-size: 0.95em;
+  width: 90%;
 }
 
 .getStarted {
-  background-color: #335af3;
-  padding: 15px 22px 15px 22px;
-  width: 170px;
-  border: none;
+  background-color: #3850ff;
+  width: 150px;
+  padding: 15px;
   color: white;
-  margin-top: 40px;
+  border: none;
+  font-weight: 500;
+  font-size: 0.9em;
   border-radius: 5px;
-  font-size: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  cursor: pointer;
+  margin-top: 60px;
 }
-.arrowRight {
-  font-size: 0.95em;
+.rightHero img {
+  width: 100%;
 }
 </style>
