@@ -11,12 +11,12 @@ const handleLogOut = async () => {
 
 <template>
   <header>
-    <img class="waveHeader" src="../assets/images/wave_pattern.png" alt="" />
-
     <nav class="navContainer">
       <div class="linksContainer">
         <div class="navLeft">
-          <a class="siteName" href="#">Quick Task</a>
+          <a class="logo" href="#"
+            ><img src="../assets/images/logo.png" alt=""
+          /></a>
         </div>
         <ul class="navLinks">
           <NuxtLink class="link" to="/">Home</NuxtLink>
@@ -37,18 +37,12 @@ header {
   border-bottom: 1px rgba(128, 128, 128, 0.097) solid;
   position: fixed;
   top: 0;
-  background-color: white;
   z-index: 1000;
+  background-color: #0a132ee9;
 }
 
-.siteName {
-  text-decoration: none;
-  font-size: 1.4em;
-  font-weight: 400;
-  width: 100%;
-  color: rgb(255, 255, 255);
-  text-decoration: line-through 2px #ffffff;
-  font-weight: 700;
+.logo img {
+  width: 150px;
 }
 
 .waveHeader {
@@ -91,25 +85,25 @@ header {
   justify-content: center;
   border-radius: 5px;
   padding: 10px 5px 10px 5px;
-  font-size: 0.95em;
+  font-size: 0.9em;
   font-weight: 400;
 }
 .linksContainer {
+  max-width: 1500px;
+  width: 80%;
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1500px;
-  width: 80%;
   margin: auto;
 }
 
 .link {
-  color: #797979;
+  color: #cccccc;
 }
 
 .router-link-active {
-  color: #1f2e5f;
+  color: #ffffff;
 }
 
 .login {

@@ -3,347 +3,133 @@
 <template>
   <div class="container">
     <div class="pricing_container">
-      <div class="pricing_content">
-        <h1 class="pricingTitle">We’ve got a plan that’s perfect for you.</h1>
-        <p class="pricingSubTitle">
-          Select Your Plan: Task Management Solutions for Every Bussiness Size
-        </p>
-      </div>
-      <div class="pricingCards">
-        <div class="pricingCard card1">
-          <div class="cardContainer">
-            <div class="upCard">
-              <img class="plan1" src="../assets/images/qt_plan1.png" alt="" />
-              <div>
-                <p class="planName">Standard</p>
-                <p class="planPrice">
-                  <span
-                    style="font-weight: bold; color: #0c1d54; font-size: 2em"
-                    >$0</span
-                  ><span style="color: #cacaca">/month</span>
-                </p>
-              </div>
-            </div>
-            <div class="downCard">
-              <hr size="0.5px" color="#E6E6E6" />
-              <div class="advantages">
-                <div>
-                  <p>Task creation and assignment</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p>Mobile app access</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p>Priority setting</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p>Deadline management</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <button class="getStarted">Get Started</button>
-          </div>
+      <div class="pricing_subcontainer">
+        <div class="pricing_content">
+          <h1 class="pricingTitle">We’ve got a plan that’s perfect for you.</h1>
+          <p class="pricingSubTitle">
+            Select Your Plan: Task Management Solutions for Every Bussiness Size
+          </p>
         </div>
-        <div class="pricingCard card2">
-          <div class="cardContainer">
-            <div class="upCard">
-              <img class="plan1" src="../assets/images/qt_plan2.png" alt="" />
-              <div>
-                <p class="planName">Special</p>
-                <p class="planPrice">
-                  <span
-                    style="font-weight: bold; color: #0c1d54; font-size: 2em"
-                    >$49</span
-                  ><span style="color: #cacaca">/month</span>
-                </p>
-              </div>
+        <div class="pricingCards">
+          <div class="pricingCard card1">
+            <div class="card_title">
+              <p class="plan_name">Standard Plan</p>
+              <p class="plan_price">
+                <span style="font-size: 2em">$</span>
+                <span style="color: white; font-weight: bold; font-size: 2em"
+                  >0</span
+                ><span style="color: #626f89">/month</span>
+              </p>
             </div>
-            <div class="downCard">
-              <hr size="0.5px" color="#E6E6E6" />
-              <div class="advantages">
+            <div class="description_container">
+              <div class="description">
                 <div>
-                  <p>Customizable user roles</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
+                  <i class="pi pi-check"></i>
+                  <p>Basic Functionality</p>
                 </div>
                 <div>
-                  <p>Unlimited storage and file attachments</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
+                  <i class="pi pi-check"></i>
+                  <p>Cost Savings</p>
                 </div>
                 <div>
-                  <p>Advanced data encryption</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
+                  <i class="pi pi-check"></i>
+                  <p>Limited Collaboration</p>
                 </div>
                 <div>
-                  <p>24/7 priority support</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
+                  <i class="pi pi-check"></i>
+                  <p>Mobile Access</p>
                 </div>
                 <div>
-                  <p>Dedicated account manager</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
+                  <i class="pi pi-check"></i>
+                  <p>Minimal Customization</p>
                 </div>
                 <div>
-                  <p>Security measures</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p>Time tracking</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <p>Email notifications</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
+                  <i class="pi pi-check"></i>
+                  <p>Support Limitations</p>
                 </div>
               </div>
             </div>
-            <button class="getStarted">Get Started</button>
+            <button class="plan_getStarted">Get Started</button>
           </div>
-        </div>
-        <div class="pricingCard card3">
-          <div class="cardContainer">
-            <div class="upCard">
-              <img class="plan1" src="../assets/images/qt_plan3.png" alt="" />
-              <div>
-                <p class="planName">Premium</p>
-                <p class="planPrice">
-                  <span
-                    style="font-weight: bold; color: #0c1d54; font-size: 2em"
-                    >$12</span
-                  ><span style="color: #cacaca">/month</span>
-                </p>
-              </div>
+          <div class="pricingCard card2">
+            <div class="card_title">
+              <p class="plan_name">Bussiness Plan</p>
+              <p class="plan_price">
+                <span style="font-size: 2em">$</span>
+                <span style="color: white; font-weight: bold; font-size: 2em"
+                  >12</span
+                ><span style="color: #626f89">/month</span>
+              </p>
             </div>
-            <div class="downCard">
-              <hr size="0.5px" color="#E6E6E6" />
-              <div class="advantages">
+            <div class="description_container">
+              <div class="description">
                 <div>
-                  <p>Advanced task tracking</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
+                  <i class="pi pi-check"></i>
+                  <p>Advanced Features</p>
                 </div>
                 <div>
-                  <p>Customizable task labels and tags</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
+                  <i class="pi pi-check"></i>
+                  <p>Team Collaboration</p>
                 </div>
                 <div>
-                  <p>Collaboration tools for team members</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
+                  <i class="pi pi-check"></i>
+                  <p>Reporting & Analytics</p>
                 </div>
                 <div>
-                  <p>File attachments and document sharing</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
+                  <i class="pi pi-check"></i>
+                  <p>Integration options</p>
                 </div>
                 <div>
-                  <p>Calendar integration</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
+                  <i class="pi pi-check"></i>
+                  <p>Priority Support</p>
                 </div>
                 <div>
-                  <p>Data export and reporting</p>
-                  <svg
-                    width="30"
-                    height="30"
-                    viewBox="0 0 30 30"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M15 30C18.9782 30 22.7936 28.4196 25.6066 25.6066C28.4196 22.7936 30 18.9782 30 15C30 11.0218 28.4196 7.20644 25.6066 4.3934C22.7936 1.58035 18.9782 0 15 0C11.0218 0 7.20644 1.58035 4.3934 4.3934C1.58035 7.20644 0 11.0218 0 15C0 18.9782 1.58035 22.7936 4.3934 25.6066C7.20644 28.4196 11.0218 30 15 30ZM21.6211 12.2461L14.1211 19.7461C13.5703 20.2969 12.6797 20.2969 12.1348 19.7461L8.38477 15.9961C7.83399 15.4453 7.83399 14.5547 8.38477 14.0098C8.93555 13.4648 9.82617 13.459 10.3711 14.0098L13.125 16.7637L19.6289 10.2539C20.1797 9.70312 21.0703 9.70312 21.6152 10.2539C22.1602 10.8047 22.166 11.6953 21.6152 12.2402L21.6211 12.2461Z"
-                      fill="#0C1D54"
-                    />
-                  </svg>
+                  <i class="pi pi-check"></i>
+                  <p>Scalability & Growth:</p>
                 </div>
               </div>
             </div>
-            <button class="getStarted">Get Started</button>
+            <button class="plan_getStarted">Get Started</button>
+          </div>
+          <div class="pricingCard card3">
+            <div class="card_title">
+              <p class="plan_name">Premium Plan</p>
+              <p class="plan_price">
+                <span style="font-size: 2em">$</span>
+                <span style="color: white; font-weight: bold; font-size: 2em"
+                  >49</span
+                ><span style="color: #626f89">/month</span>
+              </p>
+            </div>
+            <div class="description_container">
+              <div class="description">
+                <div>
+                  <i class="pi pi-check"></i>
+                  <p>Advanced Functionality</p>
+                </div>
+                <div>
+                  <i class="pi pi-check"></i>
+                  <p>Customization & Branding</p>
+                </div>
+                <div>
+                  <i class="pi pi-check"></i>
+                  <p>Seamless Integrations</p>
+                </div>
+                <div>
+                  <i class="pi pi-check"></i>
+                  <p>Exclusive Features</p>
+                </div>
+                <div>
+                  <i class="pi pi-check"></i>
+                  <p>VIP Support</p>
+                </div>
+                <div>
+                  <i class="pi pi-check"></i>
+                  <p>Enhanced Security</p>
+                </div>
+              </div>
+            </div>
+            <button class="plan_getStarted">Get Started</button>
           </div>
         </div>
       </div>
@@ -355,110 +141,117 @@
 <style  scoped>
 .container {
   width: 100%;
-  padding-bottom: 500px;
 }
 
 .pricing_container {
   margin-top: 100px;
-  background-color: #222b73;
-  height: 800px;
-  display: flex;
-  position: relative;
+  background-color: #07081c;
+  height: auto;
+  padding-bottom: 150px;
   top: 30px;
+}
+
+.pricing_subcontainer {
+  max-width: 1500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .pricing_content {
   width: 100%;
   text-align: center;
   margin: 100px auto;
+  max-width: 1500px;
 }
 .pricing_container {
   color: white;
 }
 
-.pricingText {
-  color: rgb(255, 255, 255);
-  font-weight: bold;
+.pricingSubTitle {
+  color: rgb(217, 222, 226);
 }
 
 .pricingTitle {
   font-size: 4em;
-  width: 50%;
+  width: 60%;
   margin: auto auto 20px auto;
 }
 
 .pricingCards {
-  position: absolute;
-  width: 1500px;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 60%;
   display: flex;
+  width: 100%;
   justify-content: space-between;
-  gap: 50px;
+  gap: 80px;
 }
 
 .pricingCard {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 55px 37px -3px #1518220b;
-  border: 1px rgba(128, 128, 128, 0.101) solid;
-  border-radius: 5px;
+  background-color: #0c0d2b;
+  border-radius: 20px;
+  padding-top: 50px;
+  padding-bottom: 30px;
   width: 100%;
 }
-
-.plan1 {
-  width: 130px;
-}
-
-.card1 {
-  height: 70%;
-}
-
-.card3 {
-  height: 80%;
-}
-
-.cardContainer {
-  width: 80%;
-  margin: 50px auto;
-}
-
-.upCard {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.downCard {
-  margin-top: 50px;
-}
-.advantages {
-  margin-top: 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.downCard div {
-  display: flex;
-  justify-content: space-between;
-}
-.downCard div p {
-  color: #525670;
-}
-
-.planName {
-  color: #1a2c65;
-  font-weight: 600;
+.plan_name {
+  text-align: center;
+  font-weight: 500;
   font-size: 1.2em;
 }
 
-.getStarted {
-  border-radius: 50px;
-  width: 100%;
+.plan_price {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pi-check {
   color: white;
   background-color: #3850ff;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 0.7em;
+  padding: 7px;
+}
+.description_container {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 50px auto;
+}
+
+.description div {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+  gap: 15px;
+}
+
+.description div p {
+  color: #7286ac;
+}
+
+.plan_getStarted {
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 50%;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #3850ff;
+  color: white;
   border: none;
-  padding: 15px;
-  margin-top: 50px;
 }
 </style>

@@ -4,9 +4,9 @@
 <template>
   <div class="container">
     <div class="logoContainer">
-      <NuxtLink to="/"
-        ><span style="text-decoration: line-through">Quick Task</span></NuxtLink
-      >
+      <NuxtLink class="logo" to="/"
+        ><img src="../assets/images/logo.png" alt="logo"
+      /></NuxtLink>
     </div>
     <NuxtLink to="/"><i class="pi pi-times closeIcon"></i></NuxtLink>
     <div class="leftSection"></div>
@@ -26,17 +26,12 @@
   display: flex;
 }
 .leftSection {
-  background-image: linear-gradient(
-      to left,
-      rgba(255, 4, 63, 0.774),
-      rgba(255, 21, 0, 0.87)
-    ),
-    url("./assets/images/signupImage.jpg");
+  background-image: linear-gradient(to left, #3a4ddeb2, #3a4ddeb2),
+    url("./assets/images/robot.png");
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;
   flex: 1;
-  filter: opacity(0.8);
 }
 .closeIcon {
   position: absolute;
@@ -69,5 +64,8 @@
   color: white;
   text-decoration: none;
   font-weight: bold;
+}
+.logo img {
+  width: 130px;
 }
 </style>
