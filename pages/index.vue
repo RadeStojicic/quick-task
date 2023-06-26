@@ -154,7 +154,7 @@ useHead({
     align-items: center;
     margin: auto;
     position: relative;
-    top: 20px;
+    top: 0px;
     height: 800px;
   }
   .leftHero {
@@ -163,6 +163,7 @@ useHead({
   .leftHero p {
     width: 100%;
     text-align: left;
+    margin-top: 20px;
   }
   .heroButtons {
     display: flex;
@@ -172,7 +173,7 @@ useHead({
     margin-top: 50px;
   }
   .leftHero h1 {
-    font-size: 38px;
+    font-size: 42px;
     text-align: left;
   }
   .getStarted {
