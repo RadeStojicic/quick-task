@@ -3,12 +3,16 @@
 
 <template>
   <div class="container">
-    <div class="logoContainer">
-      <NuxtLink class="logo" to="/"
-        ><img src="../assets/images/logo.png" alt="logo"
-      /></NuxtLink>
+    <div class="navBar">
+      <div class="subNav">
+        <div class="logoContainer">
+          <NuxtLink class="logo" to="/"
+            ><img src="../assets/images/logo.png" alt="logo"
+          /></NuxtLink>
+        </div>
+        <NuxtLink to="/"><i class="pi pi-times closeIcon"></i></NuxtLink>
+      </div>
     </div>
-    <NuxtLink to="/"><i class="pi pi-times closeIcon"></i></NuxtLink>
     <div class="leftSection"></div>
 
     <slot />
@@ -23,8 +27,21 @@
   height: 100vh;
   display: flex;
   background-color: rgb(255, 255, 255);
-  display: flex;
 }
+.navBar {
+  height: 80px;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.subNav {
+  display: flex;
+  width: 95%;
+  margin: auto;
+  justify-content: space-between;
+}
+
 .leftSection {
   background-image: linear-gradient(to left, #3a4ddeb2, #3a4ddeb2),
     url("./assets/images/robot.jpg");
@@ -34,9 +51,6 @@
   flex: 1;
 }
 .closeIcon {
-  position: absolute;
-  right: 30px;
-  top: 30px;
   font-size: 1.8em;
   padding: 10px;
   cursor: pointer;
@@ -44,16 +58,11 @@
 }
 
 .logoContainer {
-  position: absolute;
-  left: 30px;
-  top: 30px;
   z-index: 1;
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: center;
-  font-size: 1.2em;
-  padding: 10px;
 }
 
 .logoAcc {
@@ -67,5 +76,24 @@
 }
 .logo img {
   width: 130px;
+}
+
+@media (max-width: 1320px) {
+  .leftSection {
+    display: none;
+  }
+
+  .container {
+    background-image: linear-gradient(to left, #3a4ddeb2, #3a4ddeb2),
+      url("./assets/images/robot.jpg");
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    height: 1024px;
+    padding-bottom: 200px;
+  }
+  .closeIcon {
+    color: rgb(255, 255, 255);
+  }
 }
 </style>

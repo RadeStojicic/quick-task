@@ -75,7 +75,7 @@ const accountRegister = async () => {
 
 <template>
   <main>
-    <div>
+    <div class="parentForm">
       <form @submit.prevent="accountLogin" action="">
         <div class="formContainer">
           <h1 v-if="isLoggingIn" class="titleAcc">Login</h1>
@@ -143,6 +143,7 @@ main {
   flex-direction: column;
   flex: 1.5;
 }
+
 .inputsButtonContainer {
   display: flex;
   flex-direction: column;
@@ -267,5 +268,48 @@ main {
 
 .google-btn p {
   font-size: 0.95em;
+}
+@media (max-width: 1320px) {
+  .main {
+    width: 100%;
+    margin: auto;
+  }
+  .formContainer {
+    width: 400px;
+  }
+  .parentForm {
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow: 2px 2px 10px 5px rgba(64, 88, 161, 0.403);
+    padding: 60px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media (max-width: 600px) {
+  .main {
+    width: 100%;
+    margin: auto;
+  }
+  .formContainer {
+    width: 280px;
+  }
+  .parentForm {
+    top: 52%;
+    padding: 30px;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .subtitleAcc {
+    font-size: 0.9em;
+    width: 100%;
+  }
+  .formQuestion {
+    font-size: 0.8em;
+  }
 }
 </style>
