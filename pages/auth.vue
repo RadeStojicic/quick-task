@@ -280,14 +280,19 @@ main {
     width: 100%;
     margin: auto;
   }
-
   .parentForm {
-    background-color: rgba(255, 255, 255, 0.97);
-    box-shadow: 2px 2px 10px 5px rgba(64, 88, 161, 0.403);
     padding: 60px;
     border-radius: 10px;
-    margin-top: 120px;
-    width: 90%;
+    margin-top: 90px;
+    width: 60%;
+  }
+}
+@media (max-width: 1000px) {
+  .parentForm {
+    padding: 60px;
+    border-radius: 10px;
+    margin-top: 80px;
+    width: 80%;
   }
 }
 @media (max-width: 600px) {

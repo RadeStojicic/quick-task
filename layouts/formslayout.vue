@@ -83,15 +83,16 @@
   }
 
   .container {
-    background-image: linear-gradient(to left, #3a4ddeb2, #3a4ddeb2),
-      url("./assets/images/robot.jpg");
-    background-size: cover;
-    background-position: left;
-    background-repeat: no-repeat;
     padding-bottom: 50px;
   }
   .closeIcon {
     color: rgb(255, 255, 255);
+  }
+  .navBar {
+    background-color: #3850ff;
+  }
+  .subNav {
+    width: 90%;
   }
 }
 </style>
