@@ -204,7 +204,7 @@ header {
   flex-direction: column;
   position: absolute;
   width: 100%;
-  background-color: #0f1935;
+  background-color: #0a132ee9;
   height: auto;
   align-items: center;
   position: relative;

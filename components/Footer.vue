@@ -209,6 +209,12 @@
   }
   .footer_links {
     gap: 20px;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+  .first_right input {
+    width: 90%;
+    flex-wrap: wrap;
   }
 }
 </style>
