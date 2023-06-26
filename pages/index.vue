@@ -13,11 +13,16 @@ useHead({
 
 <template>
   <div class="container">
-    <div class="headerAndHero">
+    <div id="home" class="headerAndHero">
       <img class="shade" src="../assets/images/shade.svg" alt="" />
       <HeaderVue />
       <div class="heroContainer">
-        <div class="leftHero">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="400"
+          data-aos-easing="ease-in-out-cubic"
+          class="leftHero"
+        >
           <h1>
             <span style="color: #eb3967; font-weight: bold">Unlock</span> your
             Productivity and conquer your tasks with ease<span
@@ -33,26 +38,31 @@ useHead({
             <NuxtLink to="/todo"
               ><button class="getStarted">Get Started</button>
             </NuxtLink>
-            <NuxtLink to="/todo"
+            <NuxtLink to="/#feautures"
               ><button class="learnMore">Learn More</button>
             </NuxtLink>
           </div>
         </div>
-        <div class="rightHero">
+        <div
+          data-aos="fade-left"
+          data-aos-duration="400"
+          data-aos-easing="ease-in-out-cubic"
+          class="rightHero"
+        >
           <img src="../assets/images/qt_illustration.png" alt="illustration" />
         </div>
       </div>
     </div>
     <TrustedVue />
-    <FeauturesVue />
-    <PricingVue />
-    <FaqVue />
+    <FeauturesVue id="feautures" />
+    <PricingVue id="pricing" />
+    <FaqVue id="faq" />
     <FooterVue />
   </div>
 </template>
 
 
-<style lang="scss" scoped>
+<style scoped>
 .container {
   width: 100%;
   max-width: 100%;
@@ -126,5 +136,33 @@ useHead({
 .heroButtons {
   display: flex;
   gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .shade {
+    width: 100%;
+  }
+  .rightHero {
+    display: none;
+  }
+  .heroContainer {
+    width: 90%;
+    text-align: center;
+    gap: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  }
+  .leftHero {
+    width: 100%;
+  }
+  .leftHero p {
+    width: 100%;
+  }
+  .heroButtons {
+    display: flex;
+    justify-content: center;
+  }
 }
 </style>

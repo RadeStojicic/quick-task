@@ -11,19 +11,15 @@ const props = defineProps({
   <div class="containerNav">
     <nav>
       <div class="navLeft">
-        <span>
-          <i class="pi pi-list logoIcon"></i>
-        </span>
-        <NuxtLink to="/"
-          ><span style="text-decoration: line-through"
-            >Quick Task</span
-          ></NuxtLink
-        >
+        <NuxtLink class="logo" to="/"
+          ><img src="../assets/images/logo.png" alt="logo"
+        /></NuxtLink>
       </div>
       <div class="navRight">
-        <a class="navAddTask" href=""><i class="pi pi-plus"></i></a>
-        <p>{{ user_name }}</p>
-        <a href="" class="profilePic"><div></div></a>
+        <p class="userName">
+          Hi, <span style="font-weight: bold">{{ user_name }}</span
+          >.
+        </p>
       </div>
     </nav>
   </div>
@@ -34,11 +30,11 @@ const props = defineProps({
 .containerNav {
   position: fixed;
   width: 100%;
-  height: 50px;
   background-color: #335af3;
   display: flex;
   align-items: center;
   z-index: 1;
+  height: 50px;
 }
 .containerNav nav {
   width: 98%;
@@ -52,45 +48,19 @@ const props = defineProps({
   text-decoration: none;
   font-weight: 400;
 }
-.navLeft {
+.logo {
   display: flex;
-  justify-content: center;
   align-items: center;
+}
+.logo img {
+  width: 120px;
 }
 .navRight {
   display: flex;
-}
-
-.navAddTask {
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.navAddTask:hover {
-  background-color: #2850f0;
-}
-
-.logoIcon {
+.userName {
   color: white;
-  margin-right: 5px;
-}
-
-.profilePic {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.profilePic div {
-  background-image: url("./assets/images/profilePic.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 35px;
-  height: 35px;
-  clip-path: circle(50%);
 }
 </style>

@@ -4,7 +4,7 @@ export default defineNuxtConfig({
     modules: ['@nuxtjs/supabase'],
     css: [
         "@/assets/css/main.css",  
-        "primevue/resources/themes/lara-light-blue/theme.css",
+        "primevue/resources/themes/mira/theme.css",
         "primevue/resources/primevue.css",
         "primeicons/primeicons.css",
     ],
@@ -12,5 +12,4 @@ export default defineNuxtConfig({
 		transpile: ["primevue"]
 	},
     loading: false,
-  
 })

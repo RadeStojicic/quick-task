@@ -18,10 +18,18 @@
             <NuxtLink to="/">Contact</NuxtLink>
           </div>
           <div class="footer_icons">
-            <i class="pi pi-facebook"></i>
-            <i class="pi pi-instagram"></i>
-            <i class="pi pi-twitter"></i>
-            <i class="pi pi-linkedin"></i>
+            <a target="_blank" href="https://www.facebook.com/"
+              ><i class="pi pi-facebook"></i
+            ></a>
+            <a target="_blank" href="https://www.instagram.com/"
+              ><i class="pi pi-instagram"></i
+            ></a>
+            <a target="_blank" href="https://www.twitter.com/"
+              ><i class="pi pi-twitter"></i
+            ></a>
+            <a target="_blank" href="https://www.linkedin.com/"
+              ><i class="pi pi-linkedin"></i
+            ></a>
           </div>
         </div>
         <div class="first_right">
@@ -175,5 +183,32 @@
   display: flex;
   gap: 20px;
   color: #d8d8d8;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-bottom: 0px;
+  }
+  .footer_container {
+    width: 90%;
+    margin: auto;
+  }
+  .first_column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+    gap: 50px;
+  }
+  .second_column {
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 0.95em;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer_links {
+    gap: 20px;
+  }
 }
 </style>

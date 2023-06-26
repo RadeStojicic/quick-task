@@ -5,7 +5,12 @@
   <div class="container">
     <div class="feautures_container">
       <div class="feautures_content">
-        <div class="first_content">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-easing="ease-in-out-cubic"
+          class="first_content"
+        >
           <div class="first_left">
             <h1>What is QuickTask and how to use it</h1>
             <p>
@@ -30,7 +35,12 @@
             />
           </div>
         </div>
-        <div class="second_content">
+        <div
+          data-aos="fade-right"
+          data-aos-duration="700"
+          data-aos-easing="ease-in-out-cubic"
+          class="second_content"
+        >
           <div class="second_left">
             <img
               class="pattern_2"
@@ -177,5 +187,116 @@
   left: 100px;
   border: 3px #e7eaf3 solid;
   border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .feautures_container {
+    width: 100%;
+    margin: auto;
+    padding-top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 300px;
+    height: auto;
+    padding-bottom: 550px;
+  }
+  .feautures_content {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+  }
+  .pattern_1 {
+    position: absolute;
+    right: 0;
+    width: 90%;
+  }
+
+  .image_1 {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    right: 0px;
+    border: 3px #e7eaf3 solid;
+    border-radius: 10px;
+  }
+
+  .first_content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .first_left {
+    flex: 1/2;
+    width: 100%;
+    text-align: left;
+  }
+
+  .first_left h1 {
+    color: #05132e;
+    font-size: 48px;
+    font-weight: 600;
+  }
+
+  .first_left p {
+    color: #525670;
+    margin-top: 60px;
+    width: 100%;
+  }
+  .first_right {
+    flex: 1/2;
+    width: 100%;
+    position: absolute;
+    bottom: -50px;
+  }
+  .second_content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 100px;
+    margin-top: 250px;
+  }
+
+  .second_right {
+    flex: 2;
+    width: 100%;
+    text-align: left;
+  }
+
+  .second_right h1 {
+    color: #05132e;
+    font-size: 48px;
+    font-weight: 600;
+  }
+
+  .second_right p {
+    color: #525670;
+    margin-top: 60px;
+    width: 100%;
+  }
+  .second_left {
+    flex: 1;
+    width: 100%;
+    position: absolute;
+    bottom: -50px;
+  }
+
+  .pattern_2 {
+    position: absolute;
+    left: 0;
+    width: 80%;
+  }
+
+  .image_2 {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    left: 0px;
+    border: 3px #e7eaf3 solid;
+    border-radius: 10px;
+  }
 }
 </style>

@@ -18,7 +18,7 @@ const props = defineProps({
 });
 
 const visible = ref(false);
-const settingsRef = ref(null);
+const deleteVisible = ref(false);
 
 // edit
 const editValue = ref("");
@@ -30,18 +30,6 @@ const checkForError = () => {
     return false;
   }
 };
-
-const handleClickOutside = (event) => {
-  if (settingsRef.value && !settingsRef.value == event.target) {
-    visible.value = false;
-  }
-};
-
-onMounted(() => {
-  document.addEventListener("click", handleClickOutside);
-});
-
-const visibleDialog = ref(false);
 </script>
 
 <template>
@@ -61,69 +49,51 @@ const visibleDialog = ref(false);
             <p :class="{ checked: todo.isCompleted }">{{ todo.todo }}</p>
           </div>
           <div class="taskRight">
-            <i
-              class="pi pi-ellipsis-v seeMoreTodo"
-              icon="fa-solid
-            fa-ellipsis-vertical"
-              @click="$emit('show-settings', index)"
-              v-if="todo.category !== 'Completed'"
-            >
-            </i>
+            <div class="settings">
+              <section @click="visible = true">
+                <div class="settingsContainer">
+                  <div class="settingsSubContainer">
+                    <svg
+                      width="26"
+                      height="23"
+                      viewBox="0 0 26 23"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0 2.875C0 1.28926 1.29549 0 2.88889 0H10.1111V5.75C10.1111 6.54512 10.7566 7.1875 11.5556 7.1875H17.3333V12.8342L13.4153 16.7334C12.9503 17.1961 12.6253 17.7711 12.4674 18.4045L11.6233 21.7691C11.5194 22.1824 11.542 22.6137 11.6819 23.0045H2.88889C1.29549 23.0045 0 21.7152 0 20.1295V2.875ZM17.3333 5.75H11.5556V0L17.3333 5.75ZM24.8174 10.5881L25.4674 11.235C26.1715 11.9357 26.1715 13.0723 25.4674 13.7775L24.1403 15.0982L20.9354 11.9088L22.2625 10.5881C22.9667 9.8873 24.1087 9.8873 24.8174 10.5881ZM14.0788 18.7324L19.9108 12.9285L23.1156 16.118L17.2837 21.9174C17.0986 22.1016 16.8684 22.2318 16.6111 22.2947L13.8983 22.9686C13.65 23.0314 13.3927 22.9596 13.2122 22.7799C13.0316 22.6002 12.9594 22.3441 13.0226 22.0971L13.6997 19.3973C13.7628 19.1457 13.8937 18.9121 14.0788 18.7279V18.7324Z"
+                        fill="#0F225F"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </section>
 
-            <div v-if="todo.customSettings == true" class="settings">
-              <section
-                @click="
-                  visible = true;
-                  settingsRef = true;
-                "
-              >
-                <div class="settingsContainer">
-                  <div class="settingsSubContainer">
-                    <i class="pi pi-file-edit"></i>
-                    <div>Edit</div>
-                  </div>
-                </div>
-              </section>
-              <section @click="visibleDialog = true">
-                <div class="settingsContainer">
-                  <div class="settingsSubContainer">
-                    <i class="pi pi-info-circle"></i>
-                    <div>Info</div>
-                  </div>
-                </div>
-                <Dialog
-                  v-model:visible="visibleDialog"
-                  modal
-                  header="Additional information"
-                  :style="{ width: '50vw' }"
-                  class="infoDialog"
-                >
-                  <p>Name: {{ todo.todo }}</p>
-                  <p>Created: {{ todo.time }}</p>
-                  <p
-                    :class="{
-                      categoryDone: todo.category == 'Completed',
-                      categoryUndone: todo.category == 'Uncompleted',
-                    }"
-                  >
-                    Status: {{ todo.category }}
-                  </p>
-                </Dialog>
-              </section>
-              <section>
+              <section @click="deleteVisible = true">
                 <div
                   @click="$emit('delete-todo', index)"
                   class="settingsContainer"
                   label="Delete"
                 >
                   <div class="settingsSubContainer">
-                    <i class="pi pi-trash"></i>
-                    <div>Archive</div>
+                    <svg
+                      width="20"
+                      height="23"
+                      viewBox="0 0 20 23"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.03571 0.795117C6.27679 0.305469 6.77232 0 7.3125 0H12.6875C13.2277 0 13.7232 0.305469 13.9643 0.795117L14.2857 1.4375H18.5714C19.3616 1.4375 20 2.07988 20 2.875C20 3.67012 19.3616 4.3125 18.5714 4.3125H1.42857C0.638393 4.3125 0 3.67012 0 2.875C0 2.07988 0.638393 1.4375 1.42857 1.4375H5.71429L6.03571 0.795117ZM1.42857 5.75H18.5714V20.125C18.5714 21.7107 17.2902 23 15.7143 23H4.28571C2.70982 23 1.42857 21.7107 1.42857 20.125V5.75ZM5.71429 8.625C5.32143 8.625 5 8.94844 5 9.34375V19.4062C5 19.8016 5.32143 20.125 5.71429 20.125C6.10714 20.125 6.42857 19.8016 6.42857 19.4062V9.34375C6.42857 8.94844 6.10714 8.625 5.71429 8.625ZM10 8.625C9.60714 8.625 9.28571 8.94844 9.28571 9.34375V19.4062C9.28571 19.8016 9.60714 20.125 10 20.125C10.3929 20.125 10.7143 19.8016 10.7143 19.4062V9.34375C10.7143 8.94844 10.3929 8.625 10 8.625ZM14.2857 8.625C13.8929 8.625 13.5714 8.94844 13.5714 9.34375V19.4062C13.5714 19.8016 13.8929 20.125 14.2857 20.125C14.6786 20.125 15 19.8016 15 19.4062V9.34375C15 8.94844 14.6786 8.625 14.2857 8.625Z"
+                        fill="#0F225F"
+                      />
+                    </svg>
                   </div>
                 </div>
-                <ConfirmDialog></ConfirmDialog>
               </section>
             </div>
+            <ConfirmDialog v-model:visible="deleteVisible"></ConfirmDialog>
+
             <Dialog
               v-model:visible="visible"
               modal
@@ -191,16 +161,9 @@ const visibleDialog = ref(false);
   user-select: none;
 }
 
-.fa-ellipsis {
-  font-size: 1.5em;
-  color: rgb(41, 41, 41);
-}
-
 .taskRight {
   display: flex;
   align-items: center;
-  gap: 30px;
-  margin-right: 30px;
 }
 
 .taskRight p {
@@ -226,56 +189,30 @@ const visibleDialog = ref(false);
   cursor: pointer;
 }
 
-.seeMoreTodo {
-  color: rgb(131, 131, 131);
-  padding: 10px;
-  display: block;
-  position: absolute;
-  right: 20px;
-}
-
 .settings {
-  position: absolute;
-  right: 20px;
-  top: 40px;
-  width: 160px;
   z-index: 1;
   background-color: white;
-  box-shadow: 0px 0px 10px 5px #f1f1f13e;
-  border: 1px rgb(220, 220, 220) solid;
-  border-radius: 10px;
+  display: flex;
+  gap: 5px;
 }
 
 .settings section div {
   text-decoration: none;
   color: rgb(31, 31, 31);
-  padding: 6px 6px 6px 10px;
-  width: 100%;
-  margin: auto;
 }
 
 .settings section {
   text-decoration: none;
-  font-size: 0.95em;
 }
-.fa-box-archive {
-  color: rgb(59, 59, 59);
-  font-size: 0.95em;
+
+.settings i {
+  font-size: 1.2em;
+  color: #122565;
 }
-.fa-file-pen {
-  color: rgb(59, 59, 59);
-  font-size: 0.95em;
-}
-.fa-circle-info {
-  color: rgb(59, 59, 59);
-  font-size: 0.95em;
-}
+
 .settingsContainer {
   width: 100%;
-}
-.settingsContainer:hover {
-  width: 100%;
-  background-color: rgb(237, 237, 237);
+  padding: 2px;
 }
 
 .settingsSubContainer {

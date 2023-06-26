@@ -11,7 +11,12 @@
           </p>
         </div>
         <div class="pricingCards">
-          <div class="pricingCard card1">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="400"
+            data-aos-easing="ease-in-out-cubic"
+            class="pricingCard card1"
+          >
             <div class="card_title">
               <p class="plan_name">Standard Plan</p>
               <p class="plan_price">
@@ -49,9 +54,17 @@
                 </div>
               </div>
             </div>
-            <button class="plan_getStarted">Get Started</button>
+
+            <button class="plan_getStarted">
+              <NuxtLink class="standardPlan" to="/todo">Get Started</NuxtLink>
+            </button>
           </div>
-          <div class="pricingCard card2">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-easing="ease-in-out-cubic"
+            class="pricingCard card2"
+          >
             <div class="card_title">
               <p class="plan_name">Bussiness Plan</p>
               <p class="plan_price">
@@ -89,9 +102,16 @@
                 </div>
               </div>
             </div>
-            <button class="plan_getStarted">Get Started</button>
+            <button class="plan_getStarted">
+              <NuxtLink class="standardPlan" to="/todo">Get Started</NuxtLink>
+            </button>
           </div>
-          <div class="pricingCard card3">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="600"
+            data-aos-easing="ease-in-out-cubic"
+            class="pricingCard card3"
+          >
             <div class="card_title">
               <p class="plan_name">Premium Plan</p>
               <p class="plan_price">
@@ -129,7 +149,9 @@
                 </div>
               </div>
             </div>
-            <button class="plan_getStarted">Get Started</button>
+            <button class="plan_getStarted">
+              <NuxtLink class="standardPlan" to="/todo">Get Started</NuxtLink>
+            </button>
           </div>
         </div>
       </div>
@@ -248,10 +270,46 @@
   text-align: center;
   width: 50%;
   text-align: center;
-  padding: 12px;
   border-radius: 10px;
   background-color: #3850ff;
   color: white;
   border: none;
+}
+
+.standardPlan {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #394cd8;
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  color: white;
+}
+
+.standardPlan:hover {
+  background-color: #2739c3;
+}
+
+@media (max-width: 600px) {
+  .pricing_content {
+    width: 90%;
+  }
+  .pricingTitle {
+    width: 100%;
+    font-size: 52px;
+  }
+  .pricingSubTitle {
+    font-size: 16px;
+  }
+  .pricingCards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+  }
+  .pricing_subcontainer {
+    width: 90%;
+    margin: auto;
+  }
 }
 </style>

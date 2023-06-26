@@ -48,4 +48,12 @@
 .logos img {
   width: 120px;
 }
+
+@media (max-width: 600px) {
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 </style>

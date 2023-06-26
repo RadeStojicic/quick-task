@@ -72,20 +72,9 @@ const createTodo = async (todo) => {
 //   }
 // };
 
-// show settings
-const showSettings = (index) => {
-  items.value.forEach((todo) => {
-    if (todo.key === index) {
-      todo.customSettings = !todo.customSettings;
-    } else {
-      todo.customSettings = false;
-    }
-  });
-};
-
 // delete Todo
-
 const confirm = useConfirm();
+const deleted = ref([]);
 const deleteTodo = async (index) => {
   confirm.require({
     message: "Do you want to delete this task?",
@@ -100,10 +89,11 @@ const deleteTodo = async (index) => {
 
       items.value.forEach((todo) => {
         if (todo.key === index) {
+          deleted.value.push(todo.todo);
           items.value = items.value.filter((item) => item.key !== index);
         }
       });
-
+      console.log(deleted.value);
       if (error) {
         console.log(error);
       }
@@ -129,7 +119,6 @@ const deleteTodo = async (index) => {
             :todo="todo"
             :category="category"
             @complete-state="completeState"
-            @show-settings="showSettings"
             @delete-todo="deleteTodo"
           />
         </li>
