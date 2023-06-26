@@ -24,7 +24,7 @@
 <style scoped>
 .container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   background-color: rgb(255, 255, 255);
 }
@@ -89,8 +89,7 @@
     background-size: cover;
     background-position: left;
     background-repeat: no-repeat;
-    height: 1024px;
-    padding-bottom: 200px;
+    padding-bottom: 50px;
   }
   .closeIcon {
     color: rgb(255, 255, 255);

@@ -155,6 +155,10 @@ main {
   gap: 30px;
 }
 
+.formContainer {
+  width: 100%;
+}
+
 .inputs div p {
   margin-bottom: 10px;
 }
@@ -170,10 +174,6 @@ main {
   color: gray;
   margin: 15px 0px 30px 0px;
   font-weight: 400;
-}
-
-.formContainer {
-  width: 400px;
 }
 
 .inputs input {
@@ -213,6 +213,7 @@ main {
   text-align: center;
   margin-top: 0px;
   color: rgba(45, 45, 45, 0.583);
+  width: 100%;
 }
 
 .separator::before,
@@ -274,15 +275,14 @@ main {
     width: 100%;
     margin: auto;
   }
-  .formContainer {
-    width: 400px;
-  }
+
   .parentForm {
     background-color: rgba(255, 255, 255, 0.97);
     box-shadow: 2px 2px 10px 5px rgba(64, 88, 161, 0.403);
     padding: 60px;
     border-radius: 10px;
     margin-top: 120px;
+    width: 90%;
   }
 }
 @media (max-width: 600px) {
@@ -290,16 +290,12 @@ main {
     width: 100%;
     margin: auto;
   }
-  .formContainer {
-    width: 280px;
-  }
   .parentForm {
-    top: 52%;
-    padding: 30px;
-    width: 95%;
+    padding: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 95%;
   }
   .subtitleAcc {
     font-size: 0.9em;
