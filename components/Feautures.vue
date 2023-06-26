@@ -288,7 +288,7 @@
   .pattern_2 {
     position: absolute;
     left: 0;
-    bottom: -290px;
+    bottom: -320px;
     width: 100%;
   }
 

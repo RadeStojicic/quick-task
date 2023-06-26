@@ -166,11 +166,29 @@ useHead({
   }
   .heroButtons {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    margin-top: 50px;
   }
   .leftHero h1 {
-    font-size: 48px;
+    font-size: 38px;
     text-align: left;
+  }
+  .getStarted {
+    width: 100%;
+    padding: 15px;
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-top: 0px;
+  }
+
+  .learnMore {
+    width: 100%;
+    padding: 15px;
+    font-weight: 500;
+    font-size: 0.9em;
+    margin-top: 0px;
   }
 }
 </style>

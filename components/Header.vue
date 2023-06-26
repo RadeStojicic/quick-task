@@ -106,11 +106,12 @@ const openNav = ref(false);
 <style scoped>
 header {
   width: 100%;
-  border-bottom: 1px rgba(128, 128, 128, 0.097) solid;
+  border-bottom: 1px #dcdcdc15 solid;
+
   position: fixed;
   top: 0;
   z-index: 1000;
-  background-color: #0a132ee9;
+  background-color: #0a132efc;
 }
 
 .navContainer {
@@ -204,7 +205,6 @@ header {
   flex-direction: column;
   position: absolute;
   width: 100%;
-  background-color: #0a132ee9;
   height: auto;
   align-items: center;
   position: relative;
@@ -218,7 +218,7 @@ header {
   text-align: center;
   color: white;
   padding: 20px;
-  border-bottom: 1px #dcdcdc15 solid;
+  border-top: 1px #dcdcdc15 solid;
   width: 100%;
   cursor: pointer;
   user-select: none;
