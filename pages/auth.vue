@@ -282,10 +282,7 @@ main {
     box-shadow: 2px 2px 10px 5px rgba(64, 88, 161, 0.403);
     padding: 60px;
     border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 120px;
   }
 }
 @media (max-width: 600px) {
