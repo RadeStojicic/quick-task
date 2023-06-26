@@ -173,7 +173,7 @@ useHead({
     margin-top: 50px;
   }
   .leftHero h1 {
-    font-size: 42px;
+    font-size: 2.25rem;
     text-align: left;
   }
   .getStarted {
