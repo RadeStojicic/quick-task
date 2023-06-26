@@ -52,7 +52,6 @@
 }
 .closeIcon {
   font-size: 1.8em;
-  padding: 10px;
   cursor: pointer;
   color: rgb(23, 23, 23);
 }

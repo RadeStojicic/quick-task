@@ -76,60 +76,65 @@ const accountRegister = async () => {
 <template>
   <main>
     <div class="parentForm">
-      <form @submit.prevent="accountLogin" action="">
-        <div class="formContainer">
-          <h1 v-if="isLoggingIn" class="titleAcc">Login</h1>
-          <h1 v-else class="titleAcc">Sign Up</h1>
-          <p class="subtitleAcc">Start managing your time faster and better!</p>
-          <div class="inputsButtonContainer">
-            <div class="inputs">
-              <div>
-                <p>Email</p>
-                <input
-                  v-model="form.email"
-                  placeholder="you@example.com"
-                  type="email"
-                />
+      <div class="childForm">
+        <form class="forma" @submit.prevent="accountLogin" action="">
+          <div class="formContainer">
+            <h1 v-if="isLoggingIn" class="titleAcc">Login</h1>
+            <h1 v-else class="titleAcc">Sign Up</h1>
+            <p class="subtitleAcc">
+              Start managing your time faster and better!
+            </p>
+            <div class="inputsButtonContainer">
+              <div class="inputs">
+                <div>
+                  <p>Email</p>
+                  <input
+                    v-model="form.email"
+                    placeholder="you@example.com"
+                    type="email"
+                  />
+                </div>
+                <div>
+                  <p>Password</p>
+                  <input
+                    v-model="form.password"
+                    placeholder="At least 8 characters"
+                    type="password"
+                  />
+                </div>
               </div>
-              <div>
-                <p>Password</p>
-                <input
-                  v-model="form.password"
-                  placeholder="At least 8 characters"
-                  type="password"
-                />
-              </div>
+              <button type="submit" class="createButton">
+                <template v-if="isLoggingIn">Log In</template>
+                <template v-else>Sign Up</template>
+              </button>
+              <p class="errors">{{ errors }}</p>
             </div>
-            <button type="submit" class="createButton">
-              <template v-if="isLoggingIn">Log In</template>
-              <template v-else>Sign Up</template>
-            </button>
-            <p class="errors">{{ errors }}</p>
           </div>
+        </form>
+
+        <p class="separator">Or</p>
+        <div @click="handleGoogleLogin()" class="google-btn">
+          <div class="google-icon-wrapper">
+            <img
+              class="google-icon"
+              src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+            />
+          </div>
+          <p class="btn-text">Continue with Google</p>
         </div>
-      </form>
-      <p class="separator">Or</p>
-      <div @click="handleGoogleLogin()" class="google-btn">
-        <div class="google-icon-wrapper">
-          <img
-            class="google-icon"
-            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-          />
-        </div>
-        <p class="btn-text">Continue with Google</p>
+        <template v-if="isLoggingIn">
+          <div class="formQuestion">
+            <p>Don't you have an account?</p>
+            <span @click="isLoggingIn = false">Sign Up</span>
+          </div>
+        </template>
+        <template v-else>
+          <div class="formQuestion">
+            <p>Already have an account?</p>
+            <span @click="isLoggingIn = true">Log In</span>
+          </div>
+        </template>
       </div>
-      <template v-if="isLoggingIn">
-        <div class="formQuestion">
-          <p>Don't you have an account?</p>
-          <span @click="isLoggingIn = false">Sign Up</span>
-        </div>
-      </template>
-      <template v-else>
-        <div class="formQuestion">
-          <p>Already have an account?</p>
-          <span @click="isLoggingIn = true">Log In</span>
-        </div>
-      </template>
     </div>
   </main>
 </template>
@@ -291,18 +296,30 @@ main {
     margin: auto;
   }
   .parentForm {
-    padding: 60px;
+    padding: 60px 0px 60px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 95%;
+  }
+  .formContainer {
+    width: 100%;
   }
   .subtitleAcc {
     font-size: 0.9em;
     width: 100%;
   }
   .formQuestion {
-    font-size: 0.8em;
+    font-size: 0.9em;
+  }
+  .forma {
+    width: 100%;
+  }
+  .childForm {
+    width: 90%;
+  }
+  .inputs input::placeholder {
+    font-size: 0.9em;
   }
 }
 </style>
