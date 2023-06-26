@@ -153,16 +153,24 @@ useHead({
     justify-content: center;
     align-items: center;
     margin: auto;
+    position: relative;
+    top: 20px;
+    height: 800px;
   }
   .leftHero {
     width: 100%;
   }
   .leftHero p {
     width: 100%;
+    text-align: left;
   }
   .heroButtons {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+  }
+  .leftHero h1 {
+    font-size: 48px;
+    text-align: left;
   }
 }
 </style>

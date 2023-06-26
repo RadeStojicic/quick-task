@@ -177,13 +177,13 @@
 .pattern_2 {
   position: absolute;
   left: 0;
-  width: 650px;
+  width: 600px;
 }
 
 .image_2 {
   position: absolute;
   width: 600px;
-  bottom: 80px;
+  bottom: 120px;
   left: 100px;
   border: 3px #e7eaf3 solid;
   border-radius: 10px;
@@ -191,14 +191,14 @@
 
 @media (max-width: 600px) {
   .feautures_container {
-    width: 100%;
-    margin: auto;
+    width: 95%;
+    margin: 50px auto;
     padding-top: 0px;
     display: flex;
     flex-direction: column;
     gap: 300px;
     height: auto;
-    padding-bottom: 550px;
+    padding-bottom: 450px;
   }
   .feautures_content {
     width: 90%;
@@ -210,7 +210,7 @@
   .pattern_1 {
     position: absolute;
     right: 0;
-    width: 90%;
+    width: 100%;
   }
 
   .image_1 {
@@ -237,14 +237,15 @@
 
   .first_left h1 {
     color: #05132e;
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 600;
   }
 
   .first_left p {
     color: #525670;
-    margin-top: 60px;
+    margin-top: 30px;
     width: 100%;
+    font-size: 16px;
   }
   .first_right {
     flex: 1/2;
@@ -257,7 +258,7 @@
     flex-direction: column;
     position: relative;
     gap: 100px;
-    margin-top: 250px;
+    margin-top: 180px;
   }
 
   .second_right {
@@ -268,13 +269,13 @@
 
   .second_right h1 {
     color: #05132e;
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 600;
   }
 
   .second_right p {
     color: #525670;
-    margin-top: 60px;
+    margin-top: 30px;
     width: 100%;
   }
   .second_left {
@@ -287,13 +288,14 @@
   .pattern_2 {
     position: absolute;
     left: 0;
-    width: 80%;
+    bottom: -290px;
+    width: 100%;
   }
 
   .image_2 {
     position: absolute;
     width: 100%;
-    top: 50px;
+    top: 0px;
     left: 0px;
     border: 3px #e7eaf3 solid;
     border-radius: 10px;

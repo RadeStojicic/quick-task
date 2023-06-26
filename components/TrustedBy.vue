@@ -55,5 +55,13 @@
     flex-wrap: wrap;
     justify-content: center;
   }
+  .container {
+    width: 100%;
+    margin: auto;
+  }
+  .trustedContainer {
+    width: 90%;
+    margin-top: 50px;
+  }
 }
 </style>

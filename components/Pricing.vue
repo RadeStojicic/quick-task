@@ -296,7 +296,7 @@
   }
   .pricingTitle {
     width: 100%;
-    font-size: 52px;
+    font-size: 38px;
   }
   .pricingSubTitle {
     font-size: 16px;
