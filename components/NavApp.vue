@@ -1,10 +1,14 @@
 <script setup>
+import { ref } from "vue";
+
 const props = defineProps({
   user_name: {
     type: String,
     required: true,
   },
 });
+
+const openNav = ref(false);
 </script>
 
 <template>
@@ -16,12 +20,90 @@ const props = defineProps({
         /></NuxtLink>
       </div>
       <div class="navRight">
+        <div class="nav-container">
+          <input
+            @click="openNav = !openNav"
+            class="checkbox"
+            type="checkbox"
+            name=""
+            id=""
+          />
+          <div :class="{ active: openNav }" class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+        </div>
+
         <p class="userName">
           Hi, <span style="font-weight: bold">{{ user_name }}</span
           >.
         </p>
       </div>
     </nav>
+    <div
+      data-aos="fade-left"
+      data-aos-duration="400"
+      v-if="openNav == true"
+      class="responsive_nav"
+    >
+      <ul class="responsiveLinks">
+        <NuxtLink @click="openNav = false" class="link" to="/todo"
+          ><div>
+            <i class="pi pi-inbox"></i>
+            All Tasks
+          </div>
+          <p>0</p>
+        </NuxtLink>
+        <NuxtLink @click="openNav = false" class="link" to="/todo/today"
+          ><div>
+            <i class="pi pi-table"></i>
+            Today
+          </div>
+          <p>0</p>
+        </NuxtLink>
+        <NuxtLink @click="openNav = false" class="link" to="/"
+          ><div>
+            <i class="pi pi-star"></i>
+            Important
+          </div>
+          <p>0</p>
+        </NuxtLink>
+        <NuxtLink @click="openNav = false" class="link" to="/"
+          ><div>
+            <i class="pi pi-calendar"></i>
+            Planned
+          </div>
+          <p>0</p>
+        </NuxtLink>
+        <NuxtLink @click="openNav = false" class="link" to="/"
+          ><div>
+            <i class="pi pi-calendar-times"></i>
+            Upcoming
+          </div>
+          <p>5</p>
+        </NuxtLink>
+        <NuxtLink @click="openNav = false" class="link" to="/todo/completed"
+          ><div>
+            <i class="pi pi-check-square"></i>
+            Completed
+          </div>
+          <p>0</p>
+        </NuxtLink>
+        <NuxtLink @click="openNav = false" class="link" to="/"
+          ><div>
+            <i class="pi pi-trash"></i>
+            Deleted
+          </div>
+          <p>0</p>
+        </NuxtLink>
+
+        <NuxtLink @click="handleLogOut()" class="logout">
+          <div><i class="pi pi-user"></i>Log Out</div>
+          <i class="pi pi-sign-out"></i
+        ></NuxtLink>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -41,6 +123,7 @@ const props = defineProps({
   margin: auto;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .containerNav nav a {
@@ -62,5 +145,213 @@ const props = defineProps({
 
 .userName {
   color: white;
+}
+.responsive_nav {
+  height: 100vh;
+}
+.responsiveLinks {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  position: relative;
+  top: 0px;
+  background-color: rgb(255, 255, 255);
+}
+.respLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  color: #0f225f;
+  padding: 20px;
+  border-top: 1px #dcdcdc15 solid;
+  width: 100%;
+  cursor: pointer;
+  user-select: none;
+}
+.respLink:hover {
+  background-color: #f6f8ff;
+}
+
+.nav-container {
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.nav-container .checkbox {
+  display: block;
+  height: 32px;
+  width: 32px;
+  position: absolute;
+  top: 0px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.nav-container .hamburger-lines {
+  display: block;
+  height: 26px;
+  width: 32px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-container .hamburger-lines .line {
+  display: block;
+  height: 4px;
+  width: 100%;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.nav-container .hamburger-lines .line1 {
+  transform-origin: 0% 0%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line2 {
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-container .hamburger-lines .line3 {
+  transform-origin: 0% 100%;
+  transition: transform 0.4s ease-in-out;
+}
+
+.active .line1 {
+  transform: rotate(45deg);
+}
+
+.active .line2 {
+  transform: scaleY(0);
+}
+
+.active .line3 {
+  transform: rotate(-45deg);
+}
+
+.responsiveLinks a {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px 15px 20px;
+  color: #0e1c48;
+  font-size: 0.95em;
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 1px #f6f8ff solid;
+}
+
+.responsiveLinks a:hover {
+  background-color: #f6f8ff;
+}
+
+.responsiveLinks a div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.router-link-exact-active {
+  background-color: #f6f8ff;
+  position: relative;
+}
+
+.router-link-exact-active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background-image: linear-gradient(to bottom, #eb3868, #f7705c);
+}
+
+.router-link-exact-active p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50px;
+  color: white;
+  background-color: #3850ff;
+  font-size: 0.9em;
+  transition: 0.1s;
+}
+.sideNavLinks i {
+  color: #20263b;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.link p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+}
+
+.logout {
+  position: absolute;
+  bottom: 60px;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px 12px 20px;
+  color: #0e1c48;
+  font-size: 0.95em;
+  overflow: hidden;
+  width: 100%;
+  border-top: 1px #f6f8ff solid;
+  cursor: pointer;
+}
+
+.logout div {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.pi-user {
+  font-weight: bold;
+}
+.pi-sign-out {
+  font-weight: bold;
+}
+
+@media (max-width: 1280px) {
+  .nav-container {
+    display: block;
+  }
+  .userName {
+    display: none;
+  }
+  .containerNav {
+    height: 60px;
+  }
+  .containerNav nav {
+    width: 95%;
+    margin: auto;
+  }
+  .responsive_nav {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 60px;
+  }
 }
 </style>

@@ -18,7 +18,9 @@ const numberOfTasks = ref(2);
   <div>
     <NavApp :user_name="user_profile" />
     <div class="container">
-      <div><Sidenav :numberOfTasks="numberOfTasks" /></div>
+      <div class="sidenavContainer">
+        <Sidenav :numberOfTasks="numberOfTasks" />
+      </div>
       <div class="main">
         <slot />
       </div>
@@ -36,5 +38,16 @@ const numberOfTasks = ref(2);
   background-color: whitesmoke;
   height: 100vh;
   margin-top: 50px;
+}
+
+@media (max-width: 1280px) {
+  .sidenavContainer {
+    display: none;
+  }
+  .container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 </style>

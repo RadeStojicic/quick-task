@@ -20,6 +20,7 @@ const openNav = ref(false);
             ><img src="../assets/images/logo.png" alt=""
           /></a>
         </div>
+
         <div class="nav-container">
           <input
             @click="openNav = !openNav"
@@ -28,7 +29,7 @@ const openNav = ref(false);
             name=""
             id=""
           />
-          <div class="hamburger-lines">
+          <div :class="{ active: openNav }" class="hamburger-lines">
             <span class="line line1"></span>
             <span class="line line2"></span>
             <span class="line line3"></span>
@@ -48,6 +49,11 @@ const openNav = ref(false);
     <nav v-if="openNav == true" class="responsive_nav">
       <ul class="responsiveLinks">
         <NuxtLink
+          @click="
+            {
+              openNav = false;
+            }
+          "
           data-aos="fade-left"
           data-aos-duration="400"
           class="respLink"
@@ -55,6 +61,11 @@ const openNav = ref(false);
           >Home</NuxtLink
         >
         <NuxtLink
+          @click="
+            {
+              openNav = false;
+            }
+          "
           data-aos="fade-left"
           data-aos-duration="500"
           class="respLink"
@@ -62,6 +73,11 @@ const openNav = ref(false);
           >Features</NuxtLink
         >
         <NuxtLink
+          @click="
+            {
+              openNav = false;
+            }
+          "
           data-aos="fade-left"
           data-aos-duration="600"
           class="respLink"
@@ -69,6 +85,11 @@ const openNav = ref(false);
           >Pricing</NuxtLink
         >
         <NuxtLink
+          @click="
+            {
+              openNav = false;
+            }
+          "
           data-aos="fade-left"
           data-aos-duration="700"
           class="respLink"
@@ -76,6 +97,11 @@ const openNav = ref(false);
           >FAQ</NuxtLink
         >
         <NuxtLink
+          @click="
+            {
+              openNav = false;
+            }
+          "
           data-aos="fade-left"
           data-aos-duration="800"
           class="respLink"
@@ -186,20 +212,6 @@ header {
   color: #8da3ff;
 }
 
-.pi-bars {
-  display: none;
-  color: white;
-  font-size: 1.8em;
-  cursor: pointer;
-}
-
-.pi-times {
-  display: none;
-  color: white;
-  font-size: 1.8em;
-  cursor: pointer;
-}
-
 .responsiveLinks {
   display: flex;
   flex-direction: column;
@@ -278,15 +290,15 @@ header {
   transition: transform 0.4s ease-in-out;
 }
 
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+.active .line1 {
   transform: rotate(45deg);
 }
 
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+.active .line2 {
   transform: scaleY(0);
 }
 
-.nav-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+.active .line3 {
   transform: rotate(-45deg);
 }
 
@@ -304,12 +316,6 @@ header {
   }
   .navLinks {
     display: none;
-  }
-  .pi-bars {
-    display: block;
-  }
-  .pi-times {
-    display: block;
   }
   .nav-container {
     display: block;

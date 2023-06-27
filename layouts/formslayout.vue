@@ -77,7 +77,7 @@
   width: 130px;
 }
 
-@media (max-width: 1320px) {
+@media (max-width: 1280px) {
   .leftSection {
     display: none;
   }

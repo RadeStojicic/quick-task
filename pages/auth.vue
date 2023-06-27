@@ -275,7 +275,7 @@ main {
 .google-btn p {
   font-size: 0.95em;
 }
-@media (max-width: 1320px) {
+@media (max-width: 1280px) {
   .main {
     width: 100%;
     margin: auto;
