@@ -49,7 +49,7 @@
   width: 120px;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 767px) {
   .logos {
     display: flex;
     flex-wrap: wrap;

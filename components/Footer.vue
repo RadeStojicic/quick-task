@@ -185,7 +185,7 @@
   color: #d8d8d8;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 767px) {
   .container {
     padding-bottom: 0px;
   }

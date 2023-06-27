@@ -55,50 +55,49 @@ const openNav = ref(false);
           </div>
           <p>0</p>
         </NuxtLink>
-        <NuxtLink @click="openNav = false" class="link" to="/todo/today"
+        <NuxtLink @click="openNav = false" class="respLink" to="/todo/today"
           ><div>
             <i class="pi pi-table"></i>
             Today
           </div>
           <p>0</p>
         </NuxtLink>
-        <NuxtLink @click="openNav = false" class="link" to="/"
+        <NuxtLink @click="openNav = false" class="respLink" to="/"
           ><div>
             <i class="pi pi-star"></i>
             Important
           </div>
           <p>0</p>
         </NuxtLink>
-        <NuxtLink @click="openNav = false" class="link" to="/"
+        <NuxtLink @click="openNav = false" class="respLink" to="/"
           ><div>
             <i class="pi pi-calendar"></i>
             Planned
           </div>
           <p>0</p>
         </NuxtLink>
-        <NuxtLink @click="openNav = false" class="link" to="/"
+        <NuxtLink @click="openNav = false" class="respLink" to="/"
           ><div>
             <i class="pi pi-calendar-times"></i>
             Upcoming
           </div>
           <p>5</p>
         </NuxtLink>
-        <NuxtLink @click="openNav = false" class="link" to="/todo/completed"
+        <NuxtLink @click="openNav = false" class="respLink" to="/todo/completed"
           ><div>
             <i class="pi pi-check-square"></i>
             Completed
           </div>
           <p>0</p>
         </NuxtLink>
-        <NuxtLink @click="openNav = false" class="link" to="/"
+        <NuxtLink @click="openNav = false" class="respLink" to="/"
           ><div>
             <i class="pi pi-trash"></i>
             Deleted
           </div>
           <p>0</p>
         </NuxtLink>
-
-        <NuxtLink @click="handleLogOut()" class="logout">
+        <NuxtLink @click="handleLogOut()" class="respLink logout">
           <div><i class="pi pi-user"></i>Log Out</div>
           <i class="pi pi-sign-out"></i
         ></NuxtLink>
@@ -141,6 +140,7 @@ const openNav = ref(false);
 .navRight {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .userName {
@@ -148,17 +148,18 @@ const openNav = ref(false);
 }
 .responsive_nav {
   height: 100vh;
+  overflow-y: hidden;
 }
 .responsiveLinks {
   display: flex;
   flex-direction: column;
-  position: absolute;
   width: 100%;
   height: 100%;
   align-items: center;
   position: relative;
   top: 0px;
   background-color: rgb(255, 255, 255);
+  z-index: 1000;
 }
 .respLink {
   display: flex;
@@ -180,12 +181,14 @@ const openNav = ref(false);
 .nav-container {
   display: none;
   position: absolute;
-  right: 15px;
+  right: 10px;
   top: 15px;
 }
 
 .nav-container .checkbox {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 32px;
   width: 32px;
   position: absolute;
@@ -244,10 +247,9 @@ const openNav = ref(false);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px 15px 20px;
+  padding: 18px 20px 18px 20px;
   color: #0e1c48;
   font-size: 0.95em;
-  overflow: hidden;
   width: 100%;
   border-bottom: 1px #f6f8ff solid;
 }
@@ -290,13 +292,13 @@ const openNav = ref(false);
   font-size: 0.9em;
   transition: 0.1s;
 }
-.sideNavLinks i {
+.responsiveLinks i {
   color: #20263b;
   font-size: 1em;
   font-weight: bold;
 }
 
-.link p {
+.respLink p {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -305,32 +307,32 @@ const openNav = ref(false);
 }
 
 .logout {
-  position: absolute;
-  bottom: 60px;
   text-decoration: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px 12px 20px;
-  color: #0e1c48;
+  display: block;
+  color: #20263b;
   font-size: 0.95em;
-  overflow: hidden;
-  width: 100%;
   border-top: 1px #f6f8ff solid;
   cursor: pointer;
+}
+
+.logout p {
+  color: #20263b;
 }
 
 .logout div {
   display: flex;
   align-items: center;
   gap: 15px;
+  color: #20263b;
 }
 
 .pi-user {
   font-weight: bold;
+  color: white;
 }
 .pi-sign-out {
   font-weight: bold;
+  color: white;
 }
 
 @media (max-width: 1280px) {

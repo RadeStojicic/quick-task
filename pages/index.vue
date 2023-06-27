@@ -138,7 +138,7 @@ useHead({
   gap: 20px;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 767px) {
   .shade {
     width: 100%;
   }

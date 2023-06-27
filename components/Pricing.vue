@@ -290,7 +290,7 @@
   background-color: #2739c3;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 767px) {
   .pricing_content {
     width: 90%;
   }

@@ -190,7 +190,7 @@ import AccordionTab from "primevue/accordiontab";
   background-color: #53566217;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 767px) {
   .faq_container {
     width: 90%;
     margin: auto;

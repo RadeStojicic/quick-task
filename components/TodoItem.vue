@@ -190,6 +190,7 @@ const checkForError = () => {
 }
 
 .settings {
+  z-index: 0;
   background-color: white;
   display: flex;
   gap: 5px;
