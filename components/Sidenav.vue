@@ -1,4 +1,6 @@
 <script setup>
+import { Icon } from "@iconify/vue";
+
 const props = defineProps({
   numberOfTasks: {
     type: Number,
@@ -19,58 +21,46 @@ const handleLogOut = async () => {
       <div class="sideNavLinks">
         <NuxtLink class="link" to="/todo"
           ><div>
-            <i class="pi pi-inbox"></i>
+            <Icon class="iconSidenav" icon="mingcute:inbox-fill" />
             All Tasks
           </div>
           <p>{{ numberOfTasks }}</p>
         </NuxtLink>
         <NuxtLink class="link" to="/todo/today"
+          ><div><Icon class="iconSidenav" icon="mdi:table" />Today</div>
+          <p>0</p>
+        </NuxtLink>
+        <NuxtLink class="link" to="/"
           ><div>
-            <i class="pi pi-table"></i>
-            Today
+            <Icon class="iconSidenav" icon="iconamoon:star-bold" />Important
           </div>
           <p>0</p>
         </NuxtLink>
         <NuxtLink class="link" to="/"
           ><div>
-            <i class="pi pi-star"></i>
-            Important
+            <Icon
+              class="iconSidenav"
+              icon="material-symbols:date-range"
+            />Planned
           </div>
           <p>0</p>
         </NuxtLink>
         <NuxtLink class="link" to="/"
-          ><div>
-            <i class="pi pi-calendar"></i>
-            Planned
-          </div>
-          <p>0</p>
-        </NuxtLink>
-        <NuxtLink class="link" to="/"
-          ><div>
-            <i class="pi pi-calendar-times"></i>
-            Upcoming
-          </div>
+          ><div><Icon class="iconSidenav" icon="uis:schedule" />Upcoming</div>
           <p>5</p>
         </NuxtLink>
         <NuxtLink class="link" to="/todo/completed"
           ><div>
-            <i class="pi pi-check-square"></i>
-            Completed
+            <Icon class="iconSidenav" icon="mingcute:schedule-line" />Completed
           </div>
           <p>0</p>
         </NuxtLink>
         <NuxtLink class="link" to="/"
-          ><div>
-            <i class="pi pi-trash"></i>
-            Deleted
-          </div>
+          ><div><Icon class="iconSidenav" icon="bi:trash-fill" />Deleted</div>
           <p>0</p>
         </NuxtLink>
       </div>
-      <NuxtLink @click="handleLogOut()" class="logout">
-        <div><i class="pi pi-user"></i>Log Out</div>
-        <i class="pi pi-sign-out"></i
-      ></NuxtLink>
+      <NuxtLink @click="handleLogOut()" class="logout"> </NuxtLink>
     </div>
   </div>
 </template>
@@ -144,9 +134,9 @@ const handleLogOut = async () => {
   font-size: 0.9em;
   transition: 0.1s;
 }
-.sideNavLinks i {
+.iconSidenav {
   color: #20263b;
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: bold;
 }
 

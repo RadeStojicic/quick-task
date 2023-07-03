@@ -1,4 +1,5 @@
 <script setup>
+import { Icon } from "@iconify/vue";
 </script>
 
 
@@ -18,18 +19,19 @@
             <NuxtLink to="/">Contact</NuxtLink>
           </div>
           <div class="footer_icons">
-            <a target="_blank" href="https://www.facebook.com/"
-              ><i class="pi pi-facebook"></i
-            ></a>
-            <a target="_blank" href="https://www.instagram.com/"
-              ><i class="pi pi-instagram"></i
-            ></a>
-            <a target="_blank" href="https://www.twitter.com/"
-              ><i class="pi pi-twitter"></i
-            ></a>
-            <a target="_blank" href="https://www.linkedin.com/"
-              ><i class="pi pi-linkedin"></i
-            ></a>
+            <a target="_blank" href="https://www.instagram.com/">
+              <Icon width="25px" color="white" icon="mdi:instagram" />
+            </a>
+            <a target="_blank" href="https://www.facebook.com/">
+              <Icon width="25px" color="white" icon="mdi:facebook" />
+            </a>
+
+            <a target="_blank" href="https://www.twitter.com/">
+              <Icon width="25px" color="white" icon="mdi:twitter" />
+            </a>
+            <a target="_blank" href="https://www.linkedin.com/">
+              <Icon width="25px" color="white" icon="mdi:linkedin" />
+            </a>
           </div>
         </div>
         <div class="first_right">
@@ -106,7 +108,7 @@
   margin-top: 30px;
 }
 
-.footer_icons i {
+.footer_icons icon {
   font-size: 1.3em;
   color: #d8d8d8;
 }

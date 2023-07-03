@@ -1,5 +1,6 @@
 <script setup>
 import { reactive, ref } from "vue";
+import { Icon } from "@iconify/vue";
 
 const emit = defineEmits(["create-todo", "updated-data"]);
 const taskState = reactive({
@@ -37,7 +38,7 @@ const minDate = ref(new Date());
           @keyup.enter="createTask"
         />
         <button class="createTask" @click="createTask">
-          <i class="pi pi-plus"></i>
+          <Icon class="addIcon" icon="ph:plus-bold" />
         </button>
       </div>
       <!-- <div class="card flex justify-content-center">
@@ -106,8 +107,8 @@ const minDate = ref(new Date());
   background-color: rgb(255, 255, 255);
 }
 
-.fa-plus {
-  font-size: 1.5em;
+.addIcon {
+  font-size: 1.6em;
   color: rgb(67, 67, 67);
 }
 .showError {

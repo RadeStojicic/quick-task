@@ -1,4 +1,5 @@
 <script setup>
+import { Icon } from "@iconify/vue";
 </script>
 <template>
   <div class="container">
@@ -29,27 +30,39 @@
             <div class="description_container">
               <div class="description">
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Basic Functionality</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Cost Savings</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Limited Collaboration</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Mobile Access</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Minimal Customization</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Support Limitations</p>
                 </div>
               </div>
@@ -77,27 +90,39 @@
             <div class="description_container">
               <div class="description">
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Advanced Features</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Team Collaboration</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Reporting & Analytics</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Integration options</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Priority Support</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Scalability & Growth:</p>
                 </div>
               </div>
@@ -124,27 +149,39 @@
             <div class="description_container">
               <div class="description">
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Advanced Functionality</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Customization & Branding</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Seamless Integrations</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Exclusive Features</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>VIP Support</p>
                 </div>
                 <div>
-                  <i class="pi pi-check"></i>
+                  <span class="checked">
+                    <Icon icon="fe:check" />
+                  </span>
                   <p>Enhanced Security</p>
                 </div>
               </div>
@@ -228,13 +265,15 @@
   text-align: center;
 }
 
-.pi-check {
+.checked {
+  display: flex;
+  align-items: center;
   color: white;
   background-color: #3850ff;
   border-radius: 50px;
-  font-weight: bold;
-  font-size: 0.7em;
-  padding: 7px;
+  font-weight: bolder;
+  font-size: 1.2em;
+  padding: 6px;
 }
 .description_container {
   width: 90%;

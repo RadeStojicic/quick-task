@@ -1,4 +1,5 @@
 <script setup>
+import { Icon } from "@iconify/vue";
 </script>
 
 <template>
@@ -10,7 +11,11 @@
             ><img src="../assets/images/logo.png" alt="logo"
           /></NuxtLink>
         </div>
-        <NuxtLink to="/"><i class="pi pi-times closeIcon"></i></NuxtLink>
+        <NuxtLink to="/">
+          <span class="exitIcon">
+            <Icon icon="ic:baseline-close" />
+          </span>
+        </NuxtLink>
       </div>
     </div>
     <div class="leftSection"></div>
@@ -50,7 +55,7 @@
   background-repeat: no-repeat;
   flex: 1;
 }
-.closeIcon {
+.exitIcon {
   font-size: 1.8em;
   cursor: pointer;
   color: rgb(23, 23, 23);
@@ -85,7 +90,7 @@
   .container {
     padding-bottom: 50px;
   }
-  .closeIcon {
+  .exitIcon {
     color: rgb(255, 255, 255);
   }
   .navBar {
