@@ -79,7 +79,6 @@ const deleteTodo = async (index) => {
   confirm.require({
     message: "Do you want to delete this task?",
     header: "Delete Confirmation",
-    icon: "pi pi-info-circle",
     acceptClass: "p-button-danger",
     accept: async () => {
       const { data, error } = await client

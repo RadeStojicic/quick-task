@@ -95,7 +95,8 @@ const checkForError = () => {
             <ConfirmDialog v-model:visible="deleteVisible"></ConfirmDialog>
 
             <Dialog
-              class="dialogContainer"
+              style="width: 40vw"
+              :breakpoints="{ '960px': '75vw', '641px': '90vw' }"
               v-model:visible="visible"
               modal
               header="Edit your task"
