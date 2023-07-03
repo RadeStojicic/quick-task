@@ -95,10 +95,10 @@ const checkForError = () => {
             <ConfirmDialog v-model:visible="deleteVisible"></ConfirmDialog>
 
             <Dialog
+              class="dialogContainer"
               v-model:visible="visible"
               modal
               header="Edit your task"
-              :style="{ width: '40vw' }"
             >
               <div class="dialogContent">
                 <input
@@ -234,7 +234,7 @@ const checkForError = () => {
   color: white;
   border-radius: 10px;
   cursor: pointer;
-  width: 20%;
+  width: 40%;
 }
 
 .dialogContent button:hover {

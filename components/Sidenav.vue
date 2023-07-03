@@ -60,7 +60,12 @@ const handleLogOut = async () => {
           <p>0</p>
         </NuxtLink>
       </div>
-      <NuxtLink @click="handleLogOut()" class="logout"> </NuxtLink>
+      <NuxtLink @click="handleLogOut()" class="logout"
+        ><div>
+          <Icon class="iconSidenav" icon="mdi:user-outline" /> Sign Out
+        </div>
+        <Icon class="iconSidenav" icon="mingcute:exit-line" />
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -93,7 +98,7 @@ const handleLogOut = async () => {
   font-size: 0.95em;
   overflow: hidden;
   width: 300px;
-  border-bottom: 1px #f6f8ff solid;
+  border-top: 1px #e5e7eb solid;
 }
 
 .sideNavLinks a:hover {
@@ -160,7 +165,7 @@ const handleLogOut = async () => {
   font-size: 0.95em;
   overflow: hidden;
   width: 300px;
-  border-top: 1px #f6f8ff solid;
+  border-top: 1px #e5e7eb solid;
   cursor: pointer;
 }
 

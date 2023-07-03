@@ -87,7 +87,8 @@ const openNav = ref(false);
           <p>0</p>
         </NuxtLink>
         <NuxtLink @click="handleLogOut()" class="respLink logout">
-          <div>Log Out</div>
+          <div><Icon class="iconSidenav" icon="mdi:user-outline" />Log Out</div>
+          <Icon class="iconSidenav" icon="mingcute:exit-line" />
         </NuxtLink>
       </ul>
     </div>
@@ -157,7 +158,6 @@ const openNav = ref(false);
   text-align: center;
   color: #0f225f;
   padding: 20px;
-  border-top: 1px #dcdcdc15 solid;
   width: 100%;
   cursor: pointer;
   user-select: none;
@@ -239,7 +239,7 @@ const openNav = ref(false);
   color: #0e1c48;
   font-size: 0.95em;
   width: 100%;
-  border-bottom: 1px #f6f8ff solid;
+  border-bottom: 1px #e5e7eb solid;
 }
 
 .responsiveLinks a:hover {
@@ -299,7 +299,7 @@ const openNav = ref(false);
   display: block;
   color: #20263b;
   font-size: 0.95em;
-  border-top: 1px #f6f8ff solid;
+  border-bottom: 1px #e5e7eb solid;
   cursor: pointer;
 }
 
