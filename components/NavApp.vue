@@ -170,7 +170,7 @@ const openNav = ref(false);
   display: none;
   position: absolute;
   right: 10px;
-  top: 15px;
+  top: 18px;
 }
 
 .nav-container .checkbox {
@@ -188,11 +188,12 @@ const openNav = ref(false);
 
 .nav-container .hamburger-lines {
   display: block;
-  height: 26px;
-  width: 32px;
+  height: 22px;
+  width: 28px;
   z-index: 2;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
 }
 

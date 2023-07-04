@@ -52,6 +52,7 @@ const handleGoogleLogin = () => {
   supabaseAuth.auth.signInWithOAuth({
     provider: "google",
   });
+  redirectTo: "http://quicktaskapp.netlify.com/todo";
 };
 
 // register
