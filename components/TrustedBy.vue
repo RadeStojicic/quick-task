@@ -48,7 +48,21 @@
 .logos img {
   width: 120px;
 }
-
+@media screen and (max-width: 1280px) {
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container {
+    width: 100%;
+    margin: auto;
+  }
+  .trustedContainer {
+    width: 90%;
+    margin-top: 50px;
+  }
+}
 @media screen and (max-width: 767px) {
   .logos {
     display: flex;

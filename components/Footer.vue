@@ -187,6 +187,38 @@ import { Icon } from "@iconify/vue";
   color: #d8d8d8;
 }
 
+@media screen and (max-width: 1600px) {
+  .container {
+    padding-bottom: 0px;
+  }
+  .footer_container {
+    width: 90%;
+    margin: auto;
+  }
+  .first_column {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    gap: 50px;
+  }
+  .second_column {
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 0.95em;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .footer_links {
+    gap: 20px;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+  .first_right input {
+    width: 90%;
+    flex-wrap: wrap;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .container {
     padding-bottom: 0px;

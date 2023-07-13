@@ -329,6 +329,111 @@ import { Icon } from "@iconify/vue";
   background-color: #2739c3;
 }
 
+@media screen and (max-width: 1600px) {
+  .pricingCards {
+    gap: 50px;
+  }
+  .pricingCard {
+    width: 90%;
+    margin: auto;
+    position: relative;
+  }
+  .pricingTitle {
+    width: 100%;
+    font-size: 3em;
+  }
+  .pricingSubTitle {
+    font-size: 1.2em;
+  }
+  .pricing_content {
+    width: 90%;
+  }
+  .pricing_subcontainer {
+    width: 90%;
+    margin: auto;
+  }
+
+  .pricingCard {
+    background-color: #0c0d2b;
+    border-radius: 20px;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    width: 100%;
+  }
+  .plan_name {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.1em;
+  }
+
+  .plan_price {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1em;
+  }
+
+  .checked {
+    font-size: 1em;
+    padding: 5px;
+  }
+
+  .description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 50px auto;
+  }
+
+  .description div {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .plan_getStarted {
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 60%;
+    text-align: center;
+    border-radius: 10px;
+    background-color: #3850ff;
+    color: white;
+    border: none;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .standardPlan {
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #394cd8;
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+  }
+
+  .standardPlan:hover {
+    background-color: #2739c3;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .pricingCards {
+    gap: 15px;
+  }
+  .description div p {
+    color: #7286ac;
+    font-size: 0.8em;
+  }
+}
 @media screen and (max-width: 767px) {
   .pricing_content {
     width: 90%;
@@ -343,12 +448,25 @@ import { Icon } from "@iconify/vue";
   .pricingCards {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 70%;
     gap: 20px;
   }
   .pricing_subcontainer {
     width: 90%;
     margin: auto;
+  }
+  .description div p {
+    color: #7286ac;
+    font-size: 1em;
+  }
+  .plan_getStarted {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .pricingCards {
+    width: 100%;
   }
 }
 </style>

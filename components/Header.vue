@@ -146,6 +146,7 @@ header {
   display: flex;
   max-width: 1500px;
   margin: auto;
+  width: 95%;
 }
 
 .linksContainer {
@@ -302,7 +303,7 @@ header {
   transform: rotate(-45deg);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   header {
     width: 100%;
   }

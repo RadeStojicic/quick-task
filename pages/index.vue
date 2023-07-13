@@ -137,7 +137,32 @@ useHead({
   display: flex;
   gap: 20px;
 }
-
+@media screen and (max-width: 1280px) {
+  .heroContainer {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-bottom: 150px;
+  }
+  .shade {
+    width: 100%;
+  }
+  .leftHero {
+    width: 100%;
+    margin-top: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .rightHero {
+    display: none;
+  }
+  .rightHero img {
+    display: none;
+  }
+}
 @media screen and (max-width: 767px) {
   .shade {
     width: 100%;
