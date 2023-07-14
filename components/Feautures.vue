@@ -447,7 +447,6 @@
     border-radius: 10px;
   }
 }
-
 @media screen and (max-width: 620px) {
   .feautures_container {
     padding-bottom: 540px;

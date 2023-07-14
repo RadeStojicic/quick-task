@@ -66,6 +66,7 @@ useHead({
 .container {
   width: 100%;
   max-width: 100%;
+  overflow-y: hidden;
 }
 
 .headerAndHero {

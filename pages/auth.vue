@@ -39,8 +39,8 @@ const accountLogin = async () => {
 
     if (data) {
       useRouter().push("/todo");
-      user_profile.value = data.user.user_metadata.full_name;
-      console.log(user_profile.value);
+      // user_profile.value = data.user.user_metadata.full_name;
+      // console.log(user_profile.value);
     }
   } catch (err) {
     errors.value = "Something went wrong.";

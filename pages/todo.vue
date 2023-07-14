@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import TodoApp from "../components/TodoApp.vue";
 import TodoItem from "../components/TodoItem.vue";
 import { useConfirm } from "primevue/useconfirm";
+import { watchEffect } from "vue";
 
 const client = useSupabaseClient();
 const user = useSupabaseUser();
@@ -22,8 +23,10 @@ const { data } = useAsyncData("todos", async () => {
     .eq("user_id", user.value?.id);
   return data;
 });
-items.value = data.value;
 
+watchEffect(() => {
+  items.value = data.value;
+});
 const current = new Date();
 // create todo
 const todoForm = reactive({
