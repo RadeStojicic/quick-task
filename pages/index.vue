@@ -137,6 +137,11 @@ useHead({
   display: flex;
   gap: 20px;
 }
+@media screen and (max-width: 1600px) {
+  .heroContainer {
+    width: 95%;
+  }
+}
 @media screen and (max-width: 1280px) {
   .heroContainer {
     width: 95%;

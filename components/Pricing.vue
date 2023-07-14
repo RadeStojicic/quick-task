@@ -349,7 +349,7 @@ import { Icon } from "@iconify/vue";
     width: 90%;
   }
   .pricing_subcontainer {
-    width: 90%;
+    width: 95%;
     margin: auto;
   }
 
@@ -425,6 +425,7 @@ import { Icon } from "@iconify/vue";
     background-color: #2739c3;
   }
 }
+
 @media screen and (max-width: 1080px) {
   .pricingCards {
     gap: 15px;

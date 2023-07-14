@@ -59,7 +59,7 @@
     margin: auto;
   }
   .trustedContainer {
-    width: 90%;
+    width: 95%;
     margin-top: 50px;
   }
 }
