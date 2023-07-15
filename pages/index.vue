@@ -157,7 +157,7 @@ useHead({
   }
   .leftHero {
     width: 100%;
-    margin-top: 200px;
+    margin-top: 180px;
     text-align: center;
     display: flex;
     flex-direction: column;
