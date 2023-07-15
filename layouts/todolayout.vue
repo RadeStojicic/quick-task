@@ -4,6 +4,9 @@ import { onMounted } from "vue";
 import NavApp from "../components/NavApp.vue";
 import Sidenav from "../components/Sidenav.vue";
 import { ref, defineProps } from "vue";
+import { createClient } from "@supabase/supabase-js";
+import { useTodoStore } from "../stores/todo";
+import { storeToRefs } from "pinia";
 
 const props = defineProps({
   data: {
@@ -12,7 +15,8 @@ const props = defineProps({
   },
 });
 
-import { createClient } from "@supabase/supabase-js";
+const { todos } = storeToRefs(useTodoStore());
+
 const supabaseAuth = useSupabaseAuthClient();
 
 const {
@@ -21,15 +25,13 @@ const {
 
 console.log(user);
 const user_profile = ref(user.email);
-
-const numberOfTasks = ref(2);
 </script>
 <template>
   <div>
     <NavApp :user_name="user_profile" />
     <div class="container">
       <div class="sidenavContainer">
-        <Sidenav :numberOfTasks="numberOfTasks" />
+        <Sidenav :todos="todos" />
       </div>
       <div class="main">
         <slot />

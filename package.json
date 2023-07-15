@@ -17,8 +17,10 @@
     "supabase": "^1.61.2"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.4.11",
     "aos": "^2.3.4",
     "node-sass": "^8.0.0",
+    "pinia": "^2.1.4",
     "primeicons": "^6.0.1",
     "primevue": "^3.29.0",
     "sass-loader": "^13.2.2",

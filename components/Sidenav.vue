@@ -2,8 +2,8 @@
 import { Icon } from "@iconify/vue";
 
 const props = defineProps({
-  numberOfTasks: {
-    type: Number,
+  todos: {
+    type: Array,
     required: true,
   },
 });
@@ -24,11 +24,11 @@ const handleLogOut = async () => {
             <Icon class="iconSidenav" icon="mingcute:inbox-fill" />
             All Tasks
           </div>
-          <p>{{ numberOfTasks }}</p>
+          <p>{{ todos?.filter((e) => e.category === "Uncompleted").length }}</p>
         </NuxtLink>
         <NuxtLink class="link" to="/todo/today"
           ><div><Icon class="iconSidenav" icon="mdi:table" />Today</div>
-          <p>0</p>
+          <p>{{ todos?.filter((e) => e.category === "Today").length }}</p>
         </NuxtLink>
         <NuxtLink class="link" to="/"
           ><div>

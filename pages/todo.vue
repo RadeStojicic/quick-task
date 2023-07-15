@@ -4,29 +4,18 @@ import { v4 as uuidv4 } from "uuid";
 import TodoApp from "../components/TodoApp.vue";
 import TodoItem from "../components/TodoItem.vue";
 import { useConfirm } from "primevue/useconfirm";
-import { watchEffect } from "vue";
-
+import { useTodoStore } from "../stores/todo";
+import { storeToRefs } from "pinia";
 const client = useSupabaseClient();
 const user = useSupabaseUser();
+
+const { todos: items } = storeToRefs(useTodoStore());
 
 definePageMeta({
   layout: "todolayout",
   middleware: "auth",
 });
 
-const items = ref([]);
-
-const { data } = useAsyncData("todos", async () => {
-  const { data, error } = await client
-    .from("todos")
-    .select("*")
-    .eq("user_id", user.value?.id);
-  return data;
-});
-
-watchEffect(() => {
-  items.value = data.value;
-});
 const current = new Date();
 // create todo
 const todoForm = reactive({
