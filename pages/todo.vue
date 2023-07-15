@@ -3,6 +3,7 @@ import { ref } from "vue";
 import { v4 as uuidv4 } from "uuid";
 import TodoApp from "../components/TodoApp.vue";
 import TodoItem from "../components/TodoItem.vue";
+import Dialog from "primevue/dialog";
 import { useConfirm } from "primevue/useconfirm";
 import { useTodoStore } from "../stores/todo";
 import { storeToRefs } from "pinia";
@@ -10,6 +11,7 @@ const client = useSupabaseClient();
 const user = useSupabaseUser();
 
 const { todos: items } = storeToRefs(useTodoStore());
+const visible = ref(false);
 
 definePageMeta({
   layout: "todolayout",
@@ -21,13 +23,10 @@ const current = new Date();
 const todoForm = reactive({
   key: "",
   todo: "",
-  // category: "Uncompleted",
-  // isCompleted: false,
-  // isEditing: false,
+  category: "Category",
   customSettings: false,
-  // dueToDate: current,
+  // isCompleted: false,
 });
-
 const createTodo = async (todo) => {
   todoForm.todo = todo;
   todoForm.key = uuidv4();
@@ -53,16 +52,6 @@ const createTodo = async (todo) => {
     console.log(err);
   }
 };
-
-// let category = ref("");
-// const completeState = (index) => {
-//   todoList.value[index].isCompleted = !todoList.value[index].isCompleted;
-//   if (todoList.value[index].category == "Uncompleted") {
-//     todoList.value[index].category = "Completed";
-//   } else {
-//     todoList.value[index].category = "Uncompleted";
-//   }
-// };
 
 // delete Todo
 const confirm = useConfirm();
@@ -98,9 +87,40 @@ const deleteTodo = async (index) => {
 
 <template>
   <main>
-    <NuxtPage :items="data" />
     <div class="todoTasks">
-      <TodoApp @create-todo="createTodo" />
+      <div class="todo_menu">
+        <TodoApp @create-todo="createTodo" />
+        <div class="chooseCategory">
+          <button @click="visible = true">{{ todoForm.category }}</button>
+          <Dialog
+            v-model:visible="visible"
+            modal
+            header="Categories"
+            :style="{ width: '50vw' }"
+          >
+            <div class="categoriesContainer">
+              <button
+                class="categoryBtn"
+                @click="(visible = false), (todoForm.category = 'Today')"
+              >
+                Today
+              </button>
+              <button
+                class="categoryBtn"
+                @click="(visible = false), (todoForm.category = 'Important')"
+              >
+                Important
+              </button>
+              <button
+                class="categoryBtn"
+                @click="(visible = false), (todoForm.category = 'Completed')"
+              >
+                Completed
+              </button>
+            </div>
+          </Dialog>
+        </div>
+      </div>
       <ul>
         <li>
           <TodoItem
@@ -125,5 +145,46 @@ const deleteTodo = async (index) => {
 
 .todoTasks ul li {
   list-style: none;
+}
+
+.chooseCategory {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  width: 95%;
+  margin: auto;
+}
+
+.chooseCategory button {
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(227, 240, 255);
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.todo_menu {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.categoriesContainer {
+  display: flex;
+  gap: 5px;
+}
+
+.categoryBtn {
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.categoryBtn:hover {
+  background-color: rgb(235, 235, 238);
 }
 </style>

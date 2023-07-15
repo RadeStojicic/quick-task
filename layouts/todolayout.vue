@@ -18,13 +18,14 @@ const props = defineProps({
 const { todos } = storeToRefs(useTodoStore());
 
 const supabaseAuth = useSupabaseAuthClient();
-
 const {
   data: { user },
 } = await supabaseAuth.auth.getUser();
 
 console.log(user);
-const user_profile = ref(user.email);
+const user_profile = ref(user.user_metadata?.full_name || user.email);
+
+const numberOfTasks = ref(2);
 </script>
 <template>
   <div>

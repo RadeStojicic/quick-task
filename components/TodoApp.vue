@@ -37,6 +37,7 @@ const minDate = ref(new Date());
           maxlength="60"
           @keyup.enter="createTask"
         />
+
         <button class="createTask" @click="createTask">
           <Icon class="addIcon" icon="ph:plus-bold" />
         </button>
@@ -67,7 +68,7 @@ const minDate = ref(new Date());
 
 .todoContainer {
   width: 95%;
-  margin: 50px auto;
+  margin: 50px auto 10px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

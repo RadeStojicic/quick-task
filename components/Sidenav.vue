@@ -24,7 +24,7 @@ const handleLogOut = async () => {
             <Icon class="iconSidenav" icon="mingcute:inbox-fill" />
             All Tasks
           </div>
-          <p>{{ todos?.filter((e) => e.category === "Uncompleted").length }}</p>
+          <p>{{ todos.length }}</p>
         </NuxtLink>
         <NuxtLink class="link" to="/todo/today"
           ><div><Icon class="iconSidenav" icon="mdi:table" />Today</div>
