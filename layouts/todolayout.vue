@@ -18,9 +18,9 @@ const supabaseAuth = useSupabaseAuthClient();
 const {
   data: { user },
 } = await supabaseAuth.auth.getUser();
-let metadata = user.user_metadata;
+
 console.log(user);
-const user_profile = ref(metadata.full_name);
+const user_profile = ref(user.email);
 
 const numberOfTasks = ref(2);
 </script>

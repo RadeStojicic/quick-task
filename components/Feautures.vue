@@ -36,7 +36,7 @@
           </div>
         </div>
         <div
-          data-aos="fade-right"
+          data-aos="fade-left"
           data-aos-duration="700"
           data-aos-easing="ease-in-out-cubic"
           class="second_content"

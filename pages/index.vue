@@ -149,14 +149,13 @@ useHead({
     display: flex;
     flex-direction: column;
     height: auto;
-    padding-bottom: 150px;
+    padding: 160px 0px 100px 0px;
   }
   .shade {
     width: 100%;
   }
   .leftHero {
     width: 100%;
-    margin-top: 200px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -186,7 +185,8 @@ useHead({
     margin: auto;
     position: relative;
     top: 0px;
-    height: 800px;
+    height: auto;
+    padding: 160px 0px 100px 0px;
   }
   .leftHero {
     width: 100%;
