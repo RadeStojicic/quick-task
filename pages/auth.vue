@@ -11,7 +11,7 @@ const form = reactive({
 });
 
 const errors = ref("");
-const user_profile = useState("user_profile", () => "");
+const user_profile = ref("");
 
 // login
 const accountLogin = async () => {
@@ -40,7 +40,6 @@ const accountLogin = async () => {
     if (data) {
       useRouter().push("/todo");
       // user_profile.value = data.user.user_metadata.full_name;
-      // console.log(user_profile.value);
     }
   } catch (err) {
     errors.value = "Something went wrong.";
@@ -51,6 +50,9 @@ const accountLogin = async () => {
 const handleGoogleLogin = () => {
   supabaseAuth.auth.signInWithOAuth({
     provider: "google",
+    options: {
+      redirectTo: "https://quicktask.radestojicic.com/todo",
+    },
   });
 };
 

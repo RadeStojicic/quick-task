@@ -49,7 +49,7 @@ const handleLogOut = async () => {
           ><div><Icon class="iconSidenav" icon="uis:schedule" />Upcoming</div>
           <p>5</p>
         </NuxtLink>
-        <NuxtLink class="link" to="/todo/completed"
+        <NuxtLink class="link" to="/"
           ><div>
             <Icon class="iconSidenav" icon="mingcute:schedule-line" />Completed
           </div>

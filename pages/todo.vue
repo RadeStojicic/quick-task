@@ -32,7 +32,7 @@ const current = new Date();
 const todoForm = reactive({
   key: "",
   todo: "",
-  category: "Uncompleted",
+  // category: "Uncompleted",
   // isCompleted: false,
   // isEditing: false,
   customSettings: false,
@@ -120,7 +120,6 @@ const deleteTodo = async (index) => {
             :index="todo.key"
             :todo="todo"
             :category="category"
-            @complete-state="completeState"
             @delete-todo="deleteTodo"
           />
         </li>

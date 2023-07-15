@@ -11,10 +11,6 @@ const props = defineProps({
     type: Number,
     required: true,
   },
-  dueToDate: {
-    type: Date,
-    required: true,
-  },
 });
 
 const visible = ref(false);
