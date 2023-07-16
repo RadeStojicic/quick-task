@@ -28,36 +28,46 @@ const handleLogOut = async () => {
         </NuxtLink>
         <NuxtLink class="link" to="/todo/today"
           ><div><Icon class="iconSidenav" icon="mdi:table" />Today</div>
-          <p>{{ todos?.filter((e) => e.category === "Today").length }}</p>
+          <p>{{ todos?.filter((e) => e.category === "Today").length || 0 }}</p>
         </NuxtLink>
-        <NuxtLink class="link" to="/"
+        <NuxtLink class="link" to="/todo/important"
           ><div>
             <Icon class="iconSidenav" icon="iconamoon:star-bold" />Important
           </div>
-          <p>0</p>
+          <p>
+            {{ todos?.filter((e) => e.category === "Important").length || 0 }}
+          </p>
         </NuxtLink>
-        <NuxtLink class="link" to="/"
+        <NuxtLink class="link" to="/todo/planned"
           ><div>
             <Icon
               class="iconSidenav"
               icon="material-symbols:date-range"
             />Planned
           </div>
-          <p>0</p>
+          <p>
+            {{ todos?.filter((e) => e.category === "Planned").length || 0 }}
+          </p>
         </NuxtLink>
-        <NuxtLink class="link" to="/"
+        <NuxtLink class="link" to="/todo/upcoming"
           ><div><Icon class="iconSidenav" icon="uis:schedule" />Upcoming</div>
-          <p>5</p>
+          <p>
+            {{ todos?.filter((e) => e.category === "Upcoming").length || 0 }}
+          </p>
         </NuxtLink>
-        <NuxtLink class="link" to="/"
+        <NuxtLink class="link" to="/todo/completed"
           ><div>
             <Icon class="iconSidenav" icon="mingcute:schedule-line" />Completed
           </div>
-          <p>0</p>
+          <p>
+            {{ todos?.filter((e) => e.category === "Completed").length || 0 }}
+          </p>
         </NuxtLink>
-        <NuxtLink class="link" to="/"
+        <NuxtLink class="link" to="/todo/deleted"
           ><div><Icon class="iconSidenav" icon="bi:trash-fill" />Deleted</div>
-          <p>0</p>
+          <p>
+            {{ todos?.filter((e) => e.category === "Deleted").length || 0 }}
+          </p>
         </NuxtLink>
       </div>
       <NuxtLink @click="handleLogOut()" class="logout"

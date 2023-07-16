@@ -7,11 +7,13 @@ import Dialog from "primevue/dialog";
 import { useConfirm } from "primevue/useconfirm";
 import { useTodoStore } from "../stores/todo";
 import { storeToRefs } from "pinia";
+
 const client = useSupabaseClient();
 const user = useSupabaseUser();
 
 const { todos: items } = storeToRefs(useTodoStore());
 const visible = ref(false);
+const route = useRoute();
 
 definePageMeta({
   layout: "todolayout",
@@ -87,9 +89,12 @@ const deleteTodo = async (index) => {
 
 <template>
   <main>
-    <div class="todoTasks">
+    <NuxtPage />
+
+    <div v-if="route.name == 'todo'" class="todoTasks">
       <div class="todo_menu">
         <TodoApp @create-todo="createTodo" />
+
         <div class="chooseCategory">
           <button @click="visible = true">{{ todoForm.category }}</button>
           <Dialog
@@ -121,6 +126,7 @@ const deleteTodo = async (index) => {
           </Dialog>
         </div>
       </div>
+
       <ul>
         <li>
           <TodoItem
@@ -186,5 +192,10 @@ const deleteTodo = async (index) => {
 }
 .categoryBtn:hover {
   background-color: rgb(235, 235, 238);
+}
+
+.drag-item {
+  background: blue;
+  margin: 10px 0;
 }
 </style>
