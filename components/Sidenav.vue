@@ -70,12 +70,6 @@ const handleLogOut = async () => {
           </p>
         </NuxtLink>
       </div>
-      <NuxtLink @click="handleLogOut()" class="logout"
-        ><div>
-          <Icon class="iconSidenav" icon="mdi:user-outline" /> Sign Out
-        </div>
-        <Icon class="iconSidenav" icon="mingcute:exit-line" />
-      </NuxtLink>
     </div>
   </div>
 </template>
@@ -161,34 +155,5 @@ const handleLogOut = async () => {
   justify-content: center;
   width: 28px;
   height: 28px;
-}
-
-.logout {
-  position: absolute;
-  bottom: 0;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px 12px 20px;
-  color: #0e1c48;
-  font-size: 0.95em;
-  overflow: hidden;
-  width: 300px;
-  border-top: 1px #e5e7eb solid;
-  cursor: pointer;
-}
-
-.logout div {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.pi-user {
-  font-weight: bold;
-}
-.pi-sign-out {
-  font-weight: bold;
 }
 </style>

@@ -1,15 +1,61 @@
 <script setup>
 import { ref } from "vue";
 import { Icon } from "@iconify/vue";
-
+import Menu from "primevue/menu";
+import toast from "primevue/toast";
 const props = defineProps({
   user_name: {
     type: String,
     required: true,
   },
+  user_image: {
+    type: String,
+    required: true,
+  },
+  todos: {
+    type: Array,
+    required: true,
+  },
 });
+const authClient = useSupabaseClient();
+
+const handleLogOut = async () => {
+  await authClient.auth.signOut();
+  navigateTo("/");
+};
+
+const handleSwitchAcc = async () => {
+  await authClient.auth.signOut();
+  navigateTo("/auth");
+};
+
+const menu = ref();
+const items = ref([
+  {
+    label: "Settings",
+    items: [
+      {
+        label: "Switch Account",
+        command: () => {
+          handleSwitchAcc();
+        },
+      },
+      {
+        label: "Sign Out",
+        command: () => {
+          handleLogOut();
+        },
+      },
+    ],
+  },
+]);
+
+const toggle = (event) => {
+  menu.value.toggle(event);
+};
 
 const openNav = ref(false);
+const profileSettings = ref(false);
 </script>
 
 <template>
@@ -35,11 +81,43 @@ const openNav = ref(false);
             <span class="line line3"></span>
           </div>
         </div>
+        <div class="navappRight">
+          <p class="userName">
+            Hi, <span style="font-weight: bold">{{ user_name }}</span
+            >.
+          </p>
+          <div class="card flex justify-content-center">
+            <img
+              v-if="user_image"
+              class="profilePicture"
+              :src="user_image"
+              label="Toggle"
+              @click="toggle"
+              aria-haspopup="true"
+              aria-controls="overlay_menu"
+              alt="profilePicture"
+            />
+            <img
+              v-else
+              src="https://www.citypng.com/public/uploads/preview/png-profile-user-round-gray-icon-symbol-11639594342slkdqxcgi6.png"
+              alt="profilePictureDefault"
+              class="profilePicture"
+              label="Toggle"
+              @click="toggle"
+              aria-haspopup="true"
+              aria-controls="overlay_menu"
+            />
 
-        <p class="userName">
-          Hi, <span style="font-weight: bold">{{ user_name }}</span
-          >.
-        </p>
+            <Menu ref="menu" id="overlay_menu" :model="items" :popup="true" />
+            <Toast />
+          </div>
+        </div>
+        <div class="profileSettings" v-if="profileSettings">
+          <NuxtLink @click="handleLogOut()" class="logout"
+            ><Icon class="iconSidenav" icon="mingcute:exit-line" />
+            <p>Sign Out</p>
+          </NuxtLink>
+        </div>
       </div>
     </nav>
     <div
@@ -49,46 +127,54 @@ const openNav = ref(false);
       class="responsive_nav"
     >
       <ul class="responsiveLinks">
-        <NuxtLink @click="openNav = false" class="link" to="/todo"
+        <NuxtLink @click="openNav = false" class="respLink" to="/todo"
           ><div>
             <Icon class="iconSidenav" icon="mingcute:inbox-fill" /> All Tasks
           </div>
-          <p>0</p>
+          <p>{{ todos.length || 0 }}</p>
         </NuxtLink>
         <NuxtLink @click="openNav = false" class="respLink" to="/todo/today"
           ><div><Icon class="iconSidenav" icon="mdi:table" />Today</div>
-          <p>0</p>
+          <p>{{ todos?.filter((e) => e.category === "Today").length || 0 }}</p>
         </NuxtLink>
+
         <NuxtLink @click="openNav = false" class="respLink" to="/"
           ><div>
             <Icon class="iconSidenav" icon="iconamoon:star-bold" /> Important
           </div>
-          <p>0</p>
+          <p>
+            {{ todos?.filter((e) => e.category === "Important").length || 0 }}
+          </p>
         </NuxtLink>
+
         <NuxtLink @click="openNav = false" class="respLink" to="/"
           ><div>
             <Icon class="iconSidenav" icon="material-symbols:date-range" />
             Planned
           </div>
-          <p>0</p>
+          <p>
+            {{ todos?.filter((e) => e.category === "Planned").length || 0 }}
+          </p>
         </NuxtLink>
         <NuxtLink @click="openNav = false" class="respLink" to="/"
           ><div><Icon class="iconSidenav" icon="uis:schedule" /> Upcoming</div>
-          <p>5</p>
+          <p>
+            {{ todos?.filter((e) => e.category === "Upcoming").length || 0 }}
+          </p>
         </NuxtLink>
         <NuxtLink @click="openNav = false" class="respLink" to="/todo/completed"
           ><div>
             <Icon class="iconSidenav" icon="mingcute:schedule-line" /> Completed
           </div>
-          <p>0</p>
+          <p>
+            {{ todos?.filter((e) => e.category === "Completed").length || 0 }}
+          </p>
         </NuxtLink>
         <NuxtLink @click="openNav = false" class="respLink" to="/"
           ><div><Icon class="iconSidenav" icon="bi:trash-fill" /> Deleted</div>
-          <p>0</p>
-        </NuxtLink>
-        <NuxtLink @click="handleLogOut()" class="respLink logout">
-          <div><Icon class="iconSidenav" icon="mdi:user-outline" />Log Out</div>
-          <Icon class="iconSidenav" icon="mingcute:exit-line" />
+          <p>
+            {{ todos?.filter((e) => e.category === "Deleted").length || 0 }}
+          </p>
         </NuxtLink>
       </ul>
     </div>
@@ -169,7 +255,7 @@ const openNav = ref(false);
 .nav-container {
   display: none;
   position: absolute;
-  right: 10px;
+  right: 70px;
   top: 18px;
 }
 
@@ -188,8 +274,8 @@ const openNav = ref(false);
 
 .nav-container .hamburger-lines {
   display: block;
-  height: 22px;
-  width: 28px;
+  height: 24px;
+  width: 30px;
   z-index: 2;
   display: flex;
   flex-direction: column;
@@ -238,7 +324,6 @@ const openNav = ref(false);
   align-items: center;
   padding: 18px 20px 18px 20px;
   color: #0e1c48;
-  font-size: 0.95em;
   width: 100%;
   border-bottom: 1px #e5e7eb solid;
 }
@@ -282,7 +367,7 @@ const openNav = ref(false);
   transition: 0.1s;
 }
 .iconSidenav {
-  color: #20263b;
+  color: rgb(102, 102, 102);
   font-size: 1.3em;
   font-weight: bold;
 }
@@ -295,7 +380,7 @@ const openNav = ref(false);
   height: 28px;
 }
 
-.logout {
+.logoutResp {
   text-decoration: none;
   display: block;
   color: #20263b;
@@ -304,24 +389,33 @@ const openNav = ref(false);
   cursor: pointer;
 }
 
-.logout p {
+.logoutResp p {
   color: #20263b;
 }
 
-.logout div {
+.logoutResp div {
   display: flex;
   align-items: center;
   gap: 15px;
   color: #20263b;
 }
 
-.pi-user {
-  font-weight: bold;
-  color: white;
+.profilePicture {
+  background-size: contain;
+  border-radius: 50%;
+  display: block;
+  height: 36px;
+  width: 36px;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
 }
-.pi-sign-out {
-  font-weight: bold;
-  color: white;
+
+.navappRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 @media (max-width: 1280px) {

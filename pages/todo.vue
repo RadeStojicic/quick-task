@@ -97,12 +97,7 @@ const deleteTodo = async (index) => {
 
         <div class="chooseCategory">
           <button @click="visible = true">{{ todoForm.category }}</button>
-          <Dialog
-            v-model:visible="visible"
-            modal
-            header="Categories"
-            :style="{ width: '50vw' }"
-          >
+          <Dialog v-model:visible="visible" modal header="Categories">
             <div class="categoriesContainer">
               <button
                 class="categoryBtn"

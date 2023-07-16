@@ -22,14 +22,13 @@ const {
   data: { user },
 } = await supabaseAuth.auth.getUser();
 
-console.log(user);
 const user_profile = ref(user.user_metadata?.full_name || user.email);
-
+const user_image = ref(user.user_metadata?.avatar_url);
 const numberOfTasks = ref(2);
 </script>
 <template>
   <div>
-    <NavApp :user_name="user_profile" />
+    <NavApp :user_image="user_image" :user_name="user_profile" :todos="todos" />
     <div class="container">
       <div class="sidenavContainer">
         <Sidenav :todos="todos" />
