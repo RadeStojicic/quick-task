@@ -82,7 +82,7 @@ import { Icon } from "@iconify/vue";
   width: 130px;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1250px) {
   .leftSection {
     display: none;
   }

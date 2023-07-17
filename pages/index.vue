@@ -140,11 +140,74 @@ useHead({
 }
 @media screen and (max-width: 1600px) {
   .heroContainer {
-    width: 95%;
-    height: 900px;
+    width: 90%;
+    height: 700px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 0;
+  }
+
+  .leftHero h1 {
+    font-size: 3em;
+    width: 100%;
+    color: #ffffff;
+  }
+
+  .leftHero p {
+    margin-top: 30px;
+    color: #a0a6ba;
+    font-size: 0.95em;
+    width: 100%;
+  }
+
+  .getStarted {
+    background-color: #3850ff;
+    width: 150px;
+    padding: 15px;
+    color: white;
+    border: 2px #3850ff solid;
+    font-weight: 500;
+    font-size: 0.9em;
+    border-radius: 5px;
+    margin-top: 60px;
+    cursor: pointer;
+  }
+
+  .learnMore {
+    background-color: transparent;
+    width: 150px;
+    padding: 15px;
+    color: white;
+    border: 2px white solid;
+    font-weight: 500;
+    font-size: 0.9em;
+    border-radius: 5px;
+    margin-top: 60px;
+    cursor: pointer;
+  }
+  .rightHero img {
+    width: 90%;
+  }
+
+  .rightHero {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+  }
+
+  .heroButtons {
+    display: flex;
+    gap: 20px;
   }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1400px) {
+  .leftHero h1 {
+    font-size: 2.5em;
+  }
+}
+@media screen and (max-width: 1250px) {
   .heroContainer {
     width: 95%;
     display: flex;

@@ -48,7 +48,7 @@
 .logos img {
   width: 120px;
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1250px) {
   .logos {
     display: flex;
     flex-wrap: wrap;

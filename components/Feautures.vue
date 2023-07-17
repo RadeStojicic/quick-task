@@ -246,7 +246,7 @@
     width: 80%;
   }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1250px) {
   .first_content {
     display: flex;
     flex-direction: column;

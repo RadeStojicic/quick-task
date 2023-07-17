@@ -52,7 +52,7 @@ const numberOfTasks = ref(2);
   margin-top: 50px;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1250px) {
   .sidenavContainer {
     display: none;
   }

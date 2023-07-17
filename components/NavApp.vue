@@ -255,7 +255,7 @@ const profileSettings = ref(false);
 .nav-container {
   display: none;
   position: absolute;
-  right: 70px;
+  right: 80px;
   top: 18px;
 }
 
@@ -418,7 +418,7 @@ const profileSettings = ref(false);
   gap: 10px;
 }
 
-@media (max-width: 1280px) {
+@media screen and (max-width: 1250px) {
   .nav-container {
     display: block;
   }
@@ -437,6 +437,13 @@ const profileSettings = ref(false);
     width: 100%;
     left: 0;
     top: 60px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+    position: absolute;
+    right: 60px;
   }
 }
 </style>

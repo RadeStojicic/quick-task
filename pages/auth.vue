@@ -277,7 +277,58 @@ main {
 .google-btn p {
   font-size: 0.95em;
 }
-@media (max-width: 1280px) {
+@media screen and (max-width: 1450px) {
+  .inputs div p {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+  }
+
+  .titleAcc {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: rgb(14, 16, 22);
+  }
+
+  .subtitleAcc {
+    font-size: 0.9em;
+    color: gray;
+    margin: 15px 0px 30px 0px;
+    font-weight: 400;
+  }
+
+  .inputs input {
+    font-size: 0.9em;
+    padding: 12px;
+  }
+
+  .createButton {
+    font-size: 0.9em;
+  }
+
+  .google-btn p {
+    font-size: 0.9em;
+  }
+  .formQuestion {
+    font-size: 0.9em;
+  }
+
+  .inputsButtonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .formContainer {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1250px) {
   .main {
     width: 100%;
     margin: auto;
