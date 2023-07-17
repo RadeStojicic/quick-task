@@ -156,12 +156,6 @@ const profileSettings = ref(false);
             {{ todos?.filter((e) => e.category === "Planned").length || 0 }}
           </p>
         </NuxtLink>
-        <NuxtLink @click="openNav = false" class="respLink" to="/todo/upcoming"
-          ><div><Icon class="iconSidenav" icon="uis:schedule" /> Upcoming</div>
-          <p>
-            {{ todos?.filter((e) => e.category === "Upcoming").length || 0 }}
-          </p>
-        </NuxtLink>
         <NuxtLink @click="openNav = false" class="respLink" to="/todo/completed"
           ><div>
             <Icon class="iconSidenav" icon="mingcute:schedule-line" /> Completed

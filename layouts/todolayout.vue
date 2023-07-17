@@ -24,7 +24,6 @@ const {
 
 const user_profile = ref(user.user_metadata?.full_name || user.email);
 const user_image = ref(user.user_metadata?.avatar_url);
-const numberOfTasks = ref(2);
 </script>
 <template>
   <div>

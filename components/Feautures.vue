@@ -473,5 +473,8 @@
   .feautures_content {
     gap: 300px;
   }
+  .feautures_container {
+    padding-bottom: 450px;
+  }
 }
 </style>

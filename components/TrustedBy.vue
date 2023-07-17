@@ -72,6 +72,7 @@
   .container {
     width: 100%;
     margin: auto;
+    height: auto;
   }
   .trustedContainer {
     width: 90%;

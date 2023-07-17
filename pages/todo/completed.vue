@@ -1,6 +1,8 @@
 <script setup>
 import { useTodoStore } from "/stores/todo";
 import { storeToRefs } from "pinia";
+import { Icon } from "@iconify/vue";
+
 const props = defineProps({
   todos: {
     type: Array,
@@ -22,8 +24,11 @@ const handleCheckboxClick = (todo) => {
 
 <template>
   <div class="completedContainer">
-    <div class="completed_menu">
-      <h1>Completed Tasks</h1>
+    <div class="completed_menu_container">
+      <div class="completed_menu">
+        <Icon class="iconSidenav" icon="mingcute:schedule-line" />
+        <p>Completed Tasks</p>
+      </div>
     </div>
     <div class="completedTasks" v-for="(todo, index) in todos" :key="index">
       <div
@@ -32,16 +37,9 @@ const handleCheckboxClick = (todo) => {
         :class="{ disabled: todo.category === 'Completed' }"
       >
         <div class="completedTaskLeft">
-          <input
-            type="checkbox"
-            class="myCheckbox"
-            :checked="todo.category === 'Completed'"
-            :disabled="todo.category === 'Completed'"
-            @click="handleCheckboxClick(todo)"
-          />
+          <input type="checkbox" class="myCheckbox" />
           <p>{{ todo.todo }}</p>
         </div>
-        <p>{{ todo.created_at.split("T")[0] }}</p>
       </div>
     </div>
   </div>
@@ -54,7 +52,6 @@ const handleCheckboxClick = (todo) => {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 10px;
 }
 .newTask {
   background-color: rgb(255, 255, 255);
@@ -65,6 +62,7 @@ const handleCheckboxClick = (todo) => {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  margin-top: 12px;
 }
 
 .newTask:hover {
@@ -87,30 +85,45 @@ const handleCheckboxClick = (todo) => {
 }
 .completed_menu {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
   margin: 30px auto;
-}
-.pathText {
-  color: rgb(114, 114, 128);
-  font-size: 0.9em;
-  font-weight: 600;
-  text-decoration: underline;
+  gap: 10px;
+  font-weight: 500;
+  color: #2569d1;
+  font-size: 1.1em;
 }
 
-.deleteAll {
-  color: rgb(255, 255, 255);
-  font-size: 0.9em;
-  cursor: pointer;
-  border: none;
-  border-radius: 50px;
-  padding: 8px;
-  background-color: red;
-  width: 100px;
+.completed_menu_container {
+  display: flex;
+  align-items: center;
 }
 
+.deleteAllToday {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  color: #2569d1;
+  font-size: 0.9em;
+}
+
+.iconSidenav {
+  font-size: 21px;
+}
 .disabled {
   opacity: 0.5;
+}
+
+@media screen and (max-width: 1400px) {
+  .newTask {
+    padding: 12px;
+  }
+  .myCheckbox {
+    transform: scale(1.15);
+    cursor: pointer;
+  }
+  .completedTaskLeft p {
+    font-size: 0.9em;
+  }
 }
 </style>

@@ -1,30 +1,36 @@
 <script setup>
 import { useTodoStore } from "/stores/todo";
 import { storeToRefs } from "pinia";
+import { Icon } from "@iconify/vue";
+
 const props = defineProps({
   todos: {
     type: Array,
     required: true,
   },
 });
-const route = useRoute();
-const path = route.path.slice(1);
-const { todos } = storeToRefs(useTodoStore());
 
-const handleCheckboxClick = (todo) => {
-  if (todo.category !== "Completed") {
-    todo.category = "Completed";
-  } else {
-    todo.category = "Today";
+const { todos } = storeToRefs(useTodoStore());
+const client = useSupabaseClient();
+
+const updateTable = async (todo) => {
+  const { data, error } = await client
+    .from("todos")
+    .update({ category: "Completed" })
+    .eq("id", todo.id);
+  if (error) {
+    console.log(error);
   }
 };
 </script>
 
 <template>
   <div class="plannedContainer">
-    <div class="planned_menu">
-      <p>{{ path }}</p>
-      <h1>Planned Tasks</h1>
+    <div class="planned_menu_container">
+      <div class="planned_menu">
+        <Icon class="iconSidenav" icon="material-symbols:date-range" />
+        <p>Planned Tasks</p>
+      </div>
     </div>
     <div class="plannedTasks" v-for="(todo, index) in todos" :key="index">
       <div
@@ -38,7 +44,7 @@ const handleCheckboxClick = (todo) => {
             class="myCheckbox"
             :checked="todo.category === 'Completed'"
             :disabled="todo.category === 'Completed'"
-            @click="handleCheckboxClick(todo)"
+            @click="updateTable(todo)"
           />
           <p>{{ todo.todo }}</p>
         </div>
@@ -88,8 +94,6 @@ const handleCheckboxClick = (todo) => {
 }
 .planned_menu {
   display: flex;
-  flex-direction: column;
-
   align-items: flex-start;
   width: 100%;
   margin: 30px auto;
@@ -108,5 +112,46 @@ const handleCheckboxClick = (todo) => {
 .dueToDate {
   color: rgb(114, 114, 128);
   font-size: 0.9em;
+}
+
+.planned_menu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 30px auto;
+  gap: 10px;
+  font-weight: 500;
+  color: #2569d1;
+  font-size: 1.1em;
+}
+
+.planned_menu_container {
+  display: flex;
+  align-items: center;
+}
+
+.deleteAllPlanned {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  color: #2569d1;
+  font-size: 0.9em;
+}
+
+.iconSidenav {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1400px) {
+  .newTask {
+    padding: 12px;
+  }
+  .myCheckbox {
+    transform: scale(1.15);
+    cursor: pointer;
+  }
+  .plannedTaskLeft p {
+    font-size: 0.9em;
+  }
 }
 </style>

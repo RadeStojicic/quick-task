@@ -49,12 +49,6 @@ const handleLogOut = async () => {
             {{ todos?.filter((e) => e.category === "Planned").length || 0 }}
           </p>
         </NuxtLink>
-        <NuxtLink class="link" to="/todo/upcoming"
-          ><div><Icon class="iconSidenav" icon="uis:schedule" />Upcoming</div>
-          <p>
-            {{ todos?.filter((e) => e.category === "Upcoming").length || 0 }}
-          </p>
-        </NuxtLink>
         <NuxtLink class="link" to="/todo/completed"
           ><div>
             <Icon class="iconSidenav" icon="mingcute:schedule-line" />Completed
@@ -155,5 +149,12 @@ const handleLogOut = async () => {
   justify-content: center;
   width: 28px;
   height: 28px;
+}
+
+@media screen and (max-width: 1400px) {
+  .sideNavLinks a {
+    font-size: 0.8em;
+    padding: 10px 20px 10px 20px;
+  }
 }
 </style>

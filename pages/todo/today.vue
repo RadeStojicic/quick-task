@@ -1,30 +1,35 @@
 <script setup>
 import { useTodoStore } from "/stores/todo";
 import { storeToRefs } from "pinia";
+import { Icon } from "@iconify/vue";
+
 const props = defineProps({
   todos: {
     type: Array,
     required: true,
   },
 });
-const route = useRoute();
-const path = route.path.slice(1);
 const { todos } = storeToRefs(useTodoStore());
+const client = useSupabaseClient();
 
-const handleCheckboxClick = (todo) => {
-  if (todo.category !== "Completed") {
-    todo.category = "Completed";
-  } else {
-    todo.category = "Today";
+const updateTable = async (todo) => {
+  const { data, error } = await client
+    .from("todos")
+    .update({ category: "Completed" })
+    .eq("id", todo.id);
+  if (error) {
+    console.log(error);
   }
 };
 </script>
 
 <template>
   <div class="todayContainer">
-    <div class="today_menu">
-      <p>{{ path }}</p>
-      <h1>Today's Tasks</h1>
+    <div class="today_menu_container">
+      <div class="today_menu">
+        <Icon class="iconSidenav" icon="mdi:table" />
+        <p>Today's Tasks</p>
+      </div>
     </div>
     <div class="todayTasks" v-for="(todo, index) in todos" :key="index">
       <div
@@ -38,7 +43,7 @@ const handleCheckboxClick = (todo) => {
             class="myCheckbox"
             :checked="todo.category === 'Completed'"
             :disabled="todo.category === 'Completed'"
-            @click="handleCheckboxClick(todo)"
+            @click="updateTable(todo)"
           />
           <p>{{ todo.todo }}</p>
         </div>
@@ -87,20 +92,45 @@ const handleCheckboxClick = (todo) => {
 }
 .today_menu {
   display: flex;
-  flex-direction: column;
-
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   margin: 30px auto;
-}
-.pathText {
-  color: rgb(114, 114, 128);
-  font-size: 0.9em;
-  font-weight: 600;
-  text-decoration: underline;
+  gap: 10px;
+  font-weight: 500;
+  color: #2569d1;
+  font-size: 1.1em;
 }
 
+.today_menu_container {
+  display: flex;
+  align-items: center;
+}
+
+.deleteAllToday {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  color: #2569d1;
+  font-size: 0.9em;
+}
+
+.iconSidenav {
+  font-size: 20px;
+}
 .disabled {
   opacity: 0.5;
+}
+
+@media screen and (max-width: 1400px) {
+  .newTask {
+    padding: 12px;
+  }
+  .myCheckbox {
+    transform: scale(1.15);
+    cursor: pointer;
+  }
+  .todayTaskLeft p {
+    font-size: 0.9em;
+  }
 }
 </style>

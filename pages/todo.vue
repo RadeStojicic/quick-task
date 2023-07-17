@@ -32,7 +32,7 @@ const todoForm = reactive({
   key: "",
   todo: "",
   category: "Today",
-  dueToDate: date,
+  dueToDate: date || "",
 });
 const createTodo = async (todo) => {
   todoForm.todo = todo;
@@ -220,6 +220,10 @@ const deleteTodo = async (index) => {
 }
 .calendarCard {
   width: 40%;
+}
+
+.disabled {
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 768px) {

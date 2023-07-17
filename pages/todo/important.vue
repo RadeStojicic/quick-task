@@ -1,27 +1,53 @@
 <script setup>
 import { useTodoStore } from "/stores/todo";
 import { storeToRefs } from "pinia";
+import { Icon } from "@iconify/vue";
+
 const props = defineProps({
   todos: {
     type: Array,
     required: true,
   },
 });
-const route = useRoute();
-const path = route.path.slice(1);
 const { todos } = storeToRefs(useTodoStore());
+const client = useSupabaseClient();
+
+const updateTable = async (todo) => {
+  const { data, error } = await client
+    .from("todos")
+    .update({ category: "Completed" })
+    .eq("id", todo.id);
+  if (error) {
+    console.log(error);
+  }
+};
 </script>
 
 <template>
   <div class="importantContainer">
-    <div class="important_menu">
-      <p class="pathText">{{ path }}</p>
-      <button class="deleteAll">Delete All</button>
+    <div class="important_menu_container">
+      <div class="important_menu">
+        <Icon class="iconSidenav" icon="iconamoon:star-bold" />
+        <p>Important Tasks</p>
+      </div>
     </div>
-    <div v-for="(todo, index) in todos" :key="index">
-      <p class="newTask" v-if="todo.category === 'Important'">
-        {{ todo.todo }}
-      </p>
+    <div class="importantTasks" v-for="(todo, index) in todos" :key="index">
+      <div
+        class="newTask"
+        v-if="todo.category === 'Important'"
+        :class="{ disabled: todo.category === 'Completed' }"
+      >
+        <div class="importantTaskLeft">
+          <input
+            type="checkbox"
+            class="myCheckbox"
+            :checked="todo.category === 'Completed'"
+            :disabled="todo.category === 'Completed'"
+            @click="updateTable(todo)"
+          />
+          <p>{{ todo.todo }}</p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -50,28 +76,53 @@ const { todos } = storeToRefs(useTodoStore());
   cursor: pointer;
   background-color: rgb(253, 253, 253);
 }
+.importantTasks {
+  display: flex;
+  align-items: center;
+}
+
+.importantTaskLeft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.myCheckbox {
+  transform: scale(1.3);
+  cursor: pointer;
+}
 .important_menu {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 100%;
   margin: 30px auto;
-}
-.pathText {
-  color: rgb(114, 114, 128);
-  font-size: 0.9em;
-  font-weight: 600;
-  text-decoration: underline;
+  gap: 10px;
+  font-weight: 500;
+  color: #2569d1;
+  font-size: 1.1em;
 }
 
-.deleteAll {
-  color: rgb(255, 255, 255);
-  font-size: 0.9em;
-  cursor: pointer;
-  border: none;
-  border-radius: 50px;
-  padding: 8px;
-  background-color: red;
-  width: 100px;
+.important_menu_container {
+  display: flex;
+  align-items: center;
+}
+
+.iconSidenav {
+  font-size: 20px;
+}
+.disabled {
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 1400px) {
+  .newTask {
+    padding: 12px;
+  }
+  .myCheckbox {
+    transform: scale(1.15);
+    cursor: pointer;
+  }
+  .importantTaskLeft p {
+    font-size: 0.9em;
+  }
 }
 </style>

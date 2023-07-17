@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useConfirm } from "primevue/useconfirm";
+import { storeToRefs } from "pinia";
+import { useTodoStore } from "/stores/todo";
 
 const props = defineProps({
   todo: {
@@ -26,6 +28,20 @@ const checkForError = () => {
     return false;
   }
 };
+
+// update category
+const { todos } = storeToRefs(useTodoStore());
+const client = useSupabaseClient();
+
+const updateTable = async (todo) => {
+  const { data, error } = await client
+    .from("todos")
+    .update({ category: "Completed" })
+    .eq("id", todo.id);
+  if (error) {
+    console.log(error);
+  }
+};
 </script>
 
 <template>
@@ -33,18 +49,18 @@ const checkForError = () => {
     <div>
       <div class="tasksContainer">
         <div class="newTask">
-          <div class="taskLeft">
+          <div :class="todo.category === 'Completed' ? 'disabled' : 'taskLeft'">
             <input
               type="checkbox"
               class="myCheckbox"
-              :value="todo.isCompleted"
-              @input="$emit('complete-state', index)"
-              :disabled="todo.category == 'Completed'"
+              :checked="todo.category === 'Completed'"
+              :disabled="todo.category === 'Completed'"
+              @click="updateTable(todo)"
             />
 
             <p :class="{ checked: todo.isCompleted }">{{ todo.todo }}</p>
           </div>
-          <div class="taskRight">
+          <div v-if="todo.category !== 'Completed'" class="taskRight">
             <div class="settings">
               <section @click="visible = true">
                 <div class="settingsContainer">
@@ -122,6 +138,7 @@ const checkForError = () => {
               </div>
             </Dialog>
           </div>
+          <div class="completedContainer" v-else><p>Completed</p></div>
         </div>
       </div>
     </div>
@@ -246,9 +263,33 @@ const checkForError = () => {
   outline: none;
   font-size: 0.95em;
 }
+.completedContainer p {
+  font-size: 1em;
+  opacity: 0.5;
+}
 
-.infoDialog p {
-  padding: 12px;
-  border-bottom: 1px rgba(128, 128, 128, 0.217) solid;
+.disabled {
+  opacity: 0.5;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  user-select: none;
+}
+
+@media screen and (max-width: 1400px) {
+  .newTask {
+    padding: 12px;
+  }
+  .myCheckbox {
+    transform: scale(1.15);
+    cursor: pointer;
+  }
+  .taskLeft {
+    font-size: 0.9em;
+  }
+  .completedContainer p {
+    font-size: 0.85em;
+    color: rgb(88, 85, 85);
+  }
 }
 </style>
