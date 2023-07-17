@@ -20,10 +20,6 @@ const createTask = () => {
   taskState.invalid = true;
   taskState.errorMessage = "Todo value cannot be empty.";
 };
-
-const date = ref("Due to");
-
-const minDate = ref(new Date());
 </script>
 <template>
   <div class="container">
@@ -42,24 +38,11 @@ const minDate = ref(new Date());
           <Icon class="addIcon" icon="ph:plus-bold" />
         </button>
       </div>
-      <!-- <div class="card flex justify-content-center">
-        <Calendar
-          :minDate="minDate"
-          class="calendarContainer"
-          :dueToDate="date"
-          v-model="date"
-          showIcon
-        />
-      </div> -->
     </div>
   </div>
 </template>
 
 <style scoped>
-.date {
-  color: white;
-}
-
 .container {
   width: 100%;
   display: flex;
@@ -79,10 +62,6 @@ const minDate = ref(new Date());
   width: 100%;
   display: flex;
   gap: 10px;
-}
-
-.calendarContainer {
-  width: 100%;
 }
 
 .dueTo {
@@ -113,7 +92,7 @@ const minDate = ref(new Date());
   color: rgb(67, 67, 67);
 }
 .showError {
-  box-shadow: 0px 1px 0px 0px #ff0066;
+  box-shadow: 0px 1px 0px 0px #ff0022;
   transition: 0.3s;
 }
 </style>

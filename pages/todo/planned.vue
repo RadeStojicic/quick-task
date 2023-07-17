@@ -21,18 +21,18 @@ const handleCheckboxClick = (todo) => {
 </script>
 
 <template>
-  <div class="todayContainer">
-    <div class="today_menu">
+  <div class="plannedContainer">
+    <div class="planned_menu">
       <p>{{ path }}</p>
-      <h1>Today's Tasks</h1>
+      <h1>Planned Tasks</h1>
     </div>
-    <div class="todayTasks" v-for="(todo, index) in todos" :key="index">
+    <div class="plannedTasks" v-for="(todo, index) in todos" :key="index">
       <div
         class="newTask"
-        v-if="todo.category === 'Today'"
+        v-if="todo.category === 'Planned'"
         :class="{ disabled: todo.category === 'Completed' }"
       >
-        <div class="todayTaskLeft">
+        <div class="plannedTaskLeft">
           <input
             type="checkbox"
             class="myCheckbox"
@@ -42,13 +42,14 @@ const handleCheckboxClick = (todo) => {
           />
           <p>{{ todo.todo }}</p>
         </div>
+        <p class="dueToDate">{{ todo.dueToDate.split("T")[0] }}</p>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.todayContainer {
+.plannedContainer {
   width: 95%;
   margin: 12px auto;
   display: flex;
@@ -71,12 +72,12 @@ const handleCheckboxClick = (todo) => {
   cursor: pointer;
   background-color: rgb(253, 253, 253);
 }
-.todayTasks {
+.plannedTasks {
   display: flex;
   align-items: center;
 }
 
-.todayTaskLeft {
+.plannedTaskLeft {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -85,7 +86,7 @@ const handleCheckboxClick = (todo) => {
   transform: scale(1.3);
   cursor: pointer;
 }
-.today_menu {
+.planned_menu {
   display: flex;
   flex-direction: column;
 
@@ -102,5 +103,10 @@ const handleCheckboxClick = (todo) => {
 
 .disabled {
   opacity: 0.5;
+}
+
+.dueToDate {
+  color: rgb(114, 114, 128);
+  font-size: 0.9em;
 }
 </style>

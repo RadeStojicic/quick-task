@@ -138,7 +138,7 @@ const profileSettings = ref(false);
           <p>{{ todos?.filter((e) => e.category === "Today").length || 0 }}</p>
         </NuxtLink>
 
-        <NuxtLink @click="openNav = false" class="respLink" to="/"
+        <NuxtLink @click="openNav = false" class="respLink" to="/todo/important"
           ><div>
             <Icon class="iconSidenav" icon="iconamoon:star-bold" /> Important
           </div>
@@ -147,7 +147,7 @@ const profileSettings = ref(false);
           </p>
         </NuxtLink>
 
-        <NuxtLink @click="openNav = false" class="respLink" to="/"
+        <NuxtLink @click="openNav = false" class="respLink" to="/todo/planned"
           ><div>
             <Icon class="iconSidenav" icon="material-symbols:date-range" />
             Planned
@@ -156,7 +156,7 @@ const profileSettings = ref(false);
             {{ todos?.filter((e) => e.category === "Planned").length || 0 }}
           </p>
         </NuxtLink>
-        <NuxtLink @click="openNav = false" class="respLink" to="/"
+        <NuxtLink @click="openNav = false" class="respLink" to="/todo/upcoming"
           ><div><Icon class="iconSidenav" icon="uis:schedule" /> Upcoming</div>
           <p>
             {{ todos?.filter((e) => e.category === "Upcoming").length || 0 }}
@@ -170,7 +170,7 @@ const profileSettings = ref(false);
             {{ todos?.filter((e) => e.category === "Completed").length || 0 }}
           </p>
         </NuxtLink>
-        <NuxtLink @click="openNav = false" class="respLink" to="/"
+        <NuxtLink @click="openNav = false" class="respLink" to="/deleted"
           ><div><Icon class="iconSidenav" icon="bi:trash-fill" /> Deleted</div>
           <p>
             {{ todos?.filter((e) => e.category === "Deleted").length || 0 }}

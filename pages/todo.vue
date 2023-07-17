@@ -20,14 +20,19 @@ definePageMeta({
   middleware: "auth",
 });
 
-const current = new Date();
+// date
+
+const minDate = ref(new Date());
+minDate.value.setDate(minDate.value.getDate() + 1);
+
+const date = ref(minDate.value);
+
 // create todo
 const todoForm = reactive({
   key: "",
   todo: "",
-  category: "Category",
-  customSettings: false,
-  // isCompleted: false,
+  category: "Today",
+  dueToDate: date,
 });
 const createTodo = async (todo) => {
   todoForm.todo = todo;
@@ -36,11 +41,8 @@ const createTodo = async (todo) => {
     key: todoForm.key,
     todo: todoForm.todo,
     category: todoForm.category,
-    customSettings: todoForm.customSettings,
+    dueToDate: todoForm.dueToDate,
     user_id: user.value?.id,
-    // isCompleted: todoForm.isCompleted,
-    // isEditing: todoForm.isEditing,
-    // dueToDate: todoForm.dueToDate,
   };
 
   try {
@@ -95,30 +97,42 @@ const deleteTodo = async (index) => {
       <div class="todo_menu">
         <TodoApp @create-todo="createTodo" />
 
-        <div class="chooseCategory">
-          <button @click="visible = true">{{ todoForm.category }}</button>
-          <Dialog v-model:visible="visible" modal header="Categories">
-            <div class="categoriesContainer">
-              <button
-                class="categoryBtn"
-                @click="(visible = false), (todoForm.category = 'Today')"
-              >
-                Today
-              </button>
-              <button
-                class="categoryBtn"
-                @click="(visible = false), (todoForm.category = 'Important')"
-              >
-                Important
-              </button>
-              <button
-                class="categoryBtn"
-                @click="(visible = false), (todoForm.category = 'Completed')"
-              >
-                Completed
-              </button>
-            </div>
-          </Dialog>
+        <div class="todosMenu">
+          <div class="chooseCategory">
+            <button @click="visible = true">{{ todoForm.category }}</button>
+            <Dialog v-model:visible="visible" modal header="Categories">
+              <div class="categoriesContainer">
+                <button
+                  class="categoryBtn"
+                  @click="(visible = false), (todoForm.category = 'Today')"
+                >
+                  Today
+                </button>
+                <button
+                  class="categoryBtn"
+                  @click="(visible = false), (todoForm.category = 'Important')"
+                >
+                  Important
+                </button>
+                <button
+                  class="categoryBtn"
+                  @click="(visible = false), (todoForm.category = 'Planned')"
+                >
+                  Planned
+                </button>
+              </div>
+            </Dialog>
+          </div>
+          <div v-if="todoForm.category == 'Planned'" class="calendarContainer">
+            <Calendar
+              :minDate="minDate"
+              class="calendarCard"
+              :dueToDate="date"
+              v-model="date"
+              dateFormat="dd/mm/yy"
+              showIcon
+            />
+          </div>
         </div>
       </div>
 
@@ -154,8 +168,6 @@ const deleteTodo = async (index) => {
   border-radius: 10px;
   border: none;
   cursor: pointer;
-  width: 95%;
-  margin: auto;
 }
 
 .chooseCategory button {
@@ -166,6 +178,7 @@ const deleteTodo = async (index) => {
   background-color: rgb(227, 240, 255);
   font-weight: 400;
   margin-bottom: 30px;
+  height: 43px;
 }
 
 .todo_menu {
@@ -189,8 +202,29 @@ const deleteTodo = async (index) => {
   background-color: rgb(235, 235, 238);
 }
 
-.drag-item {
-  background: blue;
-  margin: 10px 0;
+.todosMenu {
+  display: flex;
+  align-items: flex-start;
+
+  width: 95%;
+  margin: auto;
+  gap: 20px;
+}
+
+.date {
+  color: white;
+}
+
+.calendarContainer {
+  width: 100%;
+}
+.calendarCard {
+  width: 40%;
+}
+
+@media screen and (max-width: 768px) {
+  .calendarCard {
+    width: 100%;
+  }
 }
 </style>
