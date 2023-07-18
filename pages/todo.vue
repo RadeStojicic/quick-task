@@ -51,7 +51,7 @@ const createTodo = async (todo) => {
       console.log(error.message);
       return;
     }
-    items.value = [...items.value, newTodo];
+    items.value.push(newTodo);
   } catch (err) {
     console.log(err);
   }

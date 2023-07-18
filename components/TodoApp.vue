@@ -2,7 +2,7 @@
 import { reactive, ref } from "vue";
 import { Icon } from "@iconify/vue";
 
-const emit = defineEmits(["create-todo", "updated-data"]);
+const emit = defineEmits(["create-todo"]);
 const taskState = reactive({
   todo: "",
   invalid: null,
@@ -13,7 +13,6 @@ const createTask = () => {
   taskState.invalid = null;
   if (taskState.todo !== "") {
     emit("create-todo", taskState.todo);
-    emit("updated-data", 1);
     taskState.todo = "";
     return;
   }

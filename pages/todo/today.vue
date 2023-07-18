@@ -46,7 +46,7 @@ const updateTable = async (todo) => {
               class="myCheckbox"
               :checked="todo.category === 'Completed'"
               :disabled="todo.category === 'Completed'"
-              @click="updateTable(todo)"
+              @click="() => updateTable(todo)"
             />
             <p>{{ todo.todo }}</p>
           </div>
