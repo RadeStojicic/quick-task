@@ -12,7 +12,7 @@ export default defineNuxtConfig({
 	},
     loading: false,
       image: {
-        provider: "ipx"
+        provider: 'netlify'
     }
    
 })

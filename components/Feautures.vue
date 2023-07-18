@@ -26,13 +26,13 @@
             <nuxt-img
               format="webp"
               class="pattern_1"
-              src="../assets/images/pattern_content_1.png"
+              src="/images/pattern_content_1.png"
               alt=""
             />
             <nuxt-img
               format="webp"
               class="image_1"
-              src="../assets/images/image_content_1.png"
+              src="/images/image_content_1.png"
               alt=""
             />
           </div>
@@ -47,13 +47,13 @@
             <nuxt-img
               format="webp"
               class="pattern_2"
-              src="../assets/images/pattern_content_2.png"
+              src="/images/pattern_content_2.png"
               alt=""
             />
             <nuxt-img
               format="webp"
               class="image_2"
-              src="../assets/images/image_content_2.png"
+              src="/images/image_content_2.png"
               alt=""
             />
           </div>
