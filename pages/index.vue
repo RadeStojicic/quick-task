@@ -57,7 +57,7 @@ useHead({
           <nuxt-img
             quality="100"
             format="webp"
-            sizes="xs:200px md:500px lg:50px"
+            sizes="xs:200px md:500px lg:550px"
             src="/images/qt_illustration.png"
           />
         </div>
@@ -198,6 +198,9 @@ useHead({
     display: flex;
     justify-content: flex-end;
     align-items: center;
+  }
+  .rightHero img {
+    width: 100%;
   }
 
   .heroButtons {
