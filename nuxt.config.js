@@ -11,5 +11,8 @@ export default defineNuxtConfig({
 		transpile: ["primevue"]
 	},
     loading: false,
+      image: {
+        provider: "ipx"
+    }
    
 })
