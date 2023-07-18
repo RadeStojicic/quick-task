@@ -2,6 +2,7 @@
 import { useTodoStore } from "/stores/todo";
 import { storeToRefs } from "pinia";
 import { Icon } from "@iconify/vue";
+import { useConfirm } from "primevue/useconfirm";
 
 const props = defineProps({
   todos: {
@@ -12,15 +13,62 @@ const props = defineProps({
 const route = useRoute();
 const path = route.path.slice(1);
 const { todos } = storeToRefs(useTodoStore());
+
+const deleteVisible = ref(false);
+const client = useSupabaseClient();
+const confirm = useConfirm();
+
+const deleteAllCompleted = async () => {
+  confirm.require({
+    message: "Do you want to delete all?",
+    header: "Delete Confirmation",
+    acceptClass: "p-button-danger",
+    accept: async () => {
+      try {
+        const { data, error } = await client
+          .from("todos")
+          .delete()
+          .match({ category: "Completed" });
+
+        if (error) {
+          console.log(error);
+          return;
+        }
+        todos.value = todos.value.filter(
+          (todo) => todo.category !== "Completed"
+        );
+        deleteVisible.value = false;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    reject: () => {
+      console.log("Rejected.");
+      deleteVisible.value = false;
+    },
+  });
+};
 </script>
 
 <template>
   <div class="completedContainer">
     <div class="completed_menu_container">
       <div class="completed_menu">
-        <Icon class="iconSidenav" icon="mingcute:schedule-line" />
-        <p>Completed Tasks</p>
+        <div class="completed_left">
+          <Icon class="iconSidenav" icon="mingcute:schedule-line" />
+          <p>Completed Tasks</p>
+        </div>
+        <section @click="deleteVisible = true">
+          <div
+            @click="deleteAllCompleted"
+            class="settingsContainer"
+            label="Delete"
+          >
+            <p>Delete All</p>
+          </div>
+        </section>
       </div>
+      <ConfirmDialog v-model:visible="deleteVisible"></ConfirmDialog>
     </div>
     <div class="completedTasks" v-for="(todo, index) in todos" :key="index">
       <div
@@ -32,6 +80,7 @@ const { todos } = storeToRefs(useTodoStore());
           <input type="checkbox" checked class="myCheckbox" disabled />
           <p>{{ todo.todo }}</p>
         </div>
+        <div class="completedTaskRight"><p>Completed</p></div>
       </div>
     </div>
   </div>
@@ -70,6 +119,12 @@ const { todos } = storeToRefs(useTodoStore());
   display: flex;
   align-items: center;
   gap: 15px;
+  text-decoration: line-through;
+}
+
+.completedTaskRight p {
+  text-decoration: none;
+  font-size: 0.85em;
 }
 .myCheckbox {
   transform: scale(1.3);
@@ -78,12 +133,18 @@ const { todos } = storeToRefs(useTodoStore());
 .completed_menu {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   margin: 30px auto;
+  color: #2569d1;
+}
+
+.completed_left {
+  font-size: 1.1em;
+  display: flex;
+  align-items: center;
   gap: 10px;
   font-weight: 500;
-  color: #2569d1;
-  font-size: 1.1em;
 }
 
 .completed_menu_container {
@@ -91,12 +152,9 @@ const { todos } = storeToRefs(useTodoStore());
   align-items: center;
 }
 
-.deleteAllToday {
-  display: flex;
-  width: 100%;
-  justify-content: flex-end;
+.settingsContainer p {
+  font-size: 0.85em;
   color: #2569d1;
-  font-size: 0.9em;
 }
 
 .iconSidenav {
@@ -104,7 +162,22 @@ const { todos } = storeToRefs(useTodoStore());
 }
 .disabled {
   opacity: 0.5;
-  text-decoration: line-through;
+}
+
+.completed_left {
+  display: flex;
+  align-items: center;
+}
+
+.settingsContainer {
+  padding: 10px 20px 10px 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: rgb(45, 45, 53);
+  font-weight: 400;
+  background-color: transparent;
+  height: 43px;
 }
 
 @media screen and (max-width: 1400px) {

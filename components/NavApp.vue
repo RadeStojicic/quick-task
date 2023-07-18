@@ -164,12 +164,6 @@ const profileSettings = ref(false);
             {{ todos?.filter((e) => e.category === "Completed").length || 0 }}
           </p>
         </NuxtLink>
-        <NuxtLink @click="openNav = false" class="respLink" to="/deleted"
-          ><div><Icon class="iconSidenav" icon="bi:trash-fill" /> Deleted</div>
-          <p>
-            {{ todos?.filter((e) => e.category === "Deleted").length || 0 }}
-          </p>
-        </NuxtLink>
       </ul>
     </div>
   </div>

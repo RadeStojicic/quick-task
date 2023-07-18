@@ -15,22 +15,12 @@ const props = defineProps({
   },
 });
 
+const { todos } = storeToRefs(useTodoStore());
+
 const visible = ref(false);
 const deleteVisible = ref(false);
 
-// edit
-const editValue = ref("");
-
-const checkForError = () => {
-  if (editValue.value != "") {
-    return true;
-  } else {
-    return false;
-  }
-};
-
 // update category
-const { todos } = storeToRefs(useTodoStore());
 const client = useSupabaseClient();
 
 const updateTable = async (todo) => {
@@ -45,12 +35,30 @@ const updateTable = async (todo) => {
     todo.category = "Completed";
   }
 };
+
+// edit category
+// edit
+const editValue = ref("");
+
+const editTable = async (todo) => {
+  const { data, error } = await client
+    .from("todos")
+    .update({ todo: editValue.value })
+    .eq("id", todo.id);
+
+  if (error) {
+    console.log(error);
+  } else {
+    todo.todo = editValue;
+    visible.value = false;
+  }
+};
 </script>
 
 <template>
   <div>
     <div>
-      <div class="tasksContainer">
+      <div v-if="todo.category !== 'Completed'" class="tasksContainer">
         <div class="newTask">
           <div :class="todo.category === 'Completed' ? 'disabled' : 'taskLeft'">
             <input
@@ -63,7 +71,7 @@ const updateTable = async (todo) => {
 
             <p :class="{ checked: todo.isCompleted }">{{ todo.todo }}</p>
           </div>
-          <div v-if="todo.category !== 'Completed'" class="taskRight">
+          <div class="taskRight">
             <div class="settings">
               <section @click="visible = true">
                 <div class="settingsContainer">
@@ -119,29 +127,15 @@ const updateTable = async (todo) => {
               <div class="dialogContent">
                 <input
                   v-model="editValue"
-                  @keyup.enter="
-                    checkForError()
-                      ? (todo.todo = editValue) && (visible = false)
-                      : (visible = false)
-                  "
+                  @keyup.enter="editTable(todo)"
                   class="editInput"
                   type="text"
                   placeholder="Type something..."
                 />
-                <button
-                  @click="
-                    checkForError()
-                      ? (todo.todo = editValue) && (visible = false)
-                      : (visible = false)
-                  "
-                  type="submit"
-                >
-                  Confirm
-                </button>
+                <button @click="editTable(todo)" type="submit">Confirm</button>
               </div>
             </Dialog>
           </div>
-          <div class="completedContainer" v-else><p>Completed</p></div>
         </div>
       </div>
     </div>

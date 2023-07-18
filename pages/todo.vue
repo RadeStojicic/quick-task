@@ -117,7 +117,7 @@ const deleteTodo = async (index) => {
                   class="categoryBtn"
                   @click="(visible = false), (todoForm.category = 'Planned')"
                 >
-                  Planned
+                  Schedule a task
                 </button>
               </div>
             </Dialog>

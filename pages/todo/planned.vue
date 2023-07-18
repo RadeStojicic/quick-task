@@ -10,9 +10,10 @@ const props = defineProps({
   },
 });
 
-const { todos } = storeToRefs(useTodoStore());
 const client = useSupabaseClient();
+const user = useSupabaseUser();
 
+const { todos } = storeToRefs(useTodoStore());
 const updateTable = async (todo) => {
   const { data, error } = await client
     .from("todos")
@@ -22,14 +23,6 @@ const updateTable = async (todo) => {
     console.log(error);
   } else {
     todo.category = "Completed";
-  }
-};
-
-const showDueToDate = (todo) => {
-  if (todo.dueToDate) {
-    return String(todo.dueToDate).split("T")[0];
-  } else {
-    return "";
   }
 };
 </script>
@@ -59,7 +52,7 @@ const showDueToDate = (todo) => {
           <p>{{ todo.todo }}</p>
         </div>
         <p class="dueToDate">
-          {{ showDueToDate(todo) }}
+          {{ todo.created_at }}
         </p>
       </div>
     </div>

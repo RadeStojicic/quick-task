@@ -57,12 +57,6 @@ const handleLogOut = async () => {
             {{ todos?.filter((e) => e.category === "Completed").length || 0 }}
           </p>
         </NuxtLink>
-        <NuxtLink class="link" to="/todo/deleted"
-          ><div><Icon class="iconSidenav" icon="bi:trash-fill" />Deleted</div>
-          <p>
-            {{ todos?.filter((e) => e.category === "Deleted").length || 0 }}
-          </p>
-        </NuxtLink>
       </div>
     </div>
   </div>
