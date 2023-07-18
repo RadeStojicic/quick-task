@@ -17,6 +17,7 @@
     "supabase": "^1.61.2"
   },
   "dependencies": {
+    "@nuxt/image": "^1.0.0-rc.1",
     "@pinia/nuxt": "^0.4.11",
     "aos": "^2.3.4",
     "node-sass": "^8.0.0",

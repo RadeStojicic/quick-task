@@ -68,6 +68,7 @@ const accountRegister = async () => {
       console.log(error);
       return;
     }
+    errors.value = "Check your email for verification.";
     console.log(data);
   } catch (err) {
     errors.value = "Something went wrong.";
@@ -211,7 +212,7 @@ main {
   color: rgb(231, 35, 35);
   text-align: center;
   position: relative;
-  top: -30px;
+  top: -10px;
 }
 
 .separator {

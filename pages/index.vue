@@ -14,7 +14,12 @@ useHead({
 <template>
   <div class="container">
     <div id="home" class="headerAndHero">
-      <img class="shade" src="../assets/images/shade.svg" alt="" />
+      <nuxt-img
+        sizes="xs:200px md:500px lg:1200px"
+        class="shade"
+        src="/images/shade.svg"
+        alt=""
+      />
       <HeaderVue />
       <div class="heroContainer">
         <div
@@ -49,7 +54,12 @@ useHead({
           data-aos-easing="ease-in-out-cubic"
           class="rightHero"
         >
-          <img src="../assets/images/qt_illustration.png" alt="illustration" />
+          <nuxt-img
+            quality="100"
+            format="webp"
+            sizes="xs:200px md:500px lg:550px"
+            src="/images/qt_illustration.png"
+          />
         </div>
       </div>
     </div>
@@ -87,9 +97,9 @@ useHead({
 
 .shade {
   position: absolute;
-  width: 1200px;
   z-index: 0;
   filter: opacity(0.2);
+  width: 1200px;
 }
 
 .leftHero h1 {
@@ -129,9 +139,6 @@ useHead({
   border-radius: 5px;
   margin-top: 60px;
   cursor: pointer;
-}
-.rightHero img {
-  width: 100%;
 }
 
 .heroButtons {
@@ -185,9 +192,6 @@ useHead({
     border-radius: 5px;
     margin-top: 60px;
     cursor: pointer;
-  }
-  .rightHero img {
-    width: 90%;
   }
 
   .rightHero {

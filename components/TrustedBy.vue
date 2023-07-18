@@ -6,12 +6,42 @@
     <div class="trustedContainer">
       <p class="trustedByText">Trusted By</p>
       <div class="logos">
-        <img src="../assets/images/trustedByLogos/1.svg" alt="" />
-        <img src="../assets/images/trustedByLogos/2.svg" alt="" />
-        <img src="../assets/images/trustedByLogos/3.svg" alt="" />
-        <img src="../assets/images/trustedByLogos/4.svg" alt="" />
-        <img src="../assets/images/trustedByLogos/5.svg" alt="" />
-        <img src="../assets/images/trustedByLogos/6.svg" alt="" />
+        <nuxt-img
+          quality="80"
+          format="webp"
+          src="/images/trustedByLogos/1.svg"
+          alt=""
+        />
+        <nuxt-img
+          quality="80"
+          format="webp"
+          src="/images/trustedByLogos/2.svg"
+          alt=""
+        />
+        <nuxt-img
+          quality="80"
+          format="webp"
+          src="/images/trustedByLogos/3.svg"
+          alt=""
+        />
+        <nuxt-img
+          quality="80"
+          format="webp"
+          src="/images/trustedByLogos/4.svg"
+          alt=""
+        />
+        <nuxt-img
+          quality="80"
+          format="webp"
+          src="/images/trustedByLogos/5.svg"
+          alt=""
+        />
+        <nuxt-img
+          quality="80"
+          format="webp"
+          src="/images/trustedByLogos/6.svg"
+          alt=""
+        />
       </div>
     </div>
   </div>
@@ -45,9 +75,11 @@
   gap: 60px;
   margin-top: 50px;
 }
+
 .logos img {
   width: 120px;
 }
+
 @media screen and (max-width: 1250px) {
   .logos {
     display: flex;

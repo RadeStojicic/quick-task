@@ -49,7 +49,7 @@ import { Icon } from "@iconify/vue";
 
 .leftSection {
   background-image: linear-gradient(to left, #3a4ddeb2, #3a4ddeb2),
-    url("./assets/images/robot.jpg");
+    url("./images/robot.jpg");
   background-size: cover;
   background-position: left;
   background-repeat: no-repeat;

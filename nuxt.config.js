@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
-    modules: ['@nuxtjs/supabase', '@pinia/nuxt'],
+    modules: ['@nuxtjs/supabase', '@pinia/nuxt', '@nuxt/image'],
     css: [
         "@/assets/css/main.css",  
         "primevue/resources/themes/mira/theme.css",
@@ -11,4 +11,5 @@ export default defineNuxtConfig({
 		transpile: ["primevue"]
 	},
     loading: false,
+   
 })
