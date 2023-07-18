@@ -141,7 +141,7 @@ import AccordionTab from "primevue/accordiontab";
 .contactContainer {
   width: 100%;
   background: linear-gradient(to bottom, rgba(20, 23, 57, 0.973), #12152cf8),
-    url("../assets/images/background_questions.jpg");
+    url("/images/background_questions.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;

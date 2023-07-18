@@ -8,7 +8,7 @@ import { Icon } from "@iconify/vue";
       <div class="subNav">
         <div class="logoContainer">
           <NuxtLink class="logo" to="/"
-            ><img src="../assets/images/logo.png" alt="logo"
+            ><nuxt-img format="webp" src="/images/logo.png" alt="logo"
           /></NuxtLink>
         </div>
         <NuxtLink to="/">
@@ -18,6 +18,7 @@ import { Icon } from "@iconify/vue";
         </NuxtLink>
       </div>
     </div>
+
     <div class="leftSection"></div>
 
     <slot />

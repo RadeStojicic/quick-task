@@ -63,7 +63,7 @@ const profileSettings = ref(false);
     <nav>
       <div class="navLeft">
         <NuxtLink class="logo" to="/"
-          ><img src="../assets/images/logo.png" alt="logo"
+          ><nuxt-img format="webp" src="/images/logo.png" alt="logo"
         /></NuxtLink>
       </div>
       <div class="navRight">
@@ -87,8 +87,9 @@ const profileSettings = ref(false);
             >.
           </p>
           <div class="card flex justify-content-center">
-            <img
+            <nuxt-img
               v-if="user_image"
+              format="webp"
               class="profilePicture"
               :src="user_image"
               label="Toggle"
@@ -97,9 +98,10 @@ const profileSettings = ref(false);
               aria-controls="overlay_menu"
               alt="profilePicture"
             />
-            <img
+            <nuxt-img
               v-else
-              src="https://www.citypng.com/public/uploads/preview/png-profile-user-round-gray-icon-symbol-11639594342slkdqxcgi6.png"
+              format="webp"
+              src="/images/unsigned_user.png"
               alt="profilePictureDefault"
               class="profilePicture"
               label="Toggle"

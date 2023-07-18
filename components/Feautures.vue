@@ -23,12 +23,14 @@
             </p>
           </div>
           <div class="first_right">
-            <img
+            <nuxt-img
+              format="webp"
               class="pattern_1"
               src="../assets/images/pattern_content_1.png"
               alt=""
             />
-            <img
+            <nuxt-img
+              format="webp"
               class="image_1"
               src="../assets/images/image_content_1.png"
               alt=""
@@ -42,12 +44,14 @@
           class="second_content"
         >
           <div class="second_left">
-            <img
+            <nuxt-img
+              format="webp"
               class="pattern_2"
               src="../assets/images/pattern_content_2.png"
               alt=""
             />
-            <img
+            <nuxt-img
+              format="webp"
               class="image_2"
               src="../assets/images/image_content_2.png"
               alt=""

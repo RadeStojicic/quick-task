@@ -17,7 +17,7 @@ const openNav = ref(false);
       <div class="linksContainer">
         <div class="navLeft">
           <a class="logo" href="#"
-            ><img src="../assets/images/logo.png" alt=""
+            ><nuxt-img format="webp" src="/images/logo.png" alt=""
           /></a>
         </div>
 

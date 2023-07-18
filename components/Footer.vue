@@ -9,7 +9,7 @@ import { Icon } from "@iconify/vue";
       <div class="first_column">
         <div class="first_left">
           <NuxtLink to="/"
-            ><img src="../assets/images/logo.png" alt="logo"
+            ><nuxt-img format="webp" src="/images/logo.png" alt="logo"
           /></NuxtLink>
           <div class="footer_links">
             <NuxtLink to="/">Home</NuxtLink>
