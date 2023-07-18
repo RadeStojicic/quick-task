@@ -1,5 +1,9 @@
 <script setup>
 import { Icon } from "@iconify/vue";
+
+function reloadPage() {
+  window.location.reload();
+}
 </script>
 
 
@@ -37,8 +41,10 @@ import { Icon } from "@iconify/vue";
         <div class="first_right">
           <p>Join our newsletter</p>
           <div>
-            <input type="text" placeholder="Enter your email" />
-            <button>Subscribe</button>
+            <input type="mail" placeholder="Enter your email" />
+            <button class="subscribeBtn" @click="reloadPage()">
+              Subscribe
+            </button>
           </div>
         </div>
       </div>
@@ -187,6 +193,12 @@ import { Icon } from "@iconify/vue";
   color: #d8d8d8;
 }
 
+.subscribeBtn {
+  cursor: pointer;
+}
+.subscribeBtn:hover {
+  background-color: #283ee7;
+}
 @media screen and (max-width: 1600px) {
   .container {
     padding-bottom: 0px;

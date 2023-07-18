@@ -87,7 +87,7 @@ const profileSettings = ref(false);
             >.
           </p>
           <div class="card flex justify-content-center">
-            <nuxt-img
+            <img
               v-if="user_image"
               format="webp"
               class="profilePicture"
