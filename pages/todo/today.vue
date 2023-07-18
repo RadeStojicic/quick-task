@@ -19,33 +19,37 @@ const updateTable = async (todo) => {
     .eq("id", todo.id);
   if (error) {
     console.log(error);
+  } else {
+    todo.category = "Completed";
   }
 };
 </script>
 
 <template>
-  <div class="todayContainer">
-    <div class="today_menu_container">
-      <div class="today_menu">
-        <Icon class="iconSidenav" icon="mdi:table" />
-        <p>Today's Tasks</p>
+  <div>
+    <div class="todayContainer">
+      <div class="today_menu_container">
+        <div class="today_menu">
+          <Icon class="iconSidenav" icon="mdi:table" />
+          <p>Today's Tasks</p>
+        </div>
       </div>
-    </div>
-    <div class="todayTasks" v-for="(todo, index) in todos" :key="index">
-      <div
-        class="newTask"
-        v-if="todo.category === 'Today'"
-        :class="{ disabled: todo.category === 'Completed' }"
-      >
-        <div class="todayTaskLeft">
-          <input
-            type="checkbox"
-            class="myCheckbox"
-            :checked="todo.category === 'Completed'"
-            :disabled="todo.category === 'Completed'"
-            @click="updateTable(todo)"
-          />
-          <p>{{ todo.todo }}</p>
+      <div class="todayTasks" v-for="(todo, index) in todos" :key="index">
+        <div
+          class="newTask"
+          v-if="todo.category === 'Today'"
+          :class="{ disabled: todo.category === 'Completed' }"
+        >
+          <div class="todayTaskLeft">
+            <input
+              type="checkbox"
+              class="myCheckbox"
+              :checked="todo.category === 'Completed'"
+              :disabled="todo.category === 'Completed'"
+              @click="updateTable(todo)"
+            />
+            <p>{{ todo.todo }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -59,7 +63,6 @@ const updateTable = async (todo) => {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 10px;
 }
 .newTask {
   background-color: rgb(255, 255, 255);
@@ -70,6 +73,7 @@ const updateTable = async (todo) => {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  margin-top: 12px;
 }
 
 .newTask:hover {
@@ -119,6 +123,7 @@ const updateTable = async (todo) => {
 }
 .disabled {
   opacity: 0.5;
+  text-decoration: line-through;
 }
 
 @media screen and (max-width: 1400px) {

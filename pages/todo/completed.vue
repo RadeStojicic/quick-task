@@ -12,14 +12,6 @@ const props = defineProps({
 const route = useRoute();
 const path = route.path.slice(1);
 const { todos } = storeToRefs(useTodoStore());
-
-const handleCheckboxClick = (todo) => {
-  if (todo.category !== "Completed") {
-    todo.category = "Completed";
-  } else {
-    todo.category = "Today";
-  }
-};
 </script>
 
 <template>
@@ -37,7 +29,7 @@ const handleCheckboxClick = (todo) => {
         :class="{ disabled: todo.category === 'Completed' }"
       >
         <div class="completedTaskLeft">
-          <input type="checkbox" class="myCheckbox" />
+          <input type="checkbox" checked class="myCheckbox" disabled />
           <p>{{ todo.todo }}</p>
         </div>
       </div>
@@ -112,6 +104,7 @@ const handleCheckboxClick = (todo) => {
 }
 .disabled {
   opacity: 0.5;
+  text-decoration: line-through;
 }
 
 @media screen and (max-width: 1400px) {

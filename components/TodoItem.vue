@@ -38,8 +38,11 @@ const updateTable = async (todo) => {
     .from("todos")
     .update({ category: "Completed" })
     .eq("id", todo.id);
+
   if (error) {
     console.log(error);
+  } else {
+    todo.category = "Completed";
   }
 };
 </script>
@@ -274,6 +277,7 @@ const updateTable = async (todo) => {
   align-items: center;
   gap: 15px;
   user-select: none;
+  text-decoration: line-through;
 }
 
 @media screen and (max-width: 1400px) {

@@ -9,7 +9,7 @@ const { data: todos } = useAsyncData("todos", async () => {
   const { data, error } = await client
     .from("todos")
     .select("*")
-    .eq("user_id", user.value?.id);
+    .eq("user_id", user.value?.id)
   return data;
 });
 

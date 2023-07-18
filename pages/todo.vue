@@ -90,9 +90,8 @@ const deleteTodo = async (index) => {
 </script>
 
 <template>
-  <main>
+  <main class="mainParent">
     <NuxtPage />
-
     <div v-if="route.name == 'todo'" class="todoTasks">
       <div class="todo_menu">
         <TodoApp @create-todo="createTodo" />
@@ -153,7 +152,7 @@ const deleteTodo = async (index) => {
 </template>
 
 <style scoped>
-.todoTasks {
+.mainParent {
   background-color: whitesmoke;
   padding-bottom: 50px;
 }
@@ -205,7 +204,6 @@ const deleteTodo = async (index) => {
 .todosMenu {
   display: flex;
   align-items: flex-start;
-
   width: 95%;
   margin: auto;
   gap: 20px;

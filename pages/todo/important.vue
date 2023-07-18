@@ -19,6 +19,8 @@ const updateTable = async (todo) => {
     .eq("id", todo.id);
   if (error) {
     console.log(error);
+  } else {
+    todo.category = "Completed";
   }
 };
 </script>
@@ -59,7 +61,6 @@ const updateTable = async (todo) => {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  gap: 10px;
 }
 .newTask {
   background-color: rgb(255, 255, 255);
@@ -70,6 +71,7 @@ const updateTable = async (todo) => {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  margin-top: 12px;
 }
 
 .newTask:hover {
@@ -111,6 +113,7 @@ const updateTable = async (todo) => {
 }
 .disabled {
   opacity: 0.5;
+  text-decoration: line-through;
 }
 
 @media screen and (max-width: 1400px) {
