@@ -115,6 +115,11 @@ useHead({
   width: 90%;
 }
 
+.rightHero img {
+  max-width: 100%;
+  width: 100%;
+}
+
 .getStarted {
   background-color: #3850ff;
   width: 150px;
