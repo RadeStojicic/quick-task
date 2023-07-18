@@ -39,7 +39,6 @@ const accountLogin = async () => {
 
     if (data) {
       useRouter().push("/todo");
-      // user_profile.value = data.user.user_metadata.full_name;
     }
   } catch (err) {
     errors.value = "Something went wrong.";
@@ -50,9 +49,9 @@ const accountLogin = async () => {
 const handleGoogleLogin = () => {
   supabaseAuth.auth.signInWithOAuth({
     provider: "google",
-    options: {
-      redirectTo: "https://quicktask.radestojicic.com/todo",
-    },
+    // options: {
+    //   redirectTo: "https://quicktask.radestojicic.com/todo",
+    // },
   });
 };
 
