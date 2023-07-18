@@ -200,6 +200,7 @@ useHead({
     align-items: center;
   }
   .rightHero img {
+    max-width: 100%;
     width: 100%;
   }
 
