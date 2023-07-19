@@ -5,10 +5,6 @@ import PricingVue from "../components/Pricing.vue";
 import FaqVue from "../components/Faq.vue";
 import TrustedVue from "../components/TrustedBy.vue";
 import FooterVue from "../components/Footer.vue";
-
-useHead({
-  title: "QuickTask",
-});
 </script>
 
 <template>
