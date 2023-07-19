@@ -46,10 +46,15 @@ const accountLogin = async () => {
 };
 
 // -- login via google
-const handleGoogleLogin = () => {
-  supabaseAuth.auth.signInWithOAuth({
+
+const handleGoogleLogin = async () => {
+  const { error } = await supabase.auth.signInWithOAuth({
     provider: "google",
+    options: {
+      redirectTo: "http://quicktask.radestojicic.com/todo",
+    },
   });
+  if (error) console.log(error.message);
 };
 
 // register
