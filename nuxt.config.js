@@ -4,6 +4,9 @@ export default defineNuxtConfig({
     app: {
         head: {
             title: 'QuickTask - Manage your tasks efficiently',
+            htmlAttrs: {
+                lang: 'en'
+              },
             meta: [
                 {
                     name: 'description',

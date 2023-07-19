@@ -17,7 +17,7 @@ const openNav = ref(false);
       <div class="linksContainer">
         <div class="navLeft">
           <a class="logo" href="#"
-            ><nuxt-img format="webp" src="/images/logo.png" alt=""
+            ><nuxt-img format="webp" src="/images/logo.png" alt="logo"
           /></a>
         </div>
 
@@ -36,12 +36,14 @@ const openNav = ref(false);
           </div>
         </div>
         <ul class="navLinks">
-          <NuxtLink class="link" to="/#home">Home</NuxtLink>
-          <NuxtLink class="link" to="/#feautures">Features</NuxtLink>
-          <NuxtLink class="link" to="/#pricing">Pricing</NuxtLink>
-          <NuxtLink class="link" to="/#faq">FAQ</NuxtLink>
-          <NuxtLink class="link" to="/#contact">Contact</NuxtLink>
+          <li><NuxtLink class="link" to="/#home">Home</NuxtLink></li>
+          <li><NuxtLink class="link" to="/#feautures">Features</NuxtLink></li>
+          <li><NuxtLink class="link" to="/#pricing">Pricing</NuxtLink></li>
+          <li><NuxtLink class="link" to="/#faq">FAQ</NuxtLink></li>
+          <li><NuxtLink class="link" to="/#contact">Contact</NuxtLink></li>
+
           <NuxtLink v-if="!user" class="login" to="/auth">Log In</NuxtLink>
+
           <button v-else @click="handleLogOut()" class="logout">Log Out</button>
         </ul>
       </div>
@@ -182,6 +184,10 @@ header {
   padding: 10px 5px 10px 5px;
   font-size: 0.9em;
   font-weight: 400;
+}
+
+.navLinks li {
+  list-style: none;
 }
 
 .link {

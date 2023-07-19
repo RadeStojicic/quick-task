@@ -12,15 +12,15 @@ function reloadPage() {
     <div class="footer_container">
       <div class="first_column">
         <div class="first_left">
-          <NuxtLink to="/"
+          <NuxtLink to="/#home"
             ><nuxt-img format="webp" src="/images/logo.png" alt="logo"
           /></NuxtLink>
           <div class="footer_links">
-            <NuxtLink to="/">Home</NuxtLink>
-            <NuxtLink to="/">Feautures</NuxtLink>
-            <NuxtLink to="/">Pricing</NuxtLink>
-            <NuxtLink to="/">FAQ</NuxtLink>
-            <NuxtLink to="/">Contact</NuxtLink>
+            <NuxtLink to="/#home">Home</NuxtLink>
+            <NuxtLink to="/#feautures">Feautures</NuxtLink>
+            <NuxtLink to="/#pricing">Pricing</NuxtLink>
+            <NuxtLink to="/#faq">FAQ</NuxtLink>
+            <NuxtLink to="/#contact">Contact</NuxtLink>
           </div>
           <div class="footer_icons">
             <a target="_blank" href="https://www.instagram.com/">

@@ -27,13 +27,13 @@
               format="webp"
               class="pattern_1"
               src="/images/pattern_content_1.png"
-              alt=""
+              alt="pattern1"
             />
             <nuxt-img
               format="webp"
               class="image_1"
               src="/images/image_content_1.png"
-              alt=""
+              alt="appImage1"
             />
           </div>
         </div>
@@ -48,13 +48,13 @@
               format="webp"
               class="pattern_2"
               src="/images/pattern_content_2.png"
-              alt=""
+              alt="pattern2"
             />
             <nuxt-img
               format="webp"
               class="image_2"
               src="/images/image_content_2.png"
-              alt=""
+              alt="appImage2"
             />
           </div>
           <div class="second_right">

@@ -14,7 +14,7 @@ import FooterVue from "../components/Footer.vue";
         sizes="xs:200px md:500px lg:1200px"
         class="shade"
         src="/images/shade.svg"
-        alt=""
+        alt="shade_background"
       />
       <HeaderVue />
       <div class="heroContainer">
@@ -55,6 +55,7 @@ import FooterVue from "../components/Footer.vue";
             format="webp"
             sizes="xs:200px md:500px lg:550px"
             src="/images/qt_illustration.png"
+            alt="hero_image"
           />
         </div>
       </div>

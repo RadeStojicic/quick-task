@@ -10,37 +10,37 @@
           quality="80"
           format="webp"
           src="/images/trustedByLogos/1.svg"
-          alt=""
+          alt="trustedByLogo1"
         />
         <nuxt-img
           quality="80"
           format="webp"
           src="/images/trustedByLogos/2.svg"
-          alt=""
+          alt="trustedByLogo2"
         />
         <nuxt-img
           quality="80"
           format="webp"
           src="/images/trustedByLogos/3.svg"
-          alt=""
+          alt="trustedByLogo3"
         />
         <nuxt-img
           quality="80"
           format="webp"
           src="/images/trustedByLogos/4.svg"
-          alt=""
+          alt="trustedByLogo4"
         />
         <nuxt-img
           quality="80"
           format="webp"
           src="/images/trustedByLogos/5.svg"
-          alt=""
+          alt="trustedByLogo5"
         />
         <nuxt-img
           quality="80"
           format="webp"
           src="/images/trustedByLogos/6.svg"
-          alt=""
+          alt="trustedByLogo6"
         />
       </div>
     </div>
