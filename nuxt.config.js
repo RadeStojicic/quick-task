@@ -1,14 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
-    head: {
-        title: 'QuickTask - Task Management',
-        meta: [
-          { charset: 'utf-8' },
-          { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-          { hid: 'description', name: 'description', content: 'Manage your tasks and todos efficiently with QuickTask. Stay organized and boost your productivity.' },
-        ],
-    },
+    app: {
+        head: {
+            title: 'QuickTask - Manage your tasks efficiently',
+            meta: [
+                {
+                    name: 'description',
+                    content: 'Manage your tasks and todos efficiently with QuickTask. Stay organized and boost your productivity.'
+                },
+                {
+                charset: 'utf-8',
+                viewport: 'width=device-width, initial-scale=1',
+                }
+            ]
+        }
+      },
+    
     modules: ['@nuxtjs/supabase', '@pinia/nuxt', '@nuxt/image'],
     css: [
         "@/assets/css/main.css",  
