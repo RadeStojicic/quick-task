@@ -27,7 +27,7 @@ const updateTable = async (todo) => {
   const { data, error } = await client
     .from("todos")
     .update({ category: "Completed" })
-    .eq("id", todo.id);
+    .eq("key", todo.key);
 
   if (error) {
     console.log(error);
@@ -44,7 +44,7 @@ const editTable = async (todo) => {
   const { data, error } = await client
     .from("todos")
     .update({ todo: editValue.value })
-    .eq("id", todo.id);
+    .eq("key", todo.key);
 
   if (error) {
     console.log(error);

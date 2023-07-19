@@ -18,7 +18,7 @@ const updateTable = async (todo) => {
   const { data, error } = await client
     .from("todos")
     .update({ category: "Completed" })
-    .eq("id", todo.id);
+    .eq("key", todo.key);
   if (error) {
     console.log(error);
   } else {
@@ -35,7 +35,7 @@ const updateTable = async (todo) => {
         <p>Planned Tasks</p>
       </div>
     </div>
-    <div class="plannedTasks" v-for="(todo, index) in todos" :key="index">
+    <div class="plannedTasks" v-for="(todo, index) in todos" :key="index.key">
       <div
         class="newTask"
         v-if="todo.category === 'Planned'"
@@ -52,7 +52,7 @@ const updateTable = async (todo) => {
           <p>{{ todo.todo }}</p>
         </div>
         <p class="dueToDate">
-          {{ todo.created_at }}
+          {{ String(todo.dueToDate).split("T")[0] || "" }}
         </p>
       </div>
     </div>

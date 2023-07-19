@@ -29,7 +29,7 @@ const createTask = () => {
           v-model="taskState.todo"
           placeholder="Type something..."
           type="text"
-          maxlength="60"
+          maxlength="50"
           @keyup.enter="createTask"
         />
 

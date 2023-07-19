@@ -23,17 +23,33 @@ function reloadPage() {
             <NuxtLink to="/#contact">Contact</NuxtLink>
           </div>
           <div class="footer_icons">
-            <a target="_blank" href="https://www.instagram.com/">
+            <a
+              aria-label="Instagram"
+              target="_blank"
+              href="https://www.instagram.com/"
+            >
               <Icon width="25px" color="white" icon="mdi:instagram" />
             </a>
-            <a target="_blank" href="https://www.facebook.com/">
+            <a
+              aria-label="Facebook"
+              target="_blank"
+              href="https://www.facebook.com/"
+            >
               <Icon width="25px" color="white" icon="mdi:facebook" />
             </a>
 
-            <a target="_blank" href="https://www.twitter.com/">
+            <a
+              aria-label="Twitter"
+              target="_blank"
+              href="https://www.twitter.com/"
+            >
               <Icon width="25px" color="white" icon="mdi:twitter" />
             </a>
-            <a target="_blank" href="https://www.linkedin.com/">
+            <a
+              aria-label="LinkedIn"
+              target="_blank"
+              href="https://www.linkedin.com/"
+            >
               <Icon width="25px" color="white" icon="mdi:linkedin" />
             </a>
           </div>

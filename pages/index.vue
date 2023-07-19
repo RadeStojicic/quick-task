@@ -167,7 +167,7 @@ import FooterVue from "../components/Footer.vue";
     margin-top: 30px;
     color: #a0a6ba;
     font-size: 0.95em;
-    width: 100%;
+    width: 90%;
   }
 
   .getStarted {

@@ -46,11 +46,12 @@ const createTodo = async (todo) => {
   };
 
   try {
-    const { data, error } = await client.from("todos").insert(newTodo);
+    const { data, error } = await client.from("todos").insert(newTodo).select();
     if (error) {
       console.log(error.message);
       return;
     }
+    console.log(data);
     items.value.push(newTodo);
   } catch (err) {
     console.log(err);
@@ -143,7 +144,7 @@ const deleteTodo = async (index) => {
             :index="todo.key"
             :todo="todo"
             :category="category"
-            @delete-todo="deleteTodo"
+            @delete-todo="deleteTodo(todo.key)"
           />
         </li>
       </ul>
