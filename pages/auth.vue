@@ -49,9 +49,9 @@ const accountLogin = async () => {
 const handleGoogleLogin = () => {
   supabaseAuth.auth.signInWithOAuth({
     provider: "google",
-    // options: {
-    //   redirectTo: "https://quicktask.radestojicic.com/todo",
-    // },
+    options: {
+      redirectTo: "https://quicktask.radestojicic.com/todo",
+    },
   });
 };
 
@@ -115,7 +115,7 @@ const accountRegister = async () => {
         </form>
 
         <p class="separator">Or</p>
-        <div @click="handleGoogleLogin()" class="google-btn">
+        <div @click="handleGoogleLogin" class="google-btn">
           <div class="google-icon-wrapper">
             <img
               class="google-icon"
